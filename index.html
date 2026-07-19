@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sandra</title>
+    <link rel="stylesheet" href="css/styles.min.css">
+    <!-- <link rel="stylesheet" href="css/bootstrap.css"> -->
+    <!-- <script src="js/bootstrap.bundle.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+    <div id="cursor"></div>
+    <canvas id="rainbow"></canvas>
+    <nav>
+        <div></div>
+        <button class="nav-menu-btn" id="navMenuBtn" aria-label="Menú">
+            <div class="menu-circle">
+                <div class="menu-circle-dot"></div>
+            </div>
+        </button>
+    </nav>
+    <div class="side-menu" id="sideMenu">
+        <a href="#galeria-rosa" class="menu-link" data-hcolor="#E8A4B8" onclick="closeMenu()">Rosas</a>
+        <a href="#galeria-azul" class="menu-link" data-hcolor="#5BBFBF" onclick="closeMenu()">Azul</a>
+        <a href="#galeria-amarillo" class="menu-link" data-hcolor="#E8C85A" onclick="closeMenu()">Amarillo</a>
+        <a href="#galeria-bw" class="menu-link" data-hcolor="#F5F5F0" onclick="closeMenu()">B&W</a>
+        <a href="#bio" class="menu-link" data-hcolor="rgba(255,255,255,.9)" onclick="closeMenu()">Sobre mí</a>
+        <div class="menu-contact">
+            <a href="mailto:hola@tudominio.com">hola@tudominio.com</a>
+            <a href="#">@tuinstagram</a>
+        </div>
+    </div>
+    <div class="overlay" id="overlay" onclick="closeMenu()"></div>
+    <section id="home">
+        <div class="home-container">
+            <div class="home-row anim1" id="row1"></div>
+            <div class="home-row anim2" id="row2"></div>
+        </div>
+        <div class="scroll-hint"></div>
+    </section>
+    <!-- <section id="portada" class="portada">
+        <div class="title" style="justify-self: center; align-self: end; letter-spacing: 1rem;">NUNCA DEJARE DE</div>
+        <div class="title" style="justify-self: center;">
+            <span id="pink" class="rotate" style="margin-right: .5rem; font-weight: 800; color: var(--color-pink); cursor: pointer;" onclick="changeColor('pink')">C</span>
+            <span class="rotate" style="margin-right: .5rem;">E</span>
+            <span id="blue" class="rotate" style="margin-right: .5rem; font-weight: 800; color: var(--color-blue); cursor: pointer;">L</span>
+            <span class="rotate" style="margin-right: .5rem;">E</span>
+            <span class="rotate" style="margin-right: .5rem; font-weight: 800; cursor: pointer; display: inline-block; transform: scaleX(-1);">B</span>
+            <span class="rotate" style="margin-right: .5rem;">R</span>
+            <span id="yellow" class="rotate" style="margin-right: .5rem; font-weight: 800; cursor: pointer; color: var(--color-yellow);">A</span>
+            <span class="rotate" style="margin-right: .5rem;">R</span>
+            <span class="rotate" style="margin-right: .5rem;">L</span>
+            <span class="rotate" style="margin-right: .5rem;">O</span>
+        </div>
+    </section>
+    <section id="imagenes" class="imagenes oculto">
+        <div class="imagen">
+            <img
+                src="img/1.jpeg">
+        </div>
+        <div class="imagen">
+            <img
+                src="img/1.jpeg">
+        </div>
+        <div class="imagen">
+            <img
+                src="img/1.jpeg">
+        </div>
+        <div class="imagen">
+            <img
+                src="img/1.jpeg">
+        </div>
+    </section> -->
+        <!-- <div id="texto2" class="texto oculto">
+            Segundo texto
+        </div> -->
+    <!-- <section id="portada">
+        <div class="title" style="text-align: center;">nunca dejaré de</div>
+        <div class="title" style="text-align: center; font-size: 3rem;">
+            <span style="font-weight: 800; color: var(--color-pink); cursor: pointer;" onclick="showImages()">C</span>
+            <span>E</span>
+            <span style="font-weight: 800; color: var(--color-blue);">L</span>
+            <span>E</span>
+            <span style="font-weight: 800; display: inline-block; transform: scaleX(-1);">B</span>
+            <span>R</span>
+            <span style="font-weight: 800; color: var(--color-yellow);">A</span>
+            <span>R</span>
+            <span>L</span>
+            <span>O</span>
+        </div>
+    </section>
+    <section id="rosa">
+        <div style="display: grid; grid-template-columns: 25% 25% 25% 25%;">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+        </div>
+    </section> -->
+    <script data-cfasync="false" src="js/form-submission-handler.js"></script>
+    <script>
+        // HOME
+        const glyphs = {
+            N: (s)=>`<span width="${s}" height="${s}">N</span>`,
+            U: (s)=>`<span width="${s}" height="${s}">U</span>`,
+            C: (s)=>`<span width="${s}" height="${s}">C</span>`,
+            A: (s)=>`<span width="${s}" height="${s}">A</span>`,
+            D: (s)=>`<span width="${s}" height="${s}">D</span>`,
+            E: (s)=>`<span width="${s}" height="${s}">E</span>`,
+            J: (s)=>`<span width="${s}" height="${s}">J</span>`,
+            R: (s)=>`<span width="${s}" height="${s}">R</span>`,
+            B: (s)=>`<span width="${s}" height="${s}">B</span>`,
+            L: (s)=>`<span width="${s}" height="${s}">L</span>`,
+            O: (s)=>`<span width="${s}" height="${s}">O</span>`
+        };
+        const row1Def = [
+            {ch: 'N', type: 'regular'},
+            {ch: 'U', type: 'regular'},
+            {ch: 'N', type: 'regular'},
+            {ch: 'C', type: 'regular'},
+            {ch: 'A', type: 'regular'},
+            {ch: ' '},
+            {ch: 'D', type: 'regular'},
+            {ch: 'E', type: 'azul', link: 'galeria-azul'},
+            {ch: 'J', type: 'regular'},
+            {ch: 'A', type: 'regular'},
+            {ch: 'R', type: 'regular'},
+            {ch: 'E', type: 'regular'},
+            {ch: ' '},
+            {ch: 'D', type: 'regular'},
+            {ch: 'E', type: 'regular'}
+        ];
+        const row2Def = [
+            {ch: 'C', type: 'rosa', link: 'galeria-rosa'},
+            {ch: 'E', type: 'regular'},
+            {ch: 'L', type: 'regular'},
+            {ch: 'E', type: 'regular'},
+            {ch: 'B', type: 'bw', link: 'galeria-bw'},
+            {ch: 'R', type: 'regular'},
+            {ch: 'A', type: 'amarillo', link: 'galeria-amarillo'},
+            {ch: 'R', type: 'regular'},
+            {ch: 'L', type: 'regular'},
+            {ch: 'O', type: 'regular'}
+        ];
+
+        function getScale() {
+            const vw = window.innerWidth;
+            if (vw < 400) return 0.3; 
+            if (vw < 640) return 0.36;
+            if (vw < 900) return 0.44; 
+            if (vw < 1200) return 0.52;
+            return 0.58;
+        }
+        function buildTitles() {
+            const scale = getScale();
+            function render(cid, defs) {
+                const c = document.getElementById(cid); 
+                c.innerHTML = '';
+                defs.forEach(item => {
+                    if (item.ch === ' ') {
+                        const sp = document.createElement('span');
+                        sp.className = 'letter-space';
+                        c.appendChild(sp);
+                        return;
+                    }
+                    const wrap = document.createElement('span');
+                    wrap.className = `letter letter-${item.type}`;
+                    wrap.innerHTML = (glyphs[item.ch] || glyphs['A']) (60 * scale);
+                    wrap.addEventListener('mouseenter', () => {
+                        wrap.style.transition = 'transform .52s cubic-bezier(.34, 1.56, .64, 1)';
+                        wrap.style.transform = item.type === 'bw' ? 'rotateY(0deg)' : 'rotateY(180deg)';
+                    });
+                    wrap.addEventListener('mouseleave', () => {
+                        wrap.style.transition = 'transform .52s cubic-bezier(.34, 1.56, .64, 1)';
+                        wrap.style.transform = item.type === 'bw' ? 'rotateY(180deg)' : 'rotateY(0deg)';
+                    });
+                    if (item.link) {
+                        wrap.addEventListener('click', () => {
+                            document.getElementById(item.link).scrollIntoView({behavior: 'smooth'});
+                        });
+                    }
+                    c.appendChild(wrap);
+                });
+            }
+            render('row1', row1Def);
+            render('row2', row2Def);
+        }
+        window.addEventListener('resize', buildTitles);
+        buildTitles();
+
+        // CURSOR
+        const cursor = document.getElementById('cursor');
+        let mouseX = 0, mouseY = 0, moveTimer;
+        document.addEventListener('mousemove', e => {
+            mouseX = e.clientX; mouseY = e.clientY;
+            cursor.style.left = mouseX + 'px'; cursor.style.top = mouseY + 'px';
+            cursor.classList.add('moving');
+            clearTimeout(moveTimer);
+            moveTimer = setTimeout(() => cursor.classList.remove('moving'), 120);
+            if (true) {
+                // points.push({x: mouseX, y: mouseY, t: Date.now(), c: rainbowColors[Math.floor(Math.random() * rainbowColors.length)]})
+                // if (points.length > 120) points.shift();
+            }
+        });
+
+        // RAINBOW
+        // const rainbow = document.getElementById('rainbow');
+        // const ctx = rainbow.getContext('2d');
+
+        // function resizeRainbow() {
+        //     rainbow.width = window.innerWidth;
+        //     rainbow.height = window.innerHeight;
+        // }
+        // resizeRainbow();
+        // window.addEventListener('resize', resizeRainbow);
+
+        // let points = [];
+        // const rainbowColors = ['#E8A4B8', '#FF6B6B', '#FF9F43', '#FECA57', '#5BBFBF', '#54A0FF', '#A29BFE', '#E8C85A', '#00D2D3', '#FF9FF3'];
+
+        // function catmullRomSegment(ctx, p0, p1, p2, p3) {
+        //     // Catmull-Rom to bezier conversion
+        //     const cp1x = p1.x + (p2.x - p0.x) /6;
+        //     const cp1y = p1.y + (p2.y - p0.y) /6;
+        //     const cp2x = p2.x - (p3.x - p1.x) /6;
+        //     const cp2y = p2.y - (p3.y - p1.y) /6;
+        //     ctx.bezierCurveTo(cp1x, cp1y, cp2x, cp2y, p2.x, p2.y);
+        // }
+
+        // function drawRainbow() {
+        //     ctx.clearRect(0, 0, rainbow.width, rainbow.height);
+        //     if (points.length > 3) {
+        //         const now = Date.now(); const maxAge = 1400;
+        //         points = points.filter(p => now - p.t < maxAge);
+        //         console.log(points);
+
+        //         // Draw segments with bezier curves
+        //         for (let i = 1; i < points.length - 2; i++) {
+        //             const p0 = points[Math.max(0, i-1)];
+        //             const p1 = points[i];
+        //             const p2 = points[i+1];
+        //             const p3 = points[Math.min(points.length-1, i+2)];
+        //             const age = now - p2.t;
+        //             const alpha = Math.max(0, 1 - age / maxAge);
+        //             if (alpha < 0.01) continue;
+        //             ctx.beginPath();
+        //             ctx.moveTo(p1.x, p1.y);
+        //             catmullRomSegment(ctx, p0, p1, p2, p3);
+        //             ctx.strokeStyle = p2.c;
+        //             ctx.lineWidth = Math.max(0.4, 3 * alpha);
+        //             ctx.lineCap = 'round';
+        //             ctx.lineJoin = 'round';
+        //             ctx.globalAlpha = alpha * 0.72;
+        //             ctx.stroke();
+        //         }
+        //         ctx.globalAlpha = 1;
+        //     }
+        //     requestAnimationFrame(drawRainbow);
+        // }
+        // drawRainbow();
+
+        // MENU
+        const navMenuBtn = document.getElementById('navMenuBtn');
+        const sideMenu = document.getElementById('sideMenu');
+        const overlay = document.getElementById('overlay');
+        navMenuBtn.addEventListener('click', () => {
+            const open = sideMenu.classList.toggle('open');
+            navMenuBtn.classList.toggle('open', open);
+            overlay.classList.toggle('active', open);
+        });
+        function closeMenu() {
+            sideMenu.classList.remove('open');
+            navMenuBtn.classList.remove('open');
+            overlay.classList.remove('active');
+        }
+        
+
+
+
+
+
+
+        // const portada = document.getElementById("portada");
+        // function showImages() {
+        //     portada.classList.add("fundido");
+        // }
+
+        // const portada = document.getElementById("portada");
+        // const pink = document.getElementById("pink");
+        // const blue = document.getElementById("blue");
+        // const yellow = document.getElementById("yellow");
+        
+        // const imagenes = document.getElementById("imagenes");
+
+        // const fotos = document.querySelectorAll(".imagen");
+        // let actual = 0;
+
+        // portada.addEventListener("animationend", () => {
+        //     imagenes.classList.add("visible");
+        //     fotos.forEach((foto, i) => {
+        //         setTimeout(() => {
+        //             foto.classList.add("mostrar");
+        //         }, i * 800); // Una nueva imagen cada 800 ms
+        //     });
+        // });
+
+        // function changeColor(color) {
+        //     switch(color) {
+        //         case "pink":
+        //             portada.classList.add("changeToPink");
+        //             pink.classList.add("changeToPink");
+        //             blue.classList.add("changeToPink");
+        //             yellow.classList.add("changeToPink");
+        //             break;
+        //         case "blue":
+        //             break;
+        //         case "yellow":
+        //             break;
+        //         default:
+        //             break;
+        //     }
+        // }
+
+
+//         document.getElementById("btn").addEventListener("click", () => {
+//     document.getElementById("texto1").classList.remove("visible");
+//     document.getElementById("texto1").classList.add("oculto");
+
+//     document.getElementById("texto2").classList.remove("oculto");
+//     document.getElementById("texto2").classList.add("visible");
+// });
+    </script>
+</body>
+</html>
