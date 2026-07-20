@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/styles.min.css">
     <!-- <link rel="stylesheet" href="css/bootstrap.css"> -->
     <!-- <script src="js/bootstrap.bundle.js"></script> -->
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script> -->
 </head>
 <body>
     <div id="cursor"></div>
@@ -36,68 +36,56 @@
         <div class="home-container">
             <div class="home-row anim1" id="row1"></div>
             <div class="home-row anim2" id="row2"></div>
+            <div class="color-key">
+                <a href="#galeria-rosa" class="color-key-item" data-gallery="rosa" data-color="var(--rosa)">
+                    <span class="color-dot dot-rosa"></span><span>rosas</span>
+                </a>
+                <a href="#galeria-azul" class="color-key-item" data-gallery="azul" data-color="var(--azul)">
+                    <span class="color-dot dot-azul"></span><span>azul</span>
+                </a>
+                <a href="#galeria-amarillo" class="color-key-item" data-gallery="amarillo" data-color="var(--amarillo)">
+                    <span class="color-dot dot-amarillo"></span><span>amarillo</span>
+                </a>
+                <a href="#galeria-bw" class="color-key-item" data-gallery="bw" data-color="var(--bw)">
+                    <span class="color-dot dot-bw"></span><span>b&w</span>
+                </a>
+            </div>
         </div>
-        <div class="scroll-hint"></div>
+        <div class="scroll-hint"><span>ver</span></div>
     </section>
-    <!-- <section id="portada" class="portada">
-        <div class="title" style="justify-self: center; align-self: end; letter-spacing: 1rem;">NUNCA DEJARE DE</div>
-        <div class="title" style="justify-self: center;">
-            <span id="pink" class="rotate" style="margin-right: .5rem; font-weight: 800; color: var(--color-pink); cursor: pointer;" onclick="changeColor('pink')">C</span>
-            <span class="rotate" style="margin-right: .5rem;">E</span>
-            <span id="blue" class="rotate" style="margin-right: .5rem; font-weight: 800; color: var(--color-blue); cursor: pointer;">L</span>
-            <span class="rotate" style="margin-right: .5rem;">E</span>
-            <span class="rotate" style="margin-right: .5rem; font-weight: 800; cursor: pointer; display: inline-block; transform: scaleX(-1);">B</span>
-            <span class="rotate" style="margin-right: .5rem;">R</span>
-            <span id="yellow" class="rotate" style="margin-right: .5rem; font-weight: 800; cursor: pointer; color: var(--color-yellow);">A</span>
-            <span class="rotate" style="margin-right: .5rem;">R</span>
-            <span class="rotate" style="margin-right: .5rem;">L</span>
-            <span class="rotate" style="margin-right: .5rem;">O</span>
+    <section class="gallery-section" id="galeria-rosa">
+        <div class="gallery-header">
+            <p class="gallery-tag">colección</p>
+            <div class="palette-circles">
+                <div class="palette-swatch" style="background: #E8A4B8;"></div>
+                <div class="palette-swatch" style="background: #F2C4D2;"></div>
+                <div class="palette-swatch" style="background: #D4708C;"></div>
+                <div class="palette-swatch" style="background: #FAEEF3;"></div>
+                <div class="palette-swatch" style="background: #B85475;"></div>
+            </div>
         </div>
+        <div class="photo-grid" id="grid-rosa"></div>
+        <div class="gallery-pagination" id="pag-rosa"></div>
     </section>
-    <section id="imagenes" class="imagenes oculto">
-        <div class="imagen">
-            <img
-                src="img/1.jpeg">
+    <section class="gallery-section" id="galeria-azul">
+        <div class="gallery-header">
+            <p class="gallery-tag">colección</p>
+            <div class="palette-circles">
+                <div class="palette-swatch" style="background:#5BBFBF;"></div>
+                <div class="palette-swatch" style="background:#A8DEDE;"></div>
+                <div class="palette-swatch" style="background:#2E8B8B;"></div>
+                <div class="palette-swatch" style="background:#D6F0F0;"></div>
+                <div class="palette-swatch" style="background:#1A6060;"></div>
+            </div>
         </div>
-        <div class="imagen">
-            <img
-                src="img/1.jpeg">
-        </div>
-        <div class="imagen">
-            <img
-                src="img/1.jpeg">
-        </div>
-        <div class="imagen">
-            <img
-                src="img/1.jpeg">
-        </div>
-    </section> -->
-        <!-- <div id="texto2" class="texto oculto">
-            Segundo texto
-        </div> -->
-    <!-- <section id="portada">
-        <div class="title" style="text-align: center;">nunca dejaré de</div>
-        <div class="title" style="text-align: center; font-size: 3rem;">
-            <span style="font-weight: 800; color: var(--color-pink); cursor: pointer;" onclick="showImages()">C</span>
-            <span>E</span>
-            <span style="font-weight: 800; color: var(--color-blue);">L</span>
-            <span>E</span>
-            <span style="font-weight: 800; display: inline-block; transform: scaleX(-1);">B</span>
-            <span>R</span>
-            <span style="font-weight: 800; color: var(--color-yellow);">A</span>
-            <span>R</span>
-            <span>L</span>
-            <span>O</span>
-        </div>
+        <div class="photo-grid" id="grid-azul"></div>
+        <div class="gallery-pagination" id="pag-azul"></div>
     </section>
-    <section id="rosa">
-        <div style="display: grid; grid-template-columns: 25% 25% 25% 25%;">
-            <div>1</div>
-            <div>2</div>
-            <div>3</div>
-            <div>4</div>
-        </div>
-    </section> -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" onclick="closeLightbox()">×</button>
+        <img class="lightbox-img" id="lightbox-img" src="" alt="" style="display: none;">
+        <div class="lightbox-txt" id="lightbox-txt">tus fotos aquí</div>
+    </div>
     <script data-cfasync="false" src="js/form-submission-handler.js"></script>
     <script>
         // HOME
@@ -189,6 +177,234 @@
         window.addEventListener('resize', buildTitles);
         buildTitles();
 
+        // COLOR KEY → letter color change
+        const colorMap = {rosa: '#E8A4B8', azul: '#5BBFBF', amarillo: '#E8C85A', bw:'#1C1C1A'};
+        document.querySelectorAll('.color-key-item[data-gallery]').forEach(item => {
+            const gallery = item.getAttribute('data-gallery');
+            const col = colorMap[gallery];
+            item.addEventListener('mouseenter', () => {
+                // Change all letter SVG strokes to this color temporarily
+                document.querySelectorAll('.letter-regular').forEach(p=>{
+                    p.style.color = col;
+                    p.style.opacity = '0.7';
+                });
+            });
+            item.addEventListener('mouseleave', () => {
+                document.querySelectorAll('.letter-regular').forEach(p=>{
+                    p.style.color = '';
+                    p.style.opacity = '';
+                });
+            });
+        });
+
+        // ── PROGRESSIVE GALLERY REVEAL ───────────────────────────────────────────────
+        function revealItems(entries, observer) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                const el = entry.target;
+                const siblings = Array.from(el.parentElement.children);
+                const idx = siblings.indexOf(el);
+                el.style.animationDelay = (idx * 500) + 'ms';
+                el.classList.add('revealed');
+                observer.unobserve(el);
+            });
+        }
+        const galleryObserver = new IntersectionObserver(revealItems, {threshold: 0.08, rootMargin: '0px 0px -40px 0px'});
+        setTimeout(() => {
+            document.querySelectorAll('.palette-swatch').forEach(el => galleryObserver.observe(el));
+        }, 200);
+        
+        const photos = {
+            'rosa_0': 'img/rosa/01.jpg',
+            'rosa_1': 'img/rosa/02.jpg',
+            'rosa_2': 'img/rosa/03.jpg',
+            'rosa_3': 'img/rosa/04.jpg',
+            'rosa_4': 'img/rosa/05.jpg',
+            'rosa_5': 'img/rosa/06.jpg',
+            'rosa_6': 'img/rosa/07.jpg',
+            'rosa_7': 'img/rosa/08.jpg',
+            'rosa_8': 'img/rosa/09.jpg',
+            'rosa_9': 'img/rosa/10.jpg',
+            'rosa_10': 'img/rosa/11.jpg',
+            'rosa_11': 'img/rosa/12.jpg',
+            'rosa_12': 'img/rosa/13.jpg',
+            'rosa_13': 'img/rosa/14.jpg',
+            'rosa_14': 'img/rosa/15.jpeg',
+            'rosa_15': 'img/rosa/16.jpg',
+            'rosa_16': 'img/rosa/17.jpg',
+            'rosa_17': 'img/rosa/18.jpg',
+            'rosa_18': 'img/rosa/19.jpg',
+            'rosa_19': 'img/rosa/20.jpg',
+            'rosa_20': 'img/rosa/21.jpg',
+            'rosa_21': 'img/rosa/22.jpg',
+            'rosa_22': 'img/rosa/23.jpg',
+            'rosa_23': 'img/rosa/24.jpg',
+            'rosa_24': 'img/rosa/25.jpg',
+            'rosa_25': 'img/rosa/26.jpg',
+            'azul_0': 'img/azul/01.jpg',
+            'azul_1': 'img/azul/02.jpg',
+            'azul_2': 'img/azul/03.jpg',
+            'azul_3': 'img/azul/04.jpg',
+            'azul_4': 'img/azul/05.jpg',
+            'azul_5': 'img/azul/06.jpg',
+            'azul_6': 'img/azul/07.jpg',
+            'azul_7': 'img/azul/08.jpg',
+            'azul_8': 'img/azul/09.jpg',
+            'azul_9': 'img/azul/10.jpg',
+            'azul_10': 'img/azul/11.jpg',
+            'azul_11': 'img/azul/12.jpg',
+            'azul_12': 'img/azul/13.jpg',
+            'azul_13': 'img/azul/14.jpg',
+            'azul_14': 'img/azul/15.jpg',
+            'azul_15': 'img/azul/16.jpeg',
+            'azul_16': 'img/azul/17.jpeg',
+            'azul_17': 'img/azul/18.jpeg',
+            'azul_18': 'img/azul/19.jpg',
+            'azul_19': 'img/azul/20.jpg',
+            'azul_20': 'img/azul/21.jpg',
+            'azul_21': 'img/azul/22.jpg',
+            'azul_22': 'img/azul/23.jpg',
+            'azul_23': 'img/azul/24.jpg',
+            'azul_24': 'img/azul/25.jpg',
+            'azul_25': 'img/azul/26.jpg',
+            'azul_26': 'img/azul/27.jpg',
+            'azul_27': 'img/azul/28.jpg',
+            'azul_28': 'img/azul/29.jpg',
+            'azul_29': 'img/azul/30.jpg',
+            'azul_30': 'img/azul/31.jpg',
+            'azul_31': 'img/azul/32.jpg',
+            'azul_32': 'img/azul/33.jpg',
+            'azul_33': 'img/azul/34.jpg',
+            'azul_34': 'img/azul/35.jpg',
+            'azul_35': 'img/azul/36.jpg',
+            'azul_36': 'img/azul/37.jpg',
+            'azul_37': 'img/azul/38.jpeg',
+            'azul_38': 'img/azul/39.jpeg',
+            'azul_39': 'img/azul/40.jpeg',
+            'azul_40': 'img/azul/41.jpeg',
+            'azul_41': 'img/azul/42.jpeg',
+            'azul_42': 'img/azul/43.jpeg',
+            'azul_43': 'img/azul/44.jpeg',
+            'azul_44': 'img/azul/45.jpeg',
+            'azul_45': 'img/azul/46.jpeg',
+            'azul_46': 'img/azul/47.jpeg',
+            'azul_47': 'img/azul/48.jpeg',
+            'azul_48': 'img/azul/49.jpeg',
+            'azul_49': 'img/azul/50.jpeg',
+            'azul_50': 'img/azul/51.jpeg',
+            'azul_51': 'img/azul/52.jpeg',
+            'azul_52': 'img/azul/53.jpeg',
+            'azul_53': 'img/azul/54.jpg',
+            'azul_54': 'img/azul/55.jpg',
+            'azul_55': 'img/azul/56.jpg',
+            'azul_56': 'img/azul/57.jpg',
+            'azul_57': 'img/azul/58.jpg',
+            'azul_58': 'img/azul/59.jpg',
+            'azul_59': 'img/azul/60.jpg',
+            'azul_60': 'img/azul/61.jpg',
+            'azul_61': 'img/azul/62.jpg',
+            'azul_62': 'img/azul/63.jpg',
+            'azul_63': 'img/azul/64.jpg',
+            'azul_64': 'img/azul/65.jpg',
+            'azul_65': 'img/azul/66.jpg',
+            'azul_66': 'img/azul/67.jpg',
+            'azul_67': 'img/azul/68.jpg',
+            'azul_68': 'img/azul/69.jpg',
+            'azul_69': 'img/azul/70.jpg'
+        };
+        const page_size = 4;
+        const galleryPage = {rosa: 0, azul: 0, amarillo: 0, bw: 0};
+
+        function countPhotos(gallery) {
+            return Object.keys(photos).filter(k => k.includes(gallery)).length;
+        }
+        function buildGrid(id, total, bwFirst, gallery, page) {
+            const c = document.getElementById(id);
+            c.innerHTML = '';
+            const start = page * page_size;
+            const end = Math.min(start + page_size, total);
+            for (let i = start; i < end; i++) {
+                const localIdv = i - start;
+                const d = document.createElement('div');
+                const tall = false;//(i === 0 || i === 2 || i === 3 || i === 4 || i === 5 || i === 15 || i === 23);
+                d.className = 'photo-placeholder';
+                const inner = document.createElement('div');
+                inner.className = 'photo-inner' + (tall ? ' tall': '');
+                const img = document.createElement('img');
+                if (bwFirst && i === 0) {
+                    img.src = BW_REAL;
+                } else {
+                    img.src = photos[gallery+'_'+i] || photos[gallery+'_0'];
+                }
+                img.alt = 'fotografía';
+                img.loading = 'lazy';
+                inner.appendChild(img);
+                d.appendChild(inner);
+                d.addEventListener('click', () => openImg(bwFirst && i === 0 ? BW_REAL : img.src));
+                c.appendChild(d);
+            }
+            document.querySelectorAll('#' + id + ' .photo-placeholder').forEach(el => galleryObserver.observe(el));
+            renderPagination(gallery, total, page, bwFirst);
+        }
+        function renderPagination(gallery, total, page, bwFirst) {
+            const pageCount = Math.ceil(total / page_size);
+            const pagEl = document.getElementById('pag-' + gallery);
+            pagEl.innerHTML = '';
+            if (pageCount <= 1) return;
+
+            const prevBtn = document.createElement('button');
+            prevBtn.className = 'pagination-btn';
+            prevBtn.innerHTML = '<span class="pagination-arrow">&#8592;</span>';
+            prevBtn.setAttribute('aria-label', 'Grupo anterior');
+            prevBtn.disabled = (page === 0);
+            prevBtn.addEventListener('click', () => goToPage(gallery, page - 1, total, bwFirst));
+            pagEl.appendChild(prevBtn);
+
+            const dots = document.createElement('div');
+            dots.className = 'pagination-dots';
+            for (let p = 0; p <pageCount; p++) {
+                const dot = document.createElement('button');
+                dot.className = 'pagination-dot' + (p === page ? ' active' : '');
+                dot.setAttribute('aria-label', 'Ir al grupo ' + (p + 1));
+                dot.addEventListener('click', () => goToPage(gallery, p, total, bwFirst));
+                dots.appendChild(dot);
+            }
+            pagEl.appendChild(dots);
+
+            const nextBtn = document.createElement('button');
+            nextBtn.className = 'pagination-btn';
+            nextBtn.innerHTML = '<span class="pagination-arrow">&#8594;</span>';
+            nextBtn.setAttribute('aria-label', 'Siguiente grupo');
+            nextBtn.disabled = (page >= pageCount - 1);
+            nextBtn.addEventListener('click', () => goToPage(gallery, page+1, total, bwFirst));
+            pagEl.appendChild(nextBtn);
+        }
+        function goToPage(gallery, page, total, bwFirst) {
+            galleryPage[gallery] = page;
+            buildGrid('grid-' + gallery, total, bwFirst, gallery, page);
+            document.getElementById('galeria-' + gallery).scrollIntoView({behavior:'smooth', block:'start'});
+        }
+        buildGrid('grid-rosa', countPhotos('rosa'), false, 'rosa', 0);
+        buildGrid('grid-azul', countPhotos('azul'), false, 'azul', 0);
+
+        function openImg(src) {
+            cursor.style.border = '1.5px solid white';
+
+            const lightbox = document.getElementById('lightbox');
+            document.getElementById('lightbox-img').src = src;
+            document.getElementById('lightbox-img').style.display = 'block';
+            document.getElementById('lightbox-txt').style.display = 'none';
+            lightbox.classList.add('active');
+        }
+        function closeLightbox() {
+            cursor.style.border = '1.5px solid var(--ink)';
+
+            document.getElementById('lightbox').classList.remove('active');
+        }
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+
         // CURSOR
         const cursor = document.getElementById('cursor');
         let mouseX = 0, mouseY = 0, moveTimer;
@@ -199,65 +415,64 @@
             clearTimeout(moveTimer);
             moveTimer = setTimeout(() => cursor.classList.remove('moving'), 120);
             if (true) {
-                // points.push({x: mouseX, y: mouseY, t: Date.now(), c: rainbowColors[Math.floor(Math.random() * rainbowColors.length)]})
-                // if (points.length > 120) points.shift();
+                points.push({x: mouseX, y: mouseY, t: Date.now(), c: rainbowColors[Math.floor(Math.random() * rainbowColors.length)]})
+                if (points.length > 120) points.shift();
             }
         });
 
         // RAINBOW
-        // const rainbow = document.getElementById('rainbow');
-        // const ctx = rainbow.getContext('2d');
+        const rainbow = document.getElementById('rainbow');
+        const ctx = rainbow.getContext('2d');
 
-        // function resizeRainbow() {
-        //     rainbow.width = window.innerWidth;
-        //     rainbow.height = window.innerHeight;
-        // }
-        // resizeRainbow();
-        // window.addEventListener('resize', resizeRainbow);
+        function resizeRainbow() {
+            rainbow.width = window.innerWidth;
+            rainbow.height = window.innerHeight;
+        }
+        resizeRainbow();
+        window.addEventListener('resize', resizeRainbow);
 
-        // let points = [];
-        // const rainbowColors = ['#E8A4B8', '#FF6B6B', '#FF9F43', '#FECA57', '#5BBFBF', '#54A0FF', '#A29BFE', '#E8C85A', '#00D2D3', '#FF9FF3'];
+        let points = [];
+        const rainbowColors = ['#E8A4B8', '#FF6B6B', '#FF9F43', '#FECA57', '#5BBFBF', '#54A0FF', '#A29BFE', '#E8C85A', '#00D2D3', '#FF9FF3'];
 
-        // function catmullRomSegment(ctx, p0, p1, p2, p3) {
-        //     // Catmull-Rom to bezier conversion
-        //     const cp1x = p1.x + (p2.x - p0.x) /6;
-        //     const cp1y = p1.y + (p2.y - p0.y) /6;
-        //     const cp2x = p2.x - (p3.x - p1.x) /6;
-        //     const cp2y = p2.y - (p3.y - p1.y) /6;
-        //     ctx.bezierCurveTo(cp1x, cp1y, cp2x, cp2y, p2.x, p2.y);
-        // }
+        function catmullRomSegment(ctx, p0, p1, p2, p3) {
+            // Catmull-Rom to bezier conversion
+            const cp1x = p1.x + (p2.x - p0.x) /6;
+            const cp1y = p1.y + (p2.y - p0.y) /6;
+            const cp2x = p2.x - (p3.x - p1.x) /6;
+            const cp2y = p2.y - (p3.y - p1.y) /6;
+            ctx.bezierCurveTo(cp1x, cp1y, cp2x, cp2y, p2.x, p2.y);
+        }
 
-        // function drawRainbow() {
-        //     ctx.clearRect(0, 0, rainbow.width, rainbow.height);
-        //     if (points.length > 3) {
-        //         const now = Date.now(); const maxAge = 1400;
-        //         points = points.filter(p => now - p.t < maxAge);
-        //         console.log(points);
+        function drawRainbow() {
+            ctx.clearRect(0, 0, rainbow.width, rainbow.height);
+            if (points.length > 3) {
+                const now = Date.now(); const maxAge = 1400;
+                points = points.filter(p => now - p.t < maxAge);
 
-        //         // Draw segments with bezier curves
-        //         for (let i = 1; i < points.length - 2; i++) {
-        //             const p0 = points[Math.max(0, i-1)];
-        //             const p1 = points[i];
-        //             const p2 = points[i+1];
-        //             const p3 = points[Math.min(points.length-1, i+2)];
-        //             const age = now - p2.t;
-        //             const alpha = Math.max(0, 1 - age / maxAge);
-        //             if (alpha < 0.01) continue;
-        //             ctx.beginPath();
-        //             ctx.moveTo(p1.x, p1.y);
-        //             catmullRomSegment(ctx, p0, p1, p2, p3);
-        //             ctx.strokeStyle = p2.c;
-        //             ctx.lineWidth = Math.max(0.4, 3 * alpha);
-        //             ctx.lineCap = 'round';
-        //             ctx.lineJoin = 'round';
-        //             ctx.globalAlpha = alpha * 0.72;
-        //             ctx.stroke();
-        //         }
-        //         ctx.globalAlpha = 1;
-        //     }
-        //     requestAnimationFrame(drawRainbow);
-        // }
-        // drawRainbow();
+                // Draw segments with bezier curves
+                for (let i = 1; i < points.length - 2; i++) {
+                    const p0 = points[Math.max(0, i-1)];
+                    const p1 = points[i];
+                    const p2 = points[i+1];
+                    const p3 = points[Math.min(points.length-1, i+2)];
+                    const age = now - p2.t;
+                    const alpha = Math.max(0, 1 - age / maxAge);
+                    if (alpha < 0.01) continue;
+                    ctx.beginPath();
+                    ctx.moveTo(p1.x, p1.y);
+                    catmullRomSegment(ctx, p0, p1, p2, p3);
+                    ctx.strokeStyle = p2.c;
+                    ctx.lineWidth = Math.max(0.4, 3 * alpha);
+                    ctx.lineCap = 'round';
+                    ctx.lineJoin = 'round';
+                    ctx.globalAlpha = alpha * 0.72;
+                    ctx.stroke();
+                }
+                ctx.globalAlpha = 1;
+            }
+            requestAnimationFrame(drawRainbow);
+        }
+        drawRainbow();
 
         // MENU
         const navMenuBtn = document.getElementById('navMenuBtn');
