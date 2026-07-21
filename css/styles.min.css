@@ -16,9 +16,11 @@
 :root {
   --cream: #FAFAF6;
   --ink: #1C1C1A;
-  --azul: #5BBFBF;
   --rosa: #E8A4B8;
+  --azul: #5BBFBF;
   --amarillo: #E8C85A;
+  --verde: #5BBF90;
+  --rojonaranja: #BF795B;
   --bw: #1C1C1A;
 }
 
@@ -243,6 +245,12 @@ nav {
 .letter-amarillo {
   color: var(--amarillo);
 }
+.letter-verde {
+  color: var(--verde);
+}
+.letter-rojonaranja {
+  color: var(--rojonaranja);
+}
 .letter-bw {
   transform: rotateY(180deg);
 }
@@ -284,6 +292,12 @@ nav {
 }
 .dot-amarillo {
   background: var(--amarillo);
+}
+.dot-verde {
+  background: var(--verde);
+}
+.dot-rojonaranja {
+  background: var(--rojonaranja);
 }
 .dot-bw {
   background: var(--bw);
@@ -329,6 +343,12 @@ nav {
 #galeria-amarillo {
   background: #FAF3D8;
 }
+#galeria-verde {
+  background: #E6F5EE;
+}
+#galeria-rojonaranja {
+  background: #F5EAE6;
+}
 #galeria-bw {
   background: #F0F0EE;
 }
@@ -347,7 +367,7 @@ nav {
 .palette-circles {
   display: flex;
   justify-content: center;
-  gap: 10px;
+  gap: 20px;
   flex-wrap: wrap;
 }
 .palette-swatch {
@@ -365,10 +385,10 @@ nav {
 }
 .photo-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 10px;
   width: 100%;
-  max-width: 1100px;
+  max-width: 1600px;
 }
 .photo-placeholder {
   border-radius: 2px;

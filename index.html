@@ -21,9 +21,10 @@
         </button>
     </nav>
     <div class="side-menu" id="sideMenu">
-        <a href="#galeria-rosa" class="menu-link" data-hcolor="#E8A4B8" onclick="closeMenu()">Rosas</a>
-        <a href="#galeria-azul" class="menu-link" data-hcolor="#5BBFBF" onclick="closeMenu()">Azul</a>
-        <a href="#galeria-amarillo" class="menu-link" data-hcolor="#E8C85A" onclick="closeMenu()">Amarillo</a>
+        <a href="#galeria-rosa" class="menu-link" data-hcolor="#E8A4B8" onclick="closeMenu()">rosa</a>
+        <a href="#galeria-azul" class="menu-link" data-hcolor="#5BBFBF" onclick="closeMenu()">azul</a>
+        <a href="#galeria-amarillo" class="menu-link" data-hcolor="#E8C85A" onclick="closeMenu()">amarillo</a>
+        <a href="#galeria-verde" class="menu-link" data-hcolor="#5BBF90" onclick="closeMenu()">verde</a>
         <a href="#galeria-bw" class="menu-link" data-hcolor="#F5F5F0" onclick="closeMenu()">B&W</a>
         <a href="#bio" class="menu-link" data-hcolor="rgba(255,255,255,.9)" onclick="closeMenu()">Sobre mí</a>
         <div class="menu-contact">
@@ -38,13 +39,19 @@
             <div class="home-row anim2" id="row2"></div>
             <div class="color-key">
                 <a href="#galeria-rosa" class="color-key-item" data-gallery="rosa" data-color="var(--rosa)">
-                    <span class="color-dot dot-rosa"></span><span>rosas</span>
+                    <span class="color-dot dot-rosa"></span><span>rosa</span>
                 </a>
                 <a href="#galeria-azul" class="color-key-item" data-gallery="azul" data-color="var(--azul)">
                     <span class="color-dot dot-azul"></span><span>azul</span>
                 </a>
                 <a href="#galeria-amarillo" class="color-key-item" data-gallery="amarillo" data-color="var(--amarillo)">
                     <span class="color-dot dot-amarillo"></span><span>amarillo</span>
+                </a>
+                <a href="#galeria-verde" class="color-key-item" data-gallery="verde" data-color="var(--verde)">
+                    <span class="color-dot dot-verde"></span><span>verde</span>
+                </a>
+                <a href="#galeria-rojonaranja" class="color-key-item" data-gallery="rojonaranja" data-color="var(--rojonaranja)">
+                    <span class="color-dot dot-rojonaranja"></span><span>rojo/naranja</span>
                 </a>
                 <a href="#galeria-bw" class="color-key-item" data-gallery="bw" data-color="var(--bw)">
                     <span class="color-dot dot-bw"></span><span>b&w</span>
@@ -81,6 +88,48 @@
         <div class="photo-grid" id="grid-azul"></div>
         <div class="gallery-pagination" id="pag-azul"></div>
     </section>
+    <section class="gallery-section" id="galeria-amarillo">
+        <div class="gallery-header">
+            <p class="gallery-tag">colección</p>
+            <div class="palette-circles">
+                <div class="palette-swatch" style="background:#E8C85A;"></div>
+                <div class="palette-swatch" style="background:#F5E49A;"></div>
+                <div class="palette-swatch" style="background:#C9952A;"></div>
+                <div class="palette-swatch" style="background:#FAF3D8;"></div>
+                <div class="palette-swatch" style="background:#8B6010;"></div>
+            </div>
+        </div>
+        <div class="photo-grid" id="grid-amarillo"></div>
+        <div class="gallery-pagination" id="pag-amarillo"></div>
+    </section>
+    <section class="gallery-section" id="galeria-verde">
+        <div class="gallery-header">
+            <!-- <p class="gallery-tag">colección</p> -->
+            <div class="palette-circles">
+                <div class="palette-swatch" style="background:#5BBF90;"></div>
+                <div class="palette-swatch" style="background:#A8DEC5;"></div>
+                <div class="palette-swatch" style="background:#2E8B60;"></div>
+                <div class="palette-swatch" style="background:#D6F0E4;"></div>
+                <div class="palette-swatch" style="background:#1A603F;"></div>
+            </div>
+        </div>
+        <div class="photo-grid" id="grid-verde"></div>
+        <div class="gallery-pagination" id="pag-verde"></div>
+    </section>
+    <section class="gallery-section" id="galeria-rojonaranja">
+        <div class="gallery-header">
+            <p class="gallery-tag">colección</p>
+            <div class="palette-circles">
+                <div class="palette-swatch" style="background:#BF795B;"></div>
+                <div class="palette-swatch" style="background:#DEB8A8;"></div>
+                <div class="palette-swatch" style="background:#8B4A2E;"></div>
+                <div class="palette-swatch" style="background:#F0DED6;"></div>
+                <div class="palette-swatch" style="background:#602F1A;"></div>
+            </div>
+        </div>
+        <div class="photo-grid" id="grid-rojonaranja"></div>
+        <div class="gallery-pagination" id="pag-rojonaranja"></div>
+    </section>
     <div class="lightbox" id="lightbox">
         <button class="lightbox-close" onclick="closeLightbox()">×</button>
         <img class="lightbox-img" id="lightbox-img" src="" alt="" style="display: none;">
@@ -105,7 +154,7 @@
         const row1Def = [
             {ch: 'N', type: 'regular'},
             {ch: 'U', type: 'regular'},
-            {ch: 'N', type: 'regular'},
+            {ch: 'N', type: 'verde', link: 'galeria-verde'},
             {ch: 'C', type: 'regular'},
             {ch: 'A', type: 'regular'},
             {ch: ' '},
@@ -113,7 +162,7 @@
             {ch: 'E', type: 'azul', link: 'galeria-azul'},
             {ch: 'J', type: 'regular'},
             {ch: 'A', type: 'regular'},
-            {ch: 'R', type: 'regular'},
+            {ch: 'R', type: 'rojonaranja', link: 'galeria-rojonaranja'},
             {ch: 'E', type: 'regular'},
             {ch: ' '},
             {ch: 'D', type: 'regular'},
@@ -157,11 +206,11 @@
                     wrap.innerHTML = (glyphs[item.ch] || glyphs['A']) (60 * scale);
                     wrap.addEventListener('mouseenter', () => {
                         wrap.style.transition = 'transform .52s cubic-bezier(.34, 1.56, .64, 1)';
-                        wrap.style.transform = item.type === 'bw' ? 'rotateY(0deg)' : 'rotateY(180deg)';
+                        wrap.style.transform = 'rotateY(180deg)';
                     });
                     wrap.addEventListener('mouseleave', () => {
                         wrap.style.transition = 'transform .52s cubic-bezier(.34, 1.56, .64, 1)';
-                        wrap.style.transform = item.type === 'bw' ? 'rotateY(180deg)' : 'rotateY(0deg)';
+                        wrap.style.transform = 'rotateY(0deg)';
                     });
                     if (item.link) {
                         wrap.addEventListener('click', () => {
@@ -178,7 +227,7 @@
         buildTitles();
 
         // COLOR KEY → letter color change
-        const colorMap = {rosa: '#E8A4B8', azul: '#5BBFBF', amarillo: '#E8C85A', bw:'#1C1C1A'};
+        const colorMap = {rosa: '#E8A4B8', azul: '#5BBFBF', amarillo: '#E8C85A', verde: '#5BBF90', rojonaranja: '#BF795B', bw:'#1C1C1A'};
         document.querySelectorAll('.color-key-item[data-gallery]').forEach(item => {
             const gallery = item.getAttribute('data-gallery');
             const col = colorMap[gallery];
@@ -310,10 +359,145 @@
             'azul_66': 'img/azul/67.jpg',
             'azul_67': 'img/azul/68.jpg',
             'azul_68': 'img/azul/69.jpg',
-            'azul_69': 'img/azul/70.jpg'
+            'azul_69': 'img/azul/70.jpg',
+            'amarillo_0': 'img/amarillo/01.jpg',
+            'amarillo_1': 'img/amarillo/02.jpg',
+            'amarillo_2': 'img/amarillo/03.jpg',
+            'amarillo_3': 'img/amarillo/04.jpg',
+            'amarillo_4': 'img/amarillo/05.jpg',
+            'amarillo_5': 'img/amarillo/06.jpg',
+            'amarillo_6': 'img/amarillo/07.jpg',
+            'amarillo_7': 'img/amarillo/08.jpg',
+            'amarillo_8': 'img/amarillo/09.jpg',
+            'amarillo_9': 'img/amarillo/10.jpg',
+            'amarillo_10': 'img/amarillo/11.jpg',
+            'amarillo_11': 'img/amarillo/12.jpg',
+            'amarillo_12': 'img/amarillo/13.jpg',
+            'amarillo_13': 'img/amarillo/14.jpg',
+            'amarillo_14': 'img/amarillo/15.jpg',
+            'amarillo_15': 'img/amarillo/16.jpg',
+            'amarillo_16': 'img/amarillo/17.jpg',
+            'amarillo_17': 'img/amarillo/18.jpeg',
+            'amarillo_18': 'img/amarillo/19.jpeg',
+            'amarillo_19': 'img/amarillo/20.jpeg',
+            'amarillo_20': 'img/amarillo/21.jpg',
+            'amarillo_21': 'img/amarillo/22.jpg',
+            'amarillo_22': 'img/amarillo/23.jpg',
+            'amarillo_23': 'img/amarillo/24.jpg',
+            'amarillo_24': 'img/amarillo/25.jpg',
+            'amarillo_25': 'img/amarillo/26.jpg',
+            'amarillo_26': 'img/amarillo/27.jpg',
+            'amarillo_27': 'img/amarillo/28.jpg',
+            'amarillo_28': 'img/amarillo/29.jpg',
+            'amarillo_29': 'img/amarillo/30.jpg',
+            'amarillo_30': 'img/amarillo/31.jpg',
+            'amarillo_31': 'img/amarillo/32.jpg',
+            'amarillo_32': 'img/amarillo/33.jpg',
+            'amarillo_33': 'img/amarillo/34.jpg',
+            'amarillo_34': 'img/amarillo/35.jpg',
+            'amarillo_35': 'img/amarillo/36.jpg',
+            'amarillo_36': 'img/amarillo/37.jpg',
+            'amarillo_37': 'img/amarillo/38.jpg',
+            'amarillo_38': 'img/amarillo/39.jpg',
+            'amarillo_39': 'img/amarillo/40.jpg',
+            'amarillo_40': 'img/amarillo/41.jpg',
+            'amarillo_41': 'img/amarillo/42.jpg',
+            'amarillo_42': 'img/amarillo/43.jpg',
+            'verde_0': 'img/verde/01.jpg',
+            'verde_1': 'img/verde/02.jpg',
+            'verde_2': 'img/verde/03.jpg',
+            'verde_3': 'img/verde/04.jpg',
+            'verde_4': 'img/verde/05.jpg',
+            'verde_5': 'img/verde/06.jpg',
+            'verde_6': 'img/verde/07.jpg',
+            'verde_7': 'img/verde/08.jpg',
+            'verde_8': 'img/verde/09.jpg',
+            'verde_9': 'img/verde/10.jpg',
+            'verde_10': 'img/verde/11.jpg',
+            'verde_11': 'img/verde/12.jpg',
+            'verde_12': 'img/verde/13.jpg',
+            'verde_13': 'img/verde/14.jpg',
+            'verde_14': 'img/verde/15.jpg',
+            'verde_15': 'img/verde/16.jpg',
+            'verde_16': 'img/verde/17.jpg',
+            'verde_17': 'img/verde/18.jpg',
+            'verde_18': 'img/verde/19.jpg',
+            'verde_19': 'img/verde/20.jpg',
+            'verde_20': 'img/verde/21.jpg',
+            'verde_21': 'img/verde/22.jpg',
+            'verde_22': 'img/verde/23.jpg',
+            'verde_23': 'img/verde/24.jpg',
+            'verde_24': 'img/verde/25.jpg',
+            'verde_25': 'img/verde/26.jpg',
+            'verde_26': 'img/verde/27.jpg',
+            'verde_27': 'img/verde/28.jpg',
+            'verde_28': 'img/verde/29.jpg',
+            'verde_29': 'img/verde/30.jpg',
+            'verde_30': 'img/verde/31.jpeg',
+            'verde_31': 'img/verde/32.jpeg',
+            'verde_32': 'img/verde/33.jpg',
+            'verde_33': 'img/verde/34.jpg',
+            'verde_34': 'img/verde/35.jpg',
+            'verde_35': 'img/verde/36.jpg',
+            'verde_36': 'img/verde/37.jpg',
+            'verde_37': 'img/verde/38.jpg',
+            'verde_38': 'img/verde/39.jpg',
+            'verde_39': 'img/verde/40.jpg',
+            'verde_40': 'img/verde/41.jpg',
+            'verde_41': 'img/verde/42.jpg',
+            'verde_42': 'img/verde/43.jpg',
+            'verde_43': 'img/verde/44.jpg',
+            'verde_44': 'img/verde/45.jpg',
+            'verde_45': 'img/verde/46.jpg',
+            'verde_46': 'img/verde/47.jpg',
+            'verde_47': 'img/verde/48.jpg',
+            'verde_48': 'img/verde/49.jpg',
+            'verde_49': 'img/verde/50.jpg',
+            'verde_50': 'img/verde/51.jpg',
+            'verde_51': 'img/verde/52.jpg',
+            'verde_52': 'img/verde/53.jpg',
+            'verde_53': 'img/verde/54.jpg',
+            'verde_54': 'img/verde/55.jpg',
+            'verde_55': 'img/verde/56.jpg',
+            'verde_56': 'img/verde/57.jpg',
+            'verde_57': 'img/verde/58.jpg',
+            'verde_58': 'img/verde/59.jpg',
+            'verde_59': 'img/verde/60.jpg',
+            'verde_60': 'img/verde/61.jpg',
+            'verde_61': 'img/verde/62.jpg',
+            'verde_62': 'img/verde/63.jpg',
+            'verde_63': 'img/verde/64.jpg',
+            'verde_64': 'img/verde/65.jpg',
+            'verde_65': 'img/verde/66.jpg',
+            'verde_66': 'img/verde/67.jpg',
+            'verde_67': 'img/verde/68.jpg',
+            'verde_68': 'img/verde/69.jpg',
+            'rojonaranja_0': 'img/rojonaranja/01.jpg',
+            'rojonaranja_1': 'img/rojonaranja/02.jpg',
+            'rojonaranja_2': 'img/rojonaranja/03.jpg',
+            'rojonaranja_3': 'img/rojonaranja/04.jpg',
+            'rojonaranja_4': 'img/rojonaranja/05.jpg',
+            'rojonaranja_5': 'img/rojonaranja/06.jpg',
+            'rojonaranja_6': 'img/rojonaranja/07.jpg',
+            'rojonaranja_7': 'img/rojonaranja/08.jpg',
+            'rojonaranja_8': 'img/rojonaranja/09.jpg',
+            'rojonaranja_9': 'img/rojonaranja/10.jpg',
+            'rojonaranja_10': 'img/rojonaranja/11.jpg',
+            'rojonaranja_11': 'img/rojonaranja/12.jpg',
+            'rojonaranja_12': 'img/rojonaranja/13.jpg',
+            'rojonaranja_13': 'img/rojonaranja/14.jpg',
+            'rojonaranja_14': 'img/rojonaranja/15.jpg',
+            'rojonaranja_15': 'img/rojonaranja/16.jpg',
+            'rojonaranja_16': 'img/rojonaranja/17.jpg',
+            'rojonaranja_17': 'img/rojonaranja/18.jpeg',
+            'rojonaranja_18': 'img/rojonaranja/19.jpeg',
+            'rojonaranja_19': 'img/rojonaranja/20.jpg',
+            'rojonaranja_20': 'img/rojonaranja/21.jpg',
+            'rojonaranja_21': 'img/rojonaranja/22.jpg',
+            'rojonaranja_22': 'img/rojonaranja/23.jpg',
         };
-        const page_size = 4;
-        const galleryPage = {rosa: 0, azul: 0, amarillo: 0, bw: 0};
+        const page_size = 5;
+        const galleryPage = {rosa: 0, azul: 0, amarillo: 0, verde: 0, rojonaranja: 0, bw: 0};
 
         function countPhotos(gallery) {
             return Object.keys(photos).filter(k => k.includes(gallery)).length;
@@ -386,6 +570,9 @@
         }
         buildGrid('grid-rosa', countPhotos('rosa'), false, 'rosa', 0);
         buildGrid('grid-azul', countPhotos('azul'), false, 'azul', 0);
+        buildGrid('grid-amarillo', countPhotos('amarillo'), false, 'amarillo', 0);
+        buildGrid('grid-verde', countPhotos('verde'), false, 'verde', 0);
+        buildGrid('grid-rojonaranja', countPhotos('rojonaranja'), false, 'rojonaranja', 0);
 
         function openImg(src) {
             cursor.style.border = '1.5px solid white';
