@@ -25,6 +25,8 @@
         <a href="#galeria-azul" class="menu-link" data-hcolor="#5BBFBF" onclick="closeMenu()">azul</a>
         <a href="#galeria-amarillo" class="menu-link" data-hcolor="#E8C85A" onclick="closeMenu()">amarillo</a>
         <a href="#galeria-verde" class="menu-link" data-hcolor="#5BBF90" onclick="closeMenu()">verde</a>
+        <a href="#galeria-rojonaranja" class="menu-link" data-hcolor="#BF795B" onclick="closeMenu()">rojo/naranja</a>
+        <a href="#galeria-gris" class="menu-link" data-hcolor="#90908A" onclick="closeMenu()">gris</a>
         <a href="#galeria-bw" class="menu-link" data-hcolor="#F5F5F0" onclick="closeMenu()">B&W</a>
         <a href="#bio" class="menu-link" data-hcolor="rgba(255,255,255,.9)" onclick="closeMenu()">Sobre mí</a>
         <div class="menu-contact">
@@ -52,6 +54,9 @@
                 </a>
                 <a href="#galeria-rojonaranja" class="color-key-item" data-gallery="rojonaranja" data-color="var(--rojonaranja)">
                     <span class="color-dot dot-rojonaranja"></span><span>rojo/naranja</span>
+                </a>
+                <a href="#galeria-gris" class="color-key-item" data-gallery="gris" data-color="var(--gris)">
+                    <span class="color-dot dot-gris"></span><span>gris</span>
                 </a>
                 <a href="#galeria-bw" class="color-key-item" data-gallery="bw" data-color="var(--bw)">
                     <span class="color-dot dot-bw"></span><span>b&w</span>
@@ -130,6 +135,57 @@
         <div class="photo-grid" id="grid-rojonaranja"></div>
         <div class="gallery-pagination" id="pag-rojonaranja"></div>
     </section>
+    <section class="gallery-section" id="galeria-gris">
+        <div class="gallery-header">
+            <p class="gallery-tag">colección</p>
+            <div class="palette-circles">
+                <div class="palette-swatch" style="background:#90908A;"></div>
+                <div class="palette-swatch" style="background:#C6C6C0;"></div>
+                <div class="palette-swatch" style="background:#606059;"></div>
+                <div class="palette-swatch" style="background:#E5E5E1;"></div>
+                <div class="palette-swatch" style="background:#3F3F3B;"></div>
+            </div>
+        </div>
+        <div class="photo-grid" id="grid-gris"></div>
+        <div class="gallery-pagination" id="pag-gris"></div>
+    </section>
+    <!-- <section class="gallery-section" id="galeria-bw">
+        <div class="gallery-header">
+            <p class="gallery-tag">colección</p>
+            <div class="palette-circles">
+            <div class="palette-swatch" style="background:#1C1C1A"></div>
+            <div class="palette-swatch" style="background:#4A4A48"></div>
+            <div class="palette-swatch" style="background:#888886"></div>
+            <div class="palette-swatch" style="background:#C8C8C6"></div>
+            <div class="palette-swatch" style="background:#F0F0EE"></div>
+            </div>
+        </div>
+        <div class="photo-grid" id="grid-bw"></div>
+        <p class="upload-note">añade tus fotos aquí</p>
+        </section>
+        <section id="bio">
+        <div class="bio-inner">
+            <div>
+            <p class="bio-tag">sobre mí</p>
+            <h2 class="bio-name">Tu nombre</h2>
+            <div class="bio-text">
+                <p>Fotógrafa. Celebro lo ordinario como si fuera extraordinario, porque lo es.</p>
+                <p>Mi trabajo vive entre la luz que nadie mira y los momentos que todos quieren recordar.</p>
+                <p>Basada en España. Disponible en cualquier lugar donde haya algo que celebrar.</p>
+            </div>
+            </div>
+            <div class="bio-photo-space">tu foto aquí</div>
+        </div>
+        </section>
+        <section id="contacto">
+        <p class="contact-tag">hablemos</p>
+        <h2 class="contact-title">Celebremos<br>juntas</h2>
+        <div class="contact-links">
+            <a href="mailto:hola@tudominio.com" class="contact-link">hola@tudominio.com</a>
+            <a href="#" class="contact-link">instagram</a>
+        </div>
+        <p class="footer-note">nunca dejaré de celebrarlo</p>
+        </section> -->
     <div class="lightbox" id="lightbox">
         <button class="lightbox-close" onclick="closeLightbox()">×</button>
         <img class="lightbox-img" id="lightbox-img" src="" alt="" style="display: none;">
@@ -145,6 +201,7 @@
             A: (s)=>`<span width="${s}" height="${s}">A</span>`,
             D: (s)=>`<span width="${s}" height="${s}">D</span>`,
             E: (s)=>`<span width="${s}" height="${s}">E</span>`,
+            É: (s)=>`<span width="${s}" height="${s}">É</span>`,
             J: (s)=>`<span width="${s}" height="${s}">J</span>`,
             R: (s)=>`<span width="${s}" height="${s}">R</span>`,
             B: (s)=>`<span width="${s}" height="${s}">B</span>`,
@@ -163,7 +220,7 @@
             {ch: 'J', type: 'regular'},
             {ch: 'A', type: 'regular'},
             {ch: 'R', type: 'rojonaranja', link: 'galeria-rojonaranja'},
-            {ch: 'E', type: 'regular'},
+            {ch: 'É', type: 'regular'},
             {ch: ' '},
             {ch: 'D', type: 'regular'},
             {ch: 'E', type: 'regular'}
@@ -495,9 +552,18 @@
             'rojonaranja_20': 'img/rojonaranja/21.jpg',
             'rojonaranja_21': 'img/rojonaranja/22.jpg',
             'rojonaranja_22': 'img/rojonaranja/23.jpg',
+            'gris_0': 'img/gris/01.jpg',
+            'gris_1': 'img/gris/02.jpg',
+            'gris_2': 'img/gris/03.jpg',
+            'gris_3': 'img/gris/04.jpg',
+            'gris_4': 'img/gris/05.jpeg',
+            'gris_5': 'img/gris/06.jpg',
+            'gris_6': 'img/gris/07.jpg',
+            'gris_7': 'img/gris/08.jpg',
+            'gris_8': 'img/gris/09.jpg'
         };
         const page_size = 5;
-        const galleryPage = {rosa: 0, azul: 0, amarillo: 0, verde: 0, rojonaranja: 0, bw: 0};
+        const galleryPage = {rosa: 0, azul: 0, amarillo: 0, verde: 0, rojonaranja: 0, gris: 0, bw: 0};
 
         function countPhotos(gallery) {
             return Object.keys(photos).filter(k => k.includes(gallery)).length;
@@ -573,6 +639,7 @@
         buildGrid('grid-amarillo', countPhotos('amarillo'), false, 'amarillo', 0);
         buildGrid('grid-verde', countPhotos('verde'), false, 'verde', 0);
         buildGrid('grid-rojonaranja', countPhotos('rojonaranja'), false, 'rojonaranja', 0);
+        buildGrid('grid-gris', countPhotos('gris'), false, 'gris', 0);
 
         function openImg(src) {
             cursor.style.border = '1.5px solid white';

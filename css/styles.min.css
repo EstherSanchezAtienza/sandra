@@ -21,6 +21,7 @@
   --amarillo: #E8C85A;
   --verde: #5BBF90;
   --rojonaranja: #BF795B;
+  --gris: #90908A;
   --bw: #1C1C1A;
 }
 
@@ -251,8 +252,11 @@ nav {
 .letter-rojonaranja {
   color: var(--rojonaranja);
 }
+.letter-gris {
+  color: var(--gris);
+}
 .letter-bw {
-  transform: rotateY(180deg);
+  color: var(--bw);
 }
 .color-key {
   display: flex;
@@ -298,6 +302,9 @@ nav {
 }
 .dot-rojonaranja {
   background: var(--rojonaranja);
+}
+.dot-gris {
+  background: var(--gris);
 }
 .dot-bw {
   background: var(--bw);
@@ -349,6 +356,9 @@ nav {
 #galeria-rojonaranja {
   background: #F5EAE6;
 }
+#galeria-gris {
+  background: #EFEFEC;
+}
 #galeria-bw {
   background: #F0F0EE;
 }
@@ -391,6 +401,7 @@ nav {
   max-width: 1600px;
 }
 .photo-placeholder {
+  opacity: 0;
   border-radius: 2px;
   overflow: hidden;
   cursor: none;
@@ -402,6 +413,9 @@ nav {
 .photo-placeholder:hover .photo-inner img {
   transform: scale(1.04);
   filter: brightness(1.02);
+}
+.photo-placeholder.revealed {
+  animation: revealUp .6s cubic-bezier(.4,0,.2,1) both;
 }
 .photo-inner { 
   width: 100%;
@@ -566,3 +580,13 @@ nav {
     transform:translateX(-50%) translateY(5px);
   }
 }
+@keyframes revealUp {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  } to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
