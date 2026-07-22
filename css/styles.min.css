@@ -19,8 +19,10 @@
   --rosa: #E8A4B8;
   --azul: #5BBFBF;
   --amarillo: #E8C85A;
-  --verde: #5BBF90;
-  --rojonaranja: #BF795B;
+  --verde: #B8CA6D;
+  --rojonaranja: #E6A774;
+  --violeta: #BE90DF;
+  --rojo: #E28378;
   --gris: #90908A;
   --bw: #1C1C1A;
 }
@@ -32,7 +34,8 @@ html {
 body {
   background: var(--cream);
   color: var(--ink);
-  font-family: 'Inter', sans-serif;
+  /* font-family: 'Inter', sans-serif; */
+  font-family: PacoFont, 'Inter', sans-serif;
   font-weight: 300;
   min-height: 100vh;
   overflow-x: hidden;
@@ -222,7 +225,7 @@ nav {
   gap: 0;
   margin-bottom: 4px;
   font-family: 'PacoFont';
-  font-size: 2.5rem;
+  font-size: 2rem;
   letter-spacing: .4rem;
   text-align: center;
 }
@@ -284,12 +287,13 @@ nav {
   opacity:1;
 }
 .color-dot {
-  width: 8px;
-  height: 8px;
+  width: 16px;
+  height: 16px;
   border-radius: 50%;
 }
 .dot-rosa {
-  background: var(--rosa);
+  /* background: var(--rosa); */
+  background: linear-gradient(90deg, var(--rosa) 50%, var(--violeta) 50%);
 }
 .dot-azul {
   background: var(--azul);
@@ -301,7 +305,7 @@ nav {
   background: var(--verde);
 }
 .dot-rojonaranja {
-  background: var(--rojonaranja);
+  background: linear-gradient(90deg, var(--rojonaranja) 50%, var(--rojo) 50%);
 }
 .dot-gris {
   background: var(--gris);
@@ -351,10 +355,10 @@ nav {
   background: #FAF3D8;
 }
 #galeria-verde {
-  background: #E6F5EE;
+  background: #E9F6D1;
 }
 #galeria-rojonaranja {
-  background: #F5EAE6;
+  background: #FDECD5;
 }
 #galeria-gris {
   background: #EFEFEC;
@@ -381,8 +385,8 @@ nav {
   flex-wrap: wrap;
 }
 .palette-swatch {
-  width: 26px;
-  height: 26px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   border: 1px solid rgba(0,0,0,.07);
   transition: transform .3s, box-shadow .3s, border-color .3s;

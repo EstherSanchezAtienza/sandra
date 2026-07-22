@@ -13,7 +13,7 @@
     <div id="cursor"></div>
     <canvas id="rainbow"></canvas>
     <nav>
-        <div></div>
+        <div>NDDC</div>
         <button class="nav-menu-btn" id="navMenuBtn" aria-label="Menú">
             <div class="menu-circle">
                 <div class="menu-circle-dot"></div>
@@ -21,17 +21,17 @@
         </button>
     </nav>
     <div class="side-menu" id="sideMenu">
-        <a href="#galeria-rosa" class="menu-link" data-hcolor="#E8A4B8" onclick="closeMenu()">rosa</a>
         <a href="#galeria-azul" class="menu-link" data-hcolor="#5BBFBF" onclick="closeMenu()">azul</a>
         <a href="#galeria-amarillo" class="menu-link" data-hcolor="#E8C85A" onclick="closeMenu()">amarillo</a>
+        <a href="#galeria-rosa" class="menu-link" data-hcolor="#E8A4B8" onclick="closeMenu()">rosa</a>
         <a href="#galeria-verde" class="menu-link" data-hcolor="#5BBF90" onclick="closeMenu()">verde</a>
         <a href="#galeria-rojonaranja" class="menu-link" data-hcolor="#BF795B" onclick="closeMenu()">rojo/naranja</a>
         <a href="#galeria-gris" class="menu-link" data-hcolor="#90908A" onclick="closeMenu()">gris</a>
         <a href="#galeria-bw" class="menu-link" data-hcolor="#F5F5F0" onclick="closeMenu()">B&W</a>
         <a href="#bio" class="menu-link" data-hcolor="rgba(255,255,255,.9)" onclick="closeMenu()">Sobre mí</a>
         <div class="menu-contact">
-            <a href="mailto:hola@tudominio.com">hola@tudominio.com</a>
-            <a href="#">@tuinstagram</a>
+            <a href="mailto:sandrasanati@gmail.com">sandrasanati@gmail.com</a>
+            <a href="#">@sandraschezz</a>
         </div>
     </div>
     <div class="overlay" id="overlay" onclick="closeMenu()"></div>
@@ -40,53 +40,40 @@
             <div class="home-row anim1" id="row1"></div>
             <div class="home-row anim2" id="row2"></div>
             <div class="color-key">
-                <a href="#galeria-rosa" class="color-key-item" data-gallery="rosa" data-color="var(--rosa)">
-                    <span class="color-dot dot-rosa"></span><span>rosa</span>
-                </a>
                 <a href="#galeria-azul" class="color-key-item" data-gallery="azul" data-color="var(--azul)">
-                    <span class="color-dot dot-azul"></span><span>azul</span>
+                    <span class="color-dot dot-azul"></span>
                 </a>
                 <a href="#galeria-amarillo" class="color-key-item" data-gallery="amarillo" data-color="var(--amarillo)">
-                    <span class="color-dot dot-amarillo"></span><span>amarillo</span>
+                    <span class="color-dot dot-amarillo"></span>
+                </a>
+                <a href="#galeria-rosa" class="color-key-item" data-gallery="rosa" data-color="var(--rosa)">
+                    <span class="color-dot dot-rosa"></span>
+                    <!-- <span>azul</span> -->
                 </a>
                 <a href="#galeria-verde" class="color-key-item" data-gallery="verde" data-color="var(--verde)">
-                    <span class="color-dot dot-verde"></span><span>verde</span>
+                    <span class="color-dot dot-verde"></span>
                 </a>
                 <a href="#galeria-rojonaranja" class="color-key-item" data-gallery="rojonaranja" data-color="var(--rojonaranja)">
-                    <span class="color-dot dot-rojonaranja"></span><span>rojo/naranja</span>
+                    <span class="color-dot dot-rojonaranja"></span>
                 </a>
                 <a href="#galeria-gris" class="color-key-item" data-gallery="gris" data-color="var(--gris)">
-                    <span class="color-dot dot-gris"></span><span>gris</span>
+                    <span class="color-dot dot-gris"></span>
                 </a>
                 <a href="#galeria-bw" class="color-key-item" data-gallery="bw" data-color="var(--bw)">
-                    <span class="color-dot dot-bw"></span><span>b&w</span>
+                    <span class="color-dot dot-bw"></span>
                 </a>
             </div>
         </div>
         <div class="scroll-hint"><span>ver</span></div>
     </section>
-    <section class="gallery-section" id="galeria-rosa">
-        <div class="gallery-header">
-            <!-- <p class="gallery-tag">colección</p> -->
-            <div class="palette-circles">
-                <div class="palette-swatch" style="background: #E8A4B8;"></div>
-                <div class="palette-swatch" style="background: #F2C4D2;"></div>
-                <div class="palette-swatch" style="background: #D4708C;"></div>
-                <div class="palette-swatch" style="background: #FAEEF3;"></div>
-                <div class="palette-swatch" style="background: #B85475;"></div>
-            </div>
-        </div>
-        <div class="photo-grid" id="grid-rosa"></div>
-        <div class="gallery-pagination" id="pag-rosa"></div>
-    </section>
     <section class="gallery-section" id="galeria-azul">
         <div class="gallery-header">
             <div class="palette-circles">
-                <div class="palette-swatch" style="background:#5BBFBF;"></div>
-                <div class="palette-swatch" style="background:#A8DEDE;"></div>
-                <div class="palette-swatch" style="background:#2E8B8B;"></div>
-                <div class="palette-swatch" style="background:#D6F0F0;"></div>
-                <div class="palette-swatch" style="background:#1A6060;"></div>
+                <div class="palette-swatch" style="background: #DCEBEB;"></div>
+                <div class="palette-swatch" style="background: #CCDEE6;"></div>
+                <div class="palette-swatch" style="background: #B2CFF0;"></div>
+                <div class="palette-swatch" style="background: #91C0F4;"></div>
+                <div class="palette-swatch" style="background: #589ECB;"></div>
             </div>
         </div>
         <div class="photo-grid" id="grid-azul"></div>
@@ -95,24 +82,38 @@
     <section class="gallery-section" id="galeria-amarillo">
         <div class="gallery-header">
             <div class="palette-circles">
-                <div class="palette-swatch" style="background:#E8C85A;"></div>
-                <div class="palette-swatch" style="background:#F5E49A;"></div>
-                <div class="palette-swatch" style="background:#C9952A;"></div>
-                <div class="palette-swatch" style="background:#FAF3D8;"></div>
-                <div class="palette-swatch" style="background:#8B6010;"></div>
+                <div class="palette-swatch" style="background: #F7E289;"></div>
+                <div class="palette-swatch" style="background: #FCCF72;"></div>
+                <div class="palette-swatch" style="background: #F3BD36;"></div>
+                <div class="palette-swatch" style="background: #E5C39C;"></div>
+                <div class="palette-swatch" style="background: #CEAC7A;"></div>
             </div>
         </div>
         <div class="photo-grid" id="grid-amarillo"></div>
         <div class="gallery-pagination" id="pag-amarillo"></div>
     </section>
+    <section class="gallery-section" id="galeria-rosa">
+        <div class="gallery-header">
+            <!-- <p class="gallery-tag">colección</p> -->
+            <div class="palette-circles">
+                <div class="palette-swatch" style="background: #F3C4CA;"></div>
+                <div class="palette-swatch" style="background: #DEAFBD;"></div>
+                <div class="palette-swatch" style="background: #FD9FA3;"></div>
+                <div class="palette-swatch" style="background: #E6A3E1;"></div>
+                <div class="palette-swatch" style="background: #EF2C83;"></div>
+            </div>
+        </div>
+        <div class="photo-grid" id="grid-rosa"></div>
+        <div class="gallery-pagination" id="pag-rosa"></div>
+    </section>
     <section class="gallery-section" id="galeria-verde">
         <div class="gallery-header">
             <div class="palette-circles">
-                <div class="palette-swatch" style="background:#5BBF90;"></div>
-                <div class="palette-swatch" style="background:#A8DEC5;"></div>
-                <div class="palette-swatch" style="background:#2E8B60;"></div>
-                <div class="palette-swatch" style="background:#D6F0E4;"></div>
-                <div class="palette-swatch" style="background:#1A603F;"></div>
+                <div class="palette-swatch" style="background: #B8CA6D;"></div>
+                <div class="palette-swatch" style="background: #A3C26E;"></div>
+                <div class="palette-swatch" style="background: #9BC644;"></div>
+                <div class="palette-swatch" style="background: #9DB242;"></div>
+                <div class="palette-swatch" style="background: #6A8A2C;"></div>
             </div>
         </div>
         <div class="photo-grid" id="grid-verde"></div>
@@ -121,11 +122,11 @@
     <section class="gallery-section" id="galeria-rojonaranja">
         <div class="gallery-header">
             <div class="palette-circles">
-                <div class="palette-swatch" style="background:#BF795B;"></div>
-                <div class="palette-swatch" style="background:#DEB8A8;"></div>
-                <div class="palette-swatch" style="background:#8B4A2E;"></div>
-                <div class="palette-swatch" style="background:#F0DED6;"></div>
-                <div class="palette-swatch" style="background:#602F1A;"></div>
+                <div class="palette-swatch" style="background: #E6A774;"></div>
+                <div class="palette-swatch" style="background: #F39A3A;"></div>
+                <div class="palette-swatch" style="background: #A65619;"></div>
+                <div class="palette-swatch" style="background: #74322D;"></div>
+                <div class="palette-swatch" style="background: #4F1105;"></div>
             </div>
         </div>
         <div class="photo-grid" id="grid-rojonaranja"></div>
@@ -134,11 +135,11 @@
     <section class="gallery-section" id="galeria-gris">
         <div class="gallery-header">
             <div class="palette-circles">
-                <div class="palette-swatch" style="background:#90908A;"></div>
-                <div class="palette-swatch" style="background:#C6C6C0;"></div>
-                <div class="palette-swatch" style="background:#606059;"></div>
-                <div class="palette-swatch" style="background:#E5E5E1;"></div>
-                <div class="palette-swatch" style="background:#3F3F3B;"></div>
+                <div class="palette-swatch" style="background: #FFFFFF;"></div>
+                <div class="palette-swatch" style="background: #C8CBC5;"></div>
+                <div class="palette-swatch" style="background: #ADADAB;"></div>
+                <div class="palette-swatch" style="background: #929594;"></div>
+                <div class="palette-swatch" style="background: #000000;"></div>
             </div>
         </div>
         <div class="photo-grid" id="grid-gris"></div>
@@ -279,7 +280,7 @@
         buildTitles();
 
         // COLOR KEY → letter color change
-        const colorMap = {rosa: '#E8A4B8', azul: '#5BBFBF', amarillo: '#E8C85A', verde: '#5BBF90', rojonaranja: '#BF795B', bw:'#1C1C1A'};
+        const colorMap = {azul: '#5BBFBF', amarillo: '#E8C85A', rosa: '#E8A4B8', verde: '#5BBF90', rojonaranja: '#BF795B', bw:'#1C1C1A'};
         document.querySelectorAll('.color-key-item[data-gallery]').forEach(item => {
             const gallery = item.getAttribute('data-gallery');
             const col = colorMap[gallery];
@@ -330,7 +331,7 @@
             'rosa_11': 'img/rosa/12.jpg',
             'rosa_12': 'img/rosa/13.jpg',
             'rosa_13': 'img/rosa/14.jpg',
-            'rosa_14': 'img/rosa/15.jpeg',
+            'rosa_14': 'img/rosa/15.jpg',
             'rosa_15': 'img/rosa/16.jpg',
             'rosa_16': 'img/rosa/17.jpg',
             'rosa_17': 'img/rosa/18.jpg',
@@ -340,9 +341,7 @@
             'rosa_21': 'img/rosa/22.jpg',
             'rosa_22': 'img/rosa/23.jpg',
             'rosa_23': 'img/rosa/24.jpg',
-            'rosa_24': 'img/rosa/25.jpg',
-            'rosa_25': 'img/rosa/26.jpg',
-            'azul_0': 'img/azul/01.jpg',
+            'azul_0': 'img/azul/01.jpeg',
             'azul_1': 'img/azul/02.jpg',
             'azul_2': 'img/azul/03.jpg',
             'azul_3': 'img/azul/04.jpg',
@@ -355,11 +354,11 @@
             'azul_10': 'img/azul/11.jpg',
             'azul_11': 'img/azul/12.jpg',
             'azul_12': 'img/azul/13.jpg',
-            'azul_13': 'img/azul/14.jpg',
-            'azul_14': 'img/azul/15.jpg',
+            'azul_13': 'img/azul/14.jpeg',
+            'azul_14': 'img/azul/15.jpeg',
             'azul_15': 'img/azul/16.jpeg',
-            'azul_16': 'img/azul/17.jpeg',
-            'azul_17': 'img/azul/18.jpeg',
+            'azul_16': 'img/azul/17.jpg',
+            'azul_17': 'img/azul/18.jpg',
             'azul_18': 'img/azul/19.jpg',
             'azul_19': 'img/azul/20.jpg',
             'azul_20': 'img/azul/21.jpg',
@@ -377,14 +376,14 @@
             'azul_32': 'img/azul/33.jpg',
             'azul_33': 'img/azul/34.jpg',
             'azul_34': 'img/azul/35.jpg',
-            'azul_35': 'img/azul/36.jpg',
-            'azul_36': 'img/azul/37.jpg',
+            'azul_35': 'img/azul/36.jpeg',
+            'azul_36': 'img/azul/37.jpeg',
             'azul_37': 'img/azul/38.jpeg',
             'azul_38': 'img/azul/39.jpeg',
             'azul_39': 'img/azul/40.jpeg',
             'azul_40': 'img/azul/41.jpeg',
             'azul_41': 'img/azul/42.jpeg',
-            'azul_42': 'img/azul/43.jpeg',
+            'azul_42': 'img/azul/43.jpg',
             'azul_43': 'img/azul/44.jpeg',
             'azul_44': 'img/azul/45.jpeg',
             'azul_45': 'img/azul/46.jpeg',
@@ -393,8 +392,8 @@
             'azul_48': 'img/azul/49.jpeg',
             'azul_49': 'img/azul/50.jpeg',
             'azul_50': 'img/azul/51.jpeg',
-            'azul_51': 'img/azul/52.jpeg',
-            'azul_52': 'img/azul/53.jpeg',
+            'azul_51': 'img/azul/52.jpg',
+            'azul_52': 'img/azul/53.jpg',
             'azul_53': 'img/azul/54.jpg',
             'azul_54': 'img/azul/55.jpg',
             'azul_55': 'img/azul/56.jpg',
@@ -409,9 +408,6 @@
             'azul_64': 'img/azul/65.jpg',
             'azul_65': 'img/azul/66.jpg',
             'azul_66': 'img/azul/67.jpg',
-            'azul_67': 'img/azul/68.jpg',
-            'azul_68': 'img/azul/69.jpg',
-            'azul_69': 'img/azul/70.jpg',
             'amarillo_0': 'img/amarillo/01.jpg',
             'amarillo_1': 'img/amarillo/02.jpg',
             'amarillo_2': 'img/amarillo/03.jpg',
@@ -428,10 +424,10 @@
             'amarillo_13': 'img/amarillo/14.jpg',
             'amarillo_14': 'img/amarillo/15.jpg',
             'amarillo_15': 'img/amarillo/16.jpg',
-            'amarillo_16': 'img/amarillo/17.jpg',
+            'amarillo_16': 'img/amarillo/17.jpeg',
             'amarillo_17': 'img/amarillo/18.jpeg',
-            'amarillo_18': 'img/amarillo/19.jpeg',
-            'amarillo_19': 'img/amarillo/20.jpeg',
+            'amarillo_18': 'img/amarillo/19.jpg',
+            'amarillo_19': 'img/amarillo/20.jpg',
             'amarillo_20': 'img/amarillo/21.jpg',
             'amarillo_21': 'img/amarillo/22.jpg',
             'amarillo_22': 'img/amarillo/23.jpg',
@@ -451,10 +447,6 @@
             'amarillo_36': 'img/amarillo/37.jpg',
             'amarillo_37': 'img/amarillo/38.jpg',
             'amarillo_38': 'img/amarillo/39.jpg',
-            'amarillo_39': 'img/amarillo/40.jpg',
-            'amarillo_40': 'img/amarillo/41.jpg',
-            'amarillo_41': 'img/amarillo/42.jpg',
-            'amarillo_42': 'img/amarillo/43.jpg',
             'verde_0': 'img/verde/01.jpg',
             'verde_1': 'img/verde/02.jpg',
             'verde_2': 'img/verde/03.jpg',
@@ -481,12 +473,12 @@
             'verde_23': 'img/verde/24.jpg',
             'verde_24': 'img/verde/25.jpg',
             'verde_25': 'img/verde/26.jpg',
-            'verde_26': 'img/verde/27.jpg',
-            'verde_27': 'img/verde/28.jpg',
+            'verde_26': 'img/verde/27.jpeg',
+            'verde_27': 'img/verde/28.jpeg',
             'verde_28': 'img/verde/29.jpg',
             'verde_29': 'img/verde/30.jpg',
-            'verde_30': 'img/verde/31.jpeg',
-            'verde_31': 'img/verde/32.jpeg',
+            'verde_30': 'img/verde/31.jpg',
+            'verde_31': 'img/verde/32.jpg',
             'verde_32': 'img/verde/33.jpg',
             'verde_33': 'img/verde/34.jpg',
             'verde_34': 'img/verde/35.jpg',
@@ -516,14 +508,6 @@
             'verde_58': 'img/verde/59.jpg',
             'verde_59': 'img/verde/60.jpg',
             'verde_60': 'img/verde/61.jpg',
-            'verde_61': 'img/verde/62.jpg',
-            'verde_62': 'img/verde/63.jpg',
-            'verde_63': 'img/verde/64.jpg',
-            'verde_64': 'img/verde/65.jpg',
-            'verde_65': 'img/verde/66.jpg',
-            'verde_66': 'img/verde/67.jpg',
-            'verde_67': 'img/verde/68.jpg',
-            'verde_68': 'img/verde/69.jpg',
             'rojonaranja_0': 'img/rojonaranja/01.jpg',
             'rojonaranja_1': 'img/rojonaranja/02.jpg',
             'rojonaranja_2': 'img/rojonaranja/03.jpg',
@@ -538,24 +522,19 @@
             'rojonaranja_11': 'img/rojonaranja/12.jpg',
             'rojonaranja_12': 'img/rojonaranja/13.jpg',
             'rojonaranja_13': 'img/rojonaranja/14.jpg',
-            'rojonaranja_14': 'img/rojonaranja/15.jpg',
+            'rojonaranja_14': 'img/rojonaranja/15.jpeg',
             'rojonaranja_15': 'img/rojonaranja/16.jpg',
             'rojonaranja_16': 'img/rojonaranja/17.jpg',
-            'rojonaranja_17': 'img/rojonaranja/18.jpeg',
-            'rojonaranja_18': 'img/rojonaranja/19.jpeg',
+            'rojonaranja_17': 'img/rojonaranja/18.jpg',
+            'rojonaranja_18': 'img/rojonaranja/19.jpg',
             'rojonaranja_19': 'img/rojonaranja/20.jpg',
-            'rojonaranja_20': 'img/rojonaranja/21.jpg',
-            'rojonaranja_21': 'img/rojonaranja/22.jpg',
-            'rojonaranja_22': 'img/rojonaranja/23.jpg',
             'gris_0': 'img/gris/01.jpg',
             'gris_1': 'img/gris/02.jpg',
             'gris_2': 'img/gris/03.jpg',
             'gris_3': 'img/gris/04.jpg',
-            'gris_4': 'img/gris/05.jpeg',
+            'gris_4': 'img/gris/05.jpg',
             'gris_5': 'img/gris/06.jpg',
-            'gris_6': 'img/gris/07.jpg',
-            'gris_7': 'img/gris/08.jpg',
-            'gris_8': 'img/gris/09.jpg'
+            'gris_6': 'img/gris/07.jpg'
         };
         const page_size = 5;
         const galleryPage = {rosa: 0, azul: 0, amarillo: 0, verde: 0, rojonaranja: 0, gris: 0, bw: 0};
@@ -738,6 +717,12 @@
             overlay.classList.remove('active');
         }
         
+        // ── MENU LINK HOVER COLORS ──────────────────────────────────────────────────
+        document.querySelectorAll('.menu-link[data-hcolor]').forEach(link => {
+            const col = link.getAttribute('data-hcolor');
+            link.addEventListener('mouseenter', () => {link.style.color = col;});
+            link.addEventListener('mouseleave', () => {link.style.color = '';});
+        });
 
 
 
