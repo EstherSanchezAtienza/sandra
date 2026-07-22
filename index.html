@@ -13,7 +13,7 @@
     <div id="cursor"></div>
     <canvas id="rainbow"></canvas>
     <nav>
-        <div>NDDC</div>
+        <div id="nddc">NDDC</div>
         <button class="nav-menu-btn" id="navMenuBtn" aria-label="Menú">
             <div class="menu-circle">
                 <div class="menu-circle-dot"></div>
@@ -280,7 +280,7 @@
         buildTitles();
 
         // COLOR KEY → letter color change
-        const colorMap = {azul: '#5BBFBF', amarillo: '#E8C85A', rosa: '#E8A4B8', verde: '#5BBF90', rojonaranja: '#BF795B', bw:'#1C1C1A'};
+        const colorMap = {azul: '#5BBFBF', amarillo: '#E8C85A', rosa: '#E8A4B8', verde: '#B8CA6D', rojonaranja: '#E6A774', bw:'#1C1C1A'};
         document.querySelectorAll('.color-key-item[data-gallery]').forEach(item => {
             const gallery = item.getAttribute('data-gallery');
             const col = colorMap[gallery];
@@ -706,6 +706,10 @@
         const navMenuBtn = document.getElementById('navMenuBtn');
         const sideMenu = document.getElementById('sideMenu');
         const overlay = document.getElementById('overlay');
+        const nddc = document.getElementById('nddc');
+        nddc.addEventListener('click', () => {
+            sideMenu.scrollIntoView({behavior:'smooth', block:'start'});
+        });
         navMenuBtn.addEventListener('click', () => {
             const open = sideMenu.classList.toggle('open');
             navMenuBtn.classList.toggle('open', open);
@@ -723,6 +727,7 @@
             link.addEventListener('mouseenter', () => {link.style.color = col;});
             link.addEventListener('mouseleave', () => {link.style.color = '';});
         });
+
 
 
 

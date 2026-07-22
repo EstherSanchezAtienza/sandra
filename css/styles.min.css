@@ -287,8 +287,8 @@ nav {
   opacity:1;
 }
 .color-dot {
-  width: 16px;
-  height: 16px;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
 }
 .dot-rosa {
@@ -385,15 +385,15 @@ nav {
   flex-wrap: wrap;
 }
 .palette-swatch {
-  width: 40px;
-  height: 40px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
-  border: 1px solid rgba(0,0,0,.07);
+  /* border: 1px solid rgba(0,0,0,.07); */
   transition: transform .3s, box-shadow .3s, border-color .3s;
   cursor: none;
 }
 .palette-swatch:hover {
-  transform: scale(1.35);
+  /* transform: scale(1.35); */
   box-shadow: 0 4px 12px rgba(0, 0, 0, .15);
   border-color: rgba(0, 0, 0, .15);
 }
