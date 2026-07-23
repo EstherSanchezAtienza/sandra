@@ -113,7 +113,7 @@ nav {
 }
 .nav-menu-btn:hover .menu-circle-dot {
   background: var(--azul);
-  transform:scale(1.6);
+  transform: scale(1.6);
 }
 .nav-menu-btn.open .menu-circle {
   border-color: var(--cream);
@@ -121,6 +121,10 @@ nav {
 .nav-menu-btn.open .menu-circle-dot {
   background: var(--cream);
   transform:scale(1.4);
+}
+.nddc:hover {
+  color: var(--azul);
+  transform: scale(1.08);
 }
 
 /* MENU */
@@ -506,12 +510,83 @@ nav {
   border: none;
   padding: 0;
 }
-.pagination-dot.active {
+.pagination-dot.active-rosa {
   opacity: .65;
   transform: scale(1.35);
+  background: var(--rosa);
+}
+.pagination-dot.active-azul {
+  opacity: .65;
+  transform: scale(1.35);
+  background: var(--azul);
+}
+.pagination-dot.active-amarillo {
+  opacity: .65;
+  transform: scale(1.35);
+  background: var(--amarillo);
+}
+.pagination-dot.active-rojonaranja {
+  opacity: .65;
+  transform: scale(1.35);
+  background: var(--rojonaranja);
+}
+.pagination-dot.active-verde {
+  opacity: .65;
+  transform: scale(1.35);
+  background: var(--verde);
+}
+.pagination-dot.active-gris {
+  opacity: .65;
+  transform: scale(1.35);
+  background: var(--gris);
 }
 .pagination-dot:hover {
   opacity: .8;
+}
+
+/* BW */
+#home {
+  transition: background 1s ease;
+}
+#home.bw-hover {
+  background: linear-gradient(135deg, #ffffff 0%, #000000 100%);
+}
+#home.bw-hover .letter:not(.letter-bw) {
+  color: #fff!important;
+}
+.letter {
+  transition: color .45s ease;
+}
+body.bw {
+  overflow: hidden;}
+body.bw>*:not(#bw-overlay):not(#cursor):not(#rainbow):not(nav):not(#sideMenu):not(#overlay) {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .6s ease;
+}
+#bw-overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--ink,#1C1C1A);
+  z-index: 500;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .9s ease;
+  cursor: none;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 120px 40px 80px;
+}
+#bw-overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+#bw-overlay .photo-grid {
+  max-width: 1600px;
 }
 
 /* LIGHTBOX */

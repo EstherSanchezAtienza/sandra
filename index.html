@@ -13,7 +13,7 @@
     <div id="cursor"></div>
     <canvas id="rainbow"></canvas>
     <nav>
-        <div id="nddc">NDDC</div>
+        <div id="nddc" class="nddc">NDDC</div>
         <button class="nav-menu-btn" id="navMenuBtn" aria-label="Menú">
             <div class="menu-circle">
                 <div class="menu-circle-dot"></div>
@@ -187,6 +187,10 @@
         <img class="lightbox-img" id="lightbox-img" src="" alt="" style="display: none;">
         <div class="lightbox-txt" id="lightbox-txt">tus fotos aquí</div>
     </div>
+    <div id="bw-overlay">
+        <div class="photo-grid" id="grid-bw"></div>
+        <div class="gallery-pagination" id="pag-bw"></div>
+    </div>
     <script data-cfasync="false" src="js/form-submission-handler.js"></script>
     <script>
         // HOME
@@ -226,7 +230,7 @@
             {ch: 'E', type: 'regular'},
             {ch: 'L', type: 'regular'},
             {ch: 'E', type: 'regular'},
-            {ch: 'B', type: 'bw', link: 'galeria-bw'},
+            {ch: 'B', type: 'bw'},
             {ch: 'R', type: 'regular'},
             {ch: 'A', type: 'amarillo', link: 'galeria-amarillo'},
             {ch: 'R', type: 'regular'},
@@ -270,6 +274,15 @@
                             document.getElementById(item.link).scrollIntoView({behavior: 'smooth'});
                         });
                     }
+                    if (item.type === 'bw') {
+                        wrap.addEventListener('mouseenter', () => {document.getElementById('home').classList.add('bw-hover');});
+                        wrap.addEventListener('mouseleave',() => {document.getElementById('home').classList.remove('bw-hover');});
+                        wrap.addEventListener('click', () => {
+                            document.body.classList.add('bw');
+                            document.getElementById('bw-overlay').classList.add('active');
+                            buildGrid('grid-bw', countPhotos('bw'), 'bw', 0);
+                        });
+                    }
                     c.appendChild(wrap);
                 });
             }
@@ -298,6 +311,19 @@
                 });
             });
         });
+
+        // CLOSE BW
+        function closeBW() {
+            document.body.classList.remove('bw');
+            document.getElementById('bw-overlay').classList.remove('active');
+        }
+        // document.getElementById('bw-overlay').addEventListener('click', closeBW);
+        // document.addEventListener('keydown', e => {
+        //     if (e.key === 'Escape') {
+        //         closeLightbox();
+        //         closeBW();
+        //     }
+        // });
 
         // ── PROGRESSIVE GALLERY REVEAL ───────────────────────────────────────────────
         function revealItems(entries, observer) {
@@ -534,7 +560,14 @@
             'gris_3': 'img/gris/04.jpg',
             'gris_4': 'img/gris/05.jpg',
             'gris_5': 'img/gris/06.jpg',
-            'gris_6': 'img/gris/07.jpg'
+            'gris_6': 'img/gris/07.jpg',
+            'bw_0': 'img/gris/01.jpg',
+            'bw_1': 'img/gris/02.jpg',
+            'bw_2': 'img/gris/03.jpg',
+            'bw_3': 'img/gris/04.jpg',
+            'bw_4': 'img/gris/05.jpg',
+            'bw_5': 'img/gris/06.jpg',
+            'bw_6': 'img/gris/07.jpg',
         };
         const page_size = 5;
         const galleryPage = {rosa: 0, azul: 0, amarillo: 0, verde: 0, rojonaranja: 0, gris: 0, bw: 0};
@@ -542,7 +575,7 @@
         function countPhotos(gallery) {
             return Object.keys(photos).filter(k => k.includes(gallery)).length;
         }
-        function buildGrid(id, total, bwFirst, gallery, page) {
+        function buildGrid(id, total, gallery, page) {
             const c = document.getElementById(id);
             c.innerHTML = '';
             const start = page * page_size;
@@ -555,22 +588,18 @@
                 const inner = document.createElement('div');
                 inner.className = 'photo-inner' + (tall ? ' tall': '');
                 const img = document.createElement('img');
-                if (bwFirst && i === 0) {
-                    img.src = BW_REAL;
-                } else {
-                    img.src = photos[gallery+'_'+i] || photos[gallery+'_0'];
-                }
+                img.src = photos[gallery+'_'+i] || photos[gallery+'_0'];
                 img.alt = 'fotografía';
                 img.loading = 'lazy';
                 inner.appendChild(img);
                 d.appendChild(inner);
-                d.addEventListener('click', () => openImg(bwFirst && i === 0 ? BW_REAL : img.src));
+                d.addEventListener('click', () => openImg(img.src));
                 c.appendChild(d);
             }
             document.querySelectorAll('#' + id + ' .photo-placeholder').forEach(el => galleryObserver.observe(el));
-            renderPagination(gallery, total, page, bwFirst);
+            renderPagination(gallery, total, page);
         }
-        function renderPagination(gallery, total, page, bwFirst) {
+        function renderPagination(gallery, total, page) {
             const pageCount = Math.ceil(total / page_size);
             const pagEl = document.getElementById('pag-' + gallery);
             pagEl.innerHTML = '';
@@ -581,16 +610,16 @@
             prevBtn.innerHTML = '<span class="pagination-arrow">&#8592;</span>';
             prevBtn.setAttribute('aria-label', 'Grupo anterior');
             prevBtn.disabled = (page === 0);
-            prevBtn.addEventListener('click', () => goToPage(gallery, page - 1, total, bwFirst));
+            prevBtn.addEventListener('click', () => goToPage(gallery, page - 1, total));
             pagEl.appendChild(prevBtn);
 
             const dots = document.createElement('div');
             dots.className = 'pagination-dots';
             for (let p = 0; p <pageCount; p++) {
                 const dot = document.createElement('button');
-                dot.className = 'pagination-dot' + (p === page ? ' active' : '');
+                dot.className = 'pagination-dot' + (p === page ? ' active-' + gallery : '');
                 dot.setAttribute('aria-label', 'Ir al grupo ' + (p + 1));
-                dot.addEventListener('click', () => goToPage(gallery, p, total, bwFirst));
+                dot.addEventListener('click', () => goToPage(gallery, p, total));
                 dots.appendChild(dot);
             }
             pagEl.appendChild(dots);
@@ -600,20 +629,45 @@
             nextBtn.innerHTML = '<span class="pagination-arrow">&#8594;</span>';
             nextBtn.setAttribute('aria-label', 'Siguiente grupo');
             nextBtn.disabled = (page >= pageCount - 1);
-            nextBtn.addEventListener('click', () => goToPage(gallery, page+1, total, bwFirst));
+            nextBtn.addEventListener('click', () => goToPage(gallery, page+1, total));
             pagEl.appendChild(nextBtn);
         }
-        function goToPage(gallery, page, total, bwFirst) {
+        function goToPage(gallery, page, total) {
             galleryPage[gallery] = page;
-            buildGrid('grid-' + gallery, total, bwFirst, gallery, page);
+            buildGrid('grid-' + gallery, total, gallery, page);
             document.getElementById('galeria-' + gallery).scrollIntoView({behavior:'smooth', block:'start'});
         }
-        buildGrid('grid-rosa', countPhotos('rosa'), false, 'rosa', 0);
-        buildGrid('grid-azul', countPhotos('azul'), false, 'azul', 0);
-        buildGrid('grid-amarillo', countPhotos('amarillo'), false, 'amarillo', 0);
-        buildGrid('grid-verde', countPhotos('verde'), false, 'verde', 0);
-        buildGrid('grid-rojonaranja', countPhotos('rojonaranja'), false, 'rojonaranja', 0);
-        buildGrid('grid-gris', countPhotos('gris'), false, 'gris', 0);
+        buildGrid('grid-rosa', countPhotos('rosa'), 'rosa', 0);
+        buildGrid('grid-azul', countPhotos('azul'), 'azul', 0);
+        buildGrid('grid-amarillo', countPhotos('amarillo'), 'amarillo', 0);
+        buildGrid('grid-verde', countPhotos('verde'), 'verde', 0);
+        buildGrid('grid-rojonaranja', countPhotos('rojonaranja'), 'rojonaranja', 0);
+        buildGrid('grid-gris', countPhotos('gris'), 'gris', 0);
+
+        // ── Galería del overlay de BW ──
+        // function buildBwCelebrateGrid() {
+        //     const total = countPhotos('gris');
+        //     const c = document.getElementById('grid-bw');
+        //     c.innerHTML = '';
+        //     for (let i = 0; i < total; i++) {
+        //         const d = document.createElement('div');
+        //         d.className = 'photo-placeholder';
+        //         d.style.animationDelay = (i * 120) + 'ms';
+        //         d.classList.add('revealed');
+        //         const inner = document.createElement('div');
+        //         inner.className = 'photo-inner';
+        //         const img = document.createElement('img');
+        //         img.src = photos['gris_' + i];
+        //         img.alt = 'fotografía';
+        //         img.loading = 'lazy';
+        //         inner.appendChild(img);
+        //         d.appendChild(inner);
+        //         d.addEventListener('click', () => openImg(img.src));
+        //         c.appendChild(d);
+        //     }
+        // }
+        // buildBwCelebrateGrid();
+
 
         function openImg(src) {
             cursor.style.border = '1.5px solid white';
@@ -708,7 +762,7 @@
         const overlay = document.getElementById('overlay');
         const nddc = document.getElementById('nddc');
         nddc.addEventListener('click', () => {
-            sideMenu.scrollIntoView({behavior:'smooth', block:'start'});
+            window.scrollTo({top: 0, behavior: 'smooth'});
         });
         navMenuBtn.addEventListener('click', () => {
             const open = sideMenu.classList.toggle('open');
