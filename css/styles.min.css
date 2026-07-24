@@ -537,7 +537,7 @@ nav {
 .pagination-dot.active-rosa {
   opacity: .65;
   transform: scale(1.35);
-  background: var(--rosa);
+  background: linear-gradient(90deg, var(--rosa) 50%, var(--violeta) 50%);
 }
 .pagination-dot.active-azul {
   opacity: .65;
@@ -552,7 +552,7 @@ nav {
 .pagination-dot.active-rojonaranja {
   opacity: .65;
   transform: scale(1.35);
-  background: var(--rojonaranja);
+  background: linear-gradient(90deg, var(--rojonaranja) 50%, var(--rojo) 50%);
 }
 .pagination-dot.active-verde {
   opacity: .65;
@@ -594,6 +594,9 @@ nav {
   background: linear-gradient(135deg, #ffffff 0%, #000000 100%);
 }
 #home.bw-hover .letter:not(.letter-bw) {
+  color: #fff!important;
+}
+#home.bw-hover .letter-bw {
   color: #fff!important;
 }
 nav.bw-hover .menu-circle {
