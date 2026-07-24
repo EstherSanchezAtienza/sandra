@@ -27,7 +27,8 @@
         <a href="#galeria-verde" class="menu-link" data-hcolor="#5BBF90" onclick="closeMenu()">verde</a>
         <a href="#galeria-rojonaranja" class="menu-link" data-hcolor="#BF795B" onclick="closeMenu()">rojo/naranja</a>
         <a href="#galeria-gris" class="menu-link" data-hcolor="#90908A" onclick="closeMenu()">gris</a>
-        <a href="#galeria-bw" class="menu-link" data-hcolor="#F5F5F0" onclick="closeMenu()">B&W</a>
+        <a href="#galeria-multicolor" class="menu-link" data-hcolor="#90908A" onclick="closeMenu()">multicolor</a>
+        <a href="#galeria-bw" class="menu-link" data-hcolor="#F5F5F0" onclick="closeMenu();openBW();return false;">B&W</a>
         <a href="#bio" class="menu-link" data-hcolor="rgba(255,255,255,.9)" onclick="closeMenu()">Sobre mí</a>
         <div class="menu-contact">
             <a href="mailto:sandrasanati@gmail.com">sandrasanati@gmail.com</a>
@@ -59,7 +60,10 @@
                 <a href="#galeria-gris" class="color-key-item" data-gallery="gris" data-color="var(--gris)">
                     <span class="color-dot dot-gris"></span>
                 </a>
-                <a href="#galeria-bw" class="color-key-item" data-gallery="bw" data-color="var(--bw)">
+                <a href="#galeria-multicolor" class="color-key-item" data-gallery="multicolor" data-color="var(--multicolor)">
+                    <span class="color-dot dot-multicolor"></span>
+                </a>
+                <a href="#galeria-bw" class="color-key-item" data-gallery="bw" data-color="var(--bw)" onclick="openBW();return false;">
                     <span class="color-dot dot-bw"></span>
                 </a>
             </div>
@@ -144,6 +148,19 @@
         </div>
         <div class="photo-grid" id="grid-gris"></div>
         <div class="gallery-pagination" id="pag-gris"></div>
+    </section>
+    <section class="gallery-section" id="galeria-multicolor">
+        <div class="gallery-header">
+            <div class="palette-circles">
+                <div class="palette-swatch" style="background: #FFFFFF;"></div>
+                <div class="palette-swatch" style="background: #C8CBC5;"></div>
+                <div class="palette-swatch" style="background: #ADADAB;"></div>
+                <div class="palette-swatch" style="background: #929594;"></div>
+                <div class="palette-swatch" style="background: #000000;"></div>
+            </div>
+        </div>
+        <div class="photo-grid" id="grid-multicolor"></div>
+        <div class="gallery-pagination" id="pag-multicolor"></div>
     </section>
     <!-- <section class="gallery-section" id="galeria-bw">
         <div class="gallery-header">
@@ -275,13 +292,17 @@
                         });
                     }
                     if (item.type === 'bw') {
-                        wrap.addEventListener('mouseenter', () => {document.getElementById('home').classList.add('bw-hover');});
-                        wrap.addEventListener('mouseleave',() => {document.getElementById('home').classList.remove('bw-hover');});
-                        wrap.addEventListener('click', () => {
-                            document.body.classList.add('bw');
-                            document.getElementById('bw-overlay').classList.add('active');
-                            buildGrid('grid-bw', countPhotos('bw'), 'bw', 0);
+                        wrap.addEventListener('mouseenter', () => {
+                            document.getElementById('home').classList.add('bw-hover');
+                            document.querySelector('nav').classList.add('bw-hover');
                         });
+                        wrap.addEventListener('mouseleave', () => {
+                            if (!document.getElementById('bw-overlay').classList.contains('active')) {
+                                document.getElementById('home').classList.remove('bw-hover');
+                                document.querySelector('nav').classList.remove('bw-hover');
+                            }
+                        });
+                        wrap.addEventListener('click', openBW);
                     }
                     c.appendChild(wrap);
                 });
@@ -297,6 +318,17 @@
         document.querySelectorAll('.color-key-item[data-gallery]').forEach(item => {
             const gallery = item.getAttribute('data-gallery');
             const col = colorMap[gallery];
+            if (gallery === 'bw') {
+                item.addEventListener('mouseenter', () => {
+                    document.getElementById('home').classList.add('bw-hover');
+                    document.querySelector('nav').classList.add('bw-hover');
+                });
+                item.addEventListener('mouseleave', () => {
+                    document.getElementById('home').classList.remove('bw-hover');
+                    document.querySelector('nav').classList.remove('bw-hover');
+                });
+                return;
+            }
             item.addEventListener('mouseenter', () => {
                 // Change all letter SVG strokes to this color temporarily
                 document.querySelectorAll('.letter-regular').forEach(p=>{
@@ -313,6 +345,12 @@
         });
 
         // CLOSE BW
+        // OPEN / CLOSE BW
+        function openBW() {
+            document.body.classList.add('bw');
+            document.getElementById('bw-overlay').classList.add('active');
+            buildGrid('grid-bw', countPhotos('bw'), 'bw', 0);
+        }
         function closeBW() {
             document.body.classList.remove('bw');
             document.getElementById('bw-overlay').classList.remove('active');
@@ -561,16 +599,219 @@
             'gris_4': 'img/gris/05.jpg',
             'gris_5': 'img/gris/06.jpg',
             'gris_6': 'img/gris/07.jpg',
-            'bw_0': 'img/gris/01.jpg',
-            'bw_1': 'img/gris/02.jpg',
-            'bw_2': 'img/gris/03.jpg',
-            'bw_3': 'img/gris/04.jpg',
-            'bw_4': 'img/gris/05.jpg',
-            'bw_5': 'img/gris/06.jpg',
-            'bw_6': 'img/gris/07.jpg',
+            'multicolor_0': 'img/multicolor/01.jpg',
+            'multicolor_1': 'img/multicolor/02.jpg',
+            'multicolor_2': 'img/multicolor/03.jpg',
+            'multicolor_3': 'img/multicolor/04.jpg',
+            'multicolor_4': 'img/multicolor/05.jpeg',
+            'multicolor_5': 'img/multicolor/06.jpeg',
+            'multicolor_6': 'img/multicolor/07.jpeg',
+            'multicolor_7': 'img/multicolor/08.jpeg',
+            'multicolor_8': 'img/multicolor/09.jpeg',
+            'multicolor_9': 'img/multicolor/10.jpeg',
+            'multicolor_10': 'img/multicolor/11.jpeg',
+            'multicolor_11': 'img/multicolor/12.jpeg',
+            'multicolor_12': 'img/multicolor/13.jpeg',
+            'multicolor_13': 'img/multicolor/14.jpeg',
+            'multicolor_14': 'img/multicolor/15.jpeg',
+            'multicolor_15': 'img/multicolor/16.jpg',
+            'multicolor_16': 'img/multicolor/17.jpg',
+            'multicolor_17': 'img/multicolor/18.jpg',
+            'multicolor_18': 'img/multicolor/19.jpg',
+            'multicolor_19': 'img/multicolor/20.jpg',
+            'multicolor_20': 'img/multicolor/21.jpg',
+            'multicolor_21': 'img/multicolor/22.jpg',
+            'multicolor_22': 'img/multicolor/23.jpg',
+            'multicolor_23': 'img/multicolor/24.jpg',
+            'multicolor_24': 'img/multicolor/25.jpg',
+            'multicolor_25': 'img/multicolor/26.jpg',
+            'multicolor_26': 'img/multicolor/27.jpg',
+            'multicolor_27': 'img/multicolor/28.jpg',
+            'multicolor_28': 'img/multicolor/29.jpg',
+            'multicolor_29': 'img/multicolor/30.jpg',
+            'multicolor_30': 'img/multicolor/31.jpg',
+            'multicolor_31': 'img/multicolor/32.jpg',
+            'multicolor_32': 'img/multicolor/33.jpg',
+            'multicolor_33': 'img/multicolor/34.jpg',
+            'multicolor_34': 'img/multicolor/35.jpg',
+            'bw_0': 'img/bw/001.jpg',
+            'bw_1': 'img/bw/002.jpg',
+            'bw_2': 'img/bw/003.jpg',
+            'bw_3': 'img/bw/004.jpg',
+            'bw_4': 'img/bw/005.jpg',
+            'bw_5': 'img/bw/006.jpg',
+            'bw_6': 'img/bw/007.jpg',
+            'bw_7': 'img/bw/008.jpg',
+            'bw_8': 'img/bw/009.jpg',
+            'bw_9': 'img/bw/010.jpg',
+            'bw_10': 'img/bw/011.jpg',
+            'bw_11': 'img/bw/012.jpg',
+            'bw_12': 'img/bw/013.jpg',
+            'bw_13': 'img/bw/014.jpg',
+            'bw_14': 'img/bw/015.jpg',
+            'bw_15': 'img/bw/016.jpg',
+            'bw_16': 'img/bw/017.jpg',
+            'bw_17': 'img/bw/018.jpg',
+            'bw_18': 'img/bw/019.jpg',
+            'bw_19': 'img/bw/020.jpg',
+			'bw_20': 'img/bw/021.jpg',
+            'bw_21': 'img/bw/022.jpg',
+            'bw_22': 'img/bw/023.jpg',
+            'bw_23': 'img/bw/024.jpg',
+            'bw_24': 'img/bw/025.jpg',
+            'bw_25': 'img/bw/026.jpg',
+            'bw_26': 'img/bw/027.jpg',
+            'bw_27': 'img/bw/028.jpg',
+            'bw_28': 'img/bw/029.jpg',
+            'bw_29': 'img/bw/030.jpg',
+			'bw_30': 'img/bw/031.jpg',
+            'bw_31': 'img/bw/032.jpg',
+            'bw_32': 'img/bw/033.jpg',
+            'bw_33': 'img/bw/034.jpg',
+            'bw_34': 'img/bw/035.jpg',
+            'bw_35': 'img/bw/036.jpg',
+            'bw_36': 'img/bw/037.jpg',
+            'bw_37': 'img/bw/038.jpg',
+            'bw_38': 'img/bw/039.jpg',
+            'bw_39': 'img/bw/040.jpg',
+			'bw_40': 'img/bw/041.jpg',
+            'bw_41': 'img/bw/042.jpg',
+            'bw_42': 'img/bw/043.jpg',
+            'bw_43': 'img/bw/044.jpg',
+            'bw_44': 'img/bw/045.jpg',
+            'bw_45': 'img/bw/046.jpg',
+            'bw_46': 'img/bw/047.jpg',
+            'bw_47': 'img/bw/048.jpg',
+            'bw_48': 'img/bw/049.jpg',
+            'bw_49': 'img/bw/050.jpg',
+			'bw_50': 'img/bw/051.jpg',
+            'bw_51': 'img/bw/052.jpg',
+            'bw_52': 'img/bw/053.jpg',
+            'bw_53': 'img/bw/054.jpg',
+            'bw_54': 'img/bw/055.jpg',
+            'bw_55': 'img/bw/056.jpg',
+            'bw_56': 'img/bw/057.jpg',
+            'bw_57': 'img/bw/058.jpg',
+            'bw_58': 'img/bw/059.jpg',
+            'bw_59': 'img/bw/060.jpg',
+			'bw_60': 'img/bw/061.jpg',
+            'bw_61': 'img/bw/062.jpg',
+            'bw_62': 'img/bw/063.jpg',
+            'bw_63': 'img/bw/064.jpg',
+            'bw_64': 'img/bw/065.jpg',
+            'bw_65': 'img/bw/066.jpg',
+            'bw_66': 'img/bw/067.jpg',
+            'bw_67': 'img/bw/068.jpg',
+            'bw_68': 'img/bw/069.jpg',
+            'bw_69': 'img/bw/070.jpg',
+			'bw_70': 'img/bw/071.jpg',
+            'bw_71': 'img/bw/072.jpg',
+            'bw_72': 'img/bw/073.jpg',
+            'bw_73': 'img/bw/074.jpg',
+            'bw_74': 'img/bw/075.jpg',
+            'bw_75': 'img/bw/076.jpg',
+            'bw_76': 'img/bw/077.jpg',
+            'bw_77': 'img/bw/078.jpg',
+            'bw_78': 'img/bw/079.jpg',
+            'bw_79': 'img/bw/080.jpg',
+			'bw_80': 'img/bw/081.jpg',
+            'bw_81': 'img/bw/082.jpg',
+            'bw_82': 'img/bw/083.jpg',
+            'bw_83': 'img/bw/084.jpg',
+            'bw_84': 'img/bw/085.jpg',
+            'bw_85': 'img/bw/086.jpg',
+            'bw_86': 'img/bw/087.jpg',
+            'bw_87': 'img/bw/088.jpg',
+            'bw_88': 'img/bw/089.jpg',
+            'bw_89': 'img/bw/090.jpg',
+			'bw_90': 'img/bw/091.jpg',
+            'bw_91': 'img/bw/092.jpg',
+            'bw_92': 'img/bw/093.jpg',
+            'bw_93': 'img/bw/094.jpg',
+            'bw_94': 'img/bw/095.jpg',
+            'bw_95': 'img/bw/096.jpg',
+            'bw_96': 'img/bw/097.jpg',
+            'bw_97': 'img/bw/098.jpg',
+            'bw_98': 'img/bw/099.jpg',
+            'bw_99': 'img/bw/100.jpg',
+			'bw_100': 'img/bw/101.jpg',
+            'bw_101': 'img/bw/102.jpg',
+            'bw_102': 'img/bw/103.jpg',
+            'bw_103': 'img/bw/104.jpg',
+            'bw_104': 'img/bw/105.jpg',
+            'bw_105': 'img/bw/106.jpg',
+            'bw_106': 'img/bw/107.jpg',
+            'bw_107': 'img/bw/108.jpg',
+            'bw_108': 'img/bw/109.jpg',
+            'bw_109': 'img/bw/110.jpg',
+			'bw_110': 'img/bw/111.jpg',
+            'bw_111': 'img/bw/112.jpg',
+            'bw_112': 'img/bw/113.jpg',
+            'bw_113': 'img/bw/114.jpg',
+            'bw_114': 'img/bw/115.jpg',
+            'bw_115': 'img/bw/116.jpg',
+            'bw_116': 'img/bw/117.jpg',
+            'bw_117': 'img/bw/118.jpg',
+            'bw_118': 'img/bw/119.jpg',
+            'bw_119': 'img/bw/120.jpg',
+			'bw_120': 'img/bw/121.jpg',
+            'bw_121': 'img/bw/122.jpg',
+            'bw_122': 'img/bw/123.jpg',
+            'bw_123': 'img/bw/124.jpg',
+            'bw_124': 'img/bw/125.jpg',
+            'bw_125': 'img/bw/126.jpg',
+            'bw_126': 'img/bw/127.jpg',
+            'bw_127': 'img/bw/128.jpg',
+            'bw_128': 'img/bw/129.jpg',
+            'bw_129': 'img/bw/130.jpg',
+			'bw_130': 'img/bw/131.jpg',
+            'bw_131': 'img/bw/132.jpg',
+            'bw_132': 'img/bw/133.jpg',
+            'bw_133': 'img/bw/134.jpg',
+            'bw_134': 'img/bw/135.jpg',
+            'bw_135': 'img/bw/136.jpg',
+            'bw_136': 'img/bw/137.jpg',
+            'bw_137': 'img/bw/138.jpg',
+            'bw_138': 'img/bw/139.jpg',
+            'bw_139': 'img/bw/140.jpg',
+			'bw_140': 'img/bw/141.jpg',
+            'bw_141': 'img/bw/142.jpg',
+            'bw_142': 'img/bw/143.jpg',
+            'bw_143': 'img/bw/144.jpg',
+            'bw_144': 'img/bw/145.jpg',
+            'bw_145': 'img/bw/146.jpg',
+            'bw_146': 'img/bw/147.jpg',
+            'bw_147': 'img/bw/148.jpg',
+            'bw_148': 'img/bw/149.jpg',
+            'bw_149': 'img/bw/150.jpg',
+			'bw_150': 'img/bw/151.jpg',
+            'bw_151': 'img/bw/152.jpg',
+            'bw_152': 'img/bw/153.jpg',
+            'bw_153': 'img/bw/154.jpg',
+            'bw_154': 'img/bw/155.jpg',
+            'bw_155': 'img/bw/156.jpg',
+            'bw_156': 'img/bw/157.jpg',
+            'bw_157': 'img/bw/158.jpg',
+            'bw_158': 'img/bw/159.jpg',
+            'bw_159': 'img/bw/160.jpg',
+			'bw_160': 'img/bw/161.jpg',
+            'bw_161': 'img/bw/162.jpg',
+            'bw_162': 'img/bw/163.jpg',
+            'bw_163': 'img/bw/164.jpg',
+            'bw_164': 'img/bw/165.jpg',
+            'bw_165': 'img/bw/166.jpg',
+            'bw_166': 'img/bw/167.jpg',
+            'bw_167': 'img/bw/168.jpg',
+            'bw_168': 'img/bw/169.jpg',
+            'bw_169': 'img/bw/170.jpg',
+			'bw_170': 'img/bw/171.jpg',
+            'bw_171': 'img/bw/172.jpg',
+            'bw_172': 'img/bw/173.jpg',
+            'bw_173': 'img/bw/174.jpg'
         };
         const page_size = 5;
-        const galleryPage = {rosa: 0, azul: 0, amarillo: 0, verde: 0, rojonaranja: 0, gris: 0, bw: 0};
+        const page_size_bw = 10;
+        const galleryPage = {rosa: 0, azul: 0, amarillo: 0, verde: 0, rojonaranja: 0, gris: 0, multicolor: 0, bw: 0};
 
         function countPhotos(gallery) {
             return Object.keys(photos).filter(k => k.includes(gallery)).length;
@@ -578,8 +819,9 @@
         function buildGrid(id, total, gallery, page) {
             const c = document.getElementById(id);
             c.innerHTML = '';
-            const start = page * page_size;
-            const end = Math.min(start + page_size, total);
+            const pg = gallery === 'bw' ? page_size_bw : page_size;
+            const start = page * pg;
+            const end = Math.min(start + pg, total);
             for (let i = start; i < end; i++) {
                 const localIdv = i - start;
                 const d = document.createElement('div');
@@ -600,7 +842,8 @@
             renderPagination(gallery, total, page);
         }
         function renderPagination(gallery, total, page) {
-            const pageCount = Math.ceil(total / page_size);
+            const pg = gallery === 'bw' ? page_size_bw : page_size;
+            const pageCount = Math.ceil(total / pg);
             const pagEl = document.getElementById('pag-' + gallery);
             pagEl.innerHTML = '';
             if (pageCount <= 1) return;
@@ -643,6 +886,7 @@
         buildGrid('grid-verde', countPhotos('verde'), 'verde', 0);
         buildGrid('grid-rojonaranja', countPhotos('rojonaranja'), 'rojonaranja', 0);
         buildGrid('grid-gris', countPhotos('gris'), 'gris', 0);
+        buildGrid('grid-multicolor', countPhotos('multicolor'), 'multicolor', 0);
 
         // ── Galería del overlay de BW ──
         // function buildBwCelebrateGrid() {

@@ -23,6 +23,7 @@
   --rojonaranja: #E6A774;
   --violeta: #BE90DF;
   --rojo: #E28378;
+  --multicolor: #1C1C1A;
   --gris: #90908A;
   --bw: #1C1C1A;
 }
@@ -239,6 +240,7 @@ nav {
 }
 .letter {
   display: inline-block;
+  transition: color .45s ease;
 }
 .letter-regular {
   color: var(--ink);
@@ -314,6 +316,17 @@ nav {
 .dot-gris {
   background: var(--gris);
 }
+.dot-multicolor {
+  background: conic-gradient(
+    var(--rosa) 0% 12%, 
+    var(--violeta) 12% 24%, 
+    var(--violeta) 24% 38%, 
+    var(--azul) 38% 50%, 
+    var(--amarillo) 50% 62%, 
+    var(--verde) 62% 74%, 
+    var(--rojonaranja) 74% 86%, 
+    var(--rojo) 86% 100%);
+}
 .dot-bw {
   background: var(--bw);
 }
@@ -366,6 +379,17 @@ nav {
 }
 #galeria-gris {
   background: #EFEFEC;
+}
+#galeria-multicolor {
+  background: linear-gradient(
+    90deg,
+    #F6E2E0 0%,
+    #FDECD5 16.6%,
+    #FAF3D8 33.3%,
+    #E9F6D1 50%,
+    #E6F5F5 66.6%,
+    #EDE0F6 83.3%,
+    #F7EAEE 100%);
 }
 #galeria-bw {
   background: #F0F0EE;
@@ -540,6 +564,24 @@ nav {
   transform: scale(1.35);
   background: var(--gris);
 }
+.pagination-dot.active-multicolor {
+  opacity: .65;
+  transform: scale(1.35);
+  background: conic-gradient(
+    var(--rosa) 0% 12%, 
+    var(--violeta) 12% 24%, 
+    var(--violeta) 24% 38%, 
+    var(--azul) 38% 50%, 
+    var(--amarillo) 50% 62%, 
+    var(--verde) 62% 74%, 
+    var(--rojonaranja) 74% 86%, 
+    var(--rojo) 86% 100%);
+}
+.pagination-dot.active-bw {
+  opacity: .65;
+  transform: scale(1.35);
+  background: #fff;
+}
 .pagination-dot:hover {
   opacity: .8;
 }
@@ -554,20 +596,36 @@ nav {
 #home.bw-hover .letter:not(.letter-bw) {
   color: #fff!important;
 }
-.letter {
-  transition: color .45s ease;
+nav.bw-hover .menu-circle {
+  border-color: #fff;
+}
+nav.bw-hover .menu-circle-dot {
+  background: #fff;
 }
 body.bw {
-  overflow: hidden;}
-body.bw>*:not(#bw-overlay):not(#cursor):not(#rainbow):not(nav):not(#sideMenu):not(#overlay) {
+  overflow: hidden;
+}
+body.bw>*:not(#bw-overlay):not(#cursor):not(#rainbow):not(nav):not(#sideMenu):not(#overlay):not(#lightbox) {
   opacity: 0;
   pointer-events: none;
   transition: opacity .6s ease;
 }
+body.bw nav {
+  z-index: 501;
+}
+body.bw #overlay {
+  z-index: 501;
+}
+body.bw .side-menu {
+  z-index: 502;
+}
+body.bw .lightbox {
+  z-index: 503;
+}
 #bw-overlay {
   position: fixed;
   inset: 0;
-  background: var(--ink,#1C1C1A);
+  background: linear-gradient(135deg, #ffffff 0%, #000000 100%);
   z-index: 500;
   display: flex;
   flex-direction: column;
@@ -588,6 +646,7 @@ body.bw>*:not(#bw-overlay):not(#cursor):not(#rainbow):not(nav):not(#sideMenu):no
 #bw-overlay .photo-grid {
   max-width: 1600px;
 }
+
 
 /* LIGHTBOX */
 .lightbox {
