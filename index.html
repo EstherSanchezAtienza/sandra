@@ -381,7 +381,7 @@
         }, 200);
         
         const photos = {
-            'rosa_0': 'img/rosa/01.jpg',
+            'rosa_0': 'img/rosa/01.jpeg',
             'rosa_1': 'img/rosa/02.jpg',
             'rosa_2': 'img/rosa/03.jpg',
             'rosa_3': 'img/rosa/04.jpg',
@@ -418,9 +418,9 @@
             'azul_10': 'img/azul/11.jpg',
             'azul_11': 'img/azul/12.jpg',
             'azul_12': 'img/azul/13.jpg',
-            'azul_13': 'img/azul/14.jpeg',
-            'azul_14': 'img/azul/15.jpeg',
-            'azul_15': 'img/azul/16.jpeg',
+            'azul_13': 'img/azul/14.jpg',
+            'azul_14': 'img/azul/15.jpg',
+            'azul_15': 'img/azul/16.jpg',
             'azul_16': 'img/azul/17.jpg',
             'azul_17': 'img/azul/18.jpg',
             'azul_18': 'img/azul/19.jpg',
@@ -440,15 +440,15 @@
             'azul_32': 'img/azul/33.jpg',
             'azul_33': 'img/azul/34.jpg',
             'azul_34': 'img/azul/35.jpg',
-            'azul_35': 'img/azul/36.jpeg',
-            'azul_36': 'img/azul/37.jpeg',
-            'azul_37': 'img/azul/38.jpeg',
-            'azul_38': 'img/azul/39.jpeg',
-            'azul_39': 'img/azul/40.jpeg',
-            'azul_40': 'img/azul/41.jpeg',
-            'azul_41': 'img/azul/42.jpeg',
+            'azul_35': 'img/azul/36.jpg',
+            'azul_36': 'img/azul/37.jpg',
+            'azul_37': 'img/azul/38.jpg',
+            'azul_38': 'img/azul/39.jpg',
+            'azul_39': 'img/azul/40.jpg',
+            'azul_40': 'img/azul/41.jpg',
+            'azul_41': 'img/azul/42.jpg',
             'azul_42': 'img/azul/43.jpg',
-            'azul_43': 'img/azul/44.jpeg',
+            'azul_43': 'img/azul/44.jpg',
             'azul_44': 'img/azul/45.jpeg',
             'azul_45': 'img/azul/46.jpeg',
             'azul_46': 'img/azul/47.jpeg',
@@ -456,22 +456,14 @@
             'azul_48': 'img/azul/49.jpeg',
             'azul_49': 'img/azul/50.jpeg',
             'azul_50': 'img/azul/51.jpeg',
-            'azul_51': 'img/azul/52.jpg',
-            'azul_52': 'img/azul/53.jpg',
-            'azul_53': 'img/azul/54.jpg',
-            'azul_54': 'img/azul/55.jpg',
-            'azul_55': 'img/azul/56.jpg',
-            'azul_56': 'img/azul/57.jpg',
-            'azul_57': 'img/azul/58.jpg',
-            'azul_58': 'img/azul/59.jpg',
-            'azul_59': 'img/azul/60.jpg',
-            'azul_60': 'img/azul/61.jpg',
-            'azul_61': 'img/azul/62.jpg',
-            'azul_62': 'img/azul/63.jpg',
-            'azul_63': 'img/azul/64.jpg',
-            'azul_64': 'img/azul/65.jpg',
-            'azul_65': 'img/azul/66.jpg',
-            'azul_66': 'img/azul/67.jpg',
+            'azul_51': 'img/azul/52.jpeg',
+            'azul_52': 'img/azul/53.jpeg',
+            'azul_53': 'img/azul/54.jpeg',
+            'azul_54': 'img/azul/55.jpeg',
+            'azul_55': 'img/azul/56.jpeg',
+            'azul_56': 'img/azul/57.jpeg',
+            'azul_57': 'img/azul/58.jpeg',
+            'azul_58': 'img/azul/59.jpeg',
             'amarillo_0': 'img/amarillo/01.jpg',
             'amarillo_1': 'img/amarillo/02.jpg',
             'amarillo_2': 'img/amarillo/03.jpg',
@@ -812,6 +804,9 @@
         const page_size = 5;
         const page_size_bw = 10;
         const galleryPage = {rosa: 0, azul: 0, amarillo: 0, verde: 0, rojonaranja: 0, gris: 0, multicolor: 0, bw: 0};
+        const pantone_azul = [
+            {}
+        ];
 
         function countPhotos(gallery) {
             return Object.keys(photos).filter(k => k.includes(gallery)).length;
