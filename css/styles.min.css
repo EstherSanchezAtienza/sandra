@@ -6,6 +6,24 @@
   font-weight: 100;
   font-style: normal;
 }
+@font-face {
+  font-family: "ElmsSans";
+  src: url('../fonts/elms-sans.ttf');
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Quicksand";
+  src: url('../fonts/quicksand.ttf');
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Raleway";
+  src: url('../fonts/raleway.ttf');
+  font-weight: 100;
+  font-style: normal;
+}
 
 *,*::before,*::after{
   box-sizing: border-box;
@@ -150,7 +168,7 @@ nav {
   position: fixed;
   top: 0;
   right: -100%;
-  width: 240px;
+  width: 260px;
   height: 100vh;
   background: var(--azul);
   z-index: 199;
@@ -176,10 +194,12 @@ nav {
 }
 .menu-link:hover {
   padding-left: 5px;
+  font-weight: 900;
 }
 .menu-contact {
   margin-top: auto;
-  font-size: 11px;
+  font-family: 'Quicksand';
+  font-size: 15px;
   color: rgba(255, 255, 255, .45);
   line-height: 2.2;
   letter-spacing: .07em;
@@ -339,11 +359,12 @@ nav {
   flex-direction: column;
   align-items: center;
   gap: 7px;
-  opacity: .18;
+  opacity: .3;
   animation: float 2.5s ease-in-out infinite;
 }
 .scroll-hint span {
-  font-size: 10px;
+  font-size: 15px;
+  /* font-weight: 900; */
   letter-spacing: .2em;
   text-transform: uppercase;
 }
@@ -669,7 +690,7 @@ body.bw .lightbox {
   letter-spacing: .2em;
   text-transform: uppercase;
   color: var(--ink-light);
-  opacity: .36;
+  opacity: .5;
   margin-bottom: 18px;
 }
 .bio-name {
@@ -680,8 +701,8 @@ body.bw .lightbox {
   color: var(--azul);
 }
 .bio-text {
-  font-family: 'Inter', sans-serif;
-  font-size: 14px;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 15px;
   line-height: 1.85;
   color: var(--ink-light); 
   font-weight: 300;
@@ -708,7 +729,7 @@ body.bw .lightbox {
 /* CONTACTO */
 #contacto {
   padding: 110px 40px 140px;
-  background: var(--cream);
+  background: var(--azul);
 }
 .contact-inner {
   max-width: 1100px;
@@ -735,35 +756,40 @@ body.bw .lightbox {
   flex-wrap: wrap;
 }
 .contact-info-label {
-  font-size: 11px;
+  font-size: 20px;
+  font-weight: 900;
   letter-spacing: .18em;
   text-transform: uppercase;
-  color: var(--ink);
+  color: white;
   opacity: .55;
   min-width: 150px;
 }
 .contact-info-value {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Quicksand', sans-serif;
   font-size: 15px;
-  color: var(--ink);
+  letter-spacing: .07em;
+  color: white;
   opacity: .75;
   text-decoration: none;
   transition: opacity .2s;
 }
 .contact-info-value:hover {
   opacity: 1;
-  color: var(--azul);
+  color: #1E7AA8;
   cursor: none;
 }
 .contact-title {
-  font-family: 'PacoFont', 'Inter', sans-serif;
+  font-family: 'PacoFont', 'Quicksand', sans-serif;
   font-weight: 100;
   font-size: clamp(46px, 7vw, 84px);
   letter-spacing: .12em;
   text-transform: uppercase;
-  color: var(--ink);
+  color: white;
   opacity: .8;
   margin-top: 56px;
+}
+.contact-title:hover {
+  transform: rotateY(180deg);
 }
 .contact-form-card {
   flex: 1;
@@ -778,17 +804,18 @@ body.bw .lightbox {
   gap: 18px;
 }
 .contact-form-card-label {
-  font-size: 11px;
+  font-size: 15px;
   letter-spacing: .1em;
   text-transform: uppercase;
   color: var(--ink);
   opacity: .75;
   margin-bottom: 5px;
+  font-weight: 900;
 }
 .contact-form-card input, .contact-form-card textarea {
-  font-family: 'Inter', sans-serif;
-  font-size: 14px;
-  color: var(--ink);
+  font-family: 'Quicksand', sans-serif;
+  font-size: 15px;
+  color: #1E7AA8;
   border: 1px solid rgba(0, 0, 0, .1);
   border-radius: 8px;
   padding: 11px 14px;
@@ -807,21 +834,14 @@ body.bw .lightbox {
 }
 .contact-submit {
   width: 100%;
-  background: linear-gradient(
-    90deg,
-    #F6E2E0 0%,
-    #FDECD5 16.6%,
-    #FAF3D8 33.3%,
-    #E9F6D1 50%,
-    #E6F5F5 66.6%,
-    #EDE0F6 83.3%,
-    #F7EAEE 100%);
-  color: var(--ink);
+  background: var(--azul);
+  color: white;
   border: none; 
   border-radius: 999px;
   padding: 10px 20px;
-  font-family: PacoFont, 'Inter', sans-serif;
-  font-size: 12px;
+  font-family: PacoFont, 'Quicksand', sans-serif;
+  font-size: 15px;
+  font-weight: 900;
   letter-spacing: .18em;
   text-transform: uppercase;
   cursor: none;
@@ -835,11 +855,12 @@ body.bw .lightbox {
 #footer {
   display: flex;
   justify-content: center;
-  padding: 110px 40px 110px;
+  padding: 90px 40px 90px;
   background: var(--ink);
 }
 .footer-note {
-  font-size: 10px;
+  font-size: 15px;
+  font-weight: 900;
   letter-spacing: .2em;
   text-transform: uppercase;
   color: var(--cream)
