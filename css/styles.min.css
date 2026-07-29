@@ -807,8 +807,16 @@ body.bw .lightbox {
 }
 .contact-submit {
   width: 100%;
-  background: var(--ink);
-  color: var(--cream);
+  background: linear-gradient(
+    90deg,
+    #F6E2E0 0%,
+    #FDECD5 16.6%,
+    #FAF3D8 33.3%,
+    #E9F6D1 50%,
+    #E6F5F5 66.6%,
+    #EDE0F6 83.3%,
+    #F7EAEE 100%);
+  color: var(--ink);
   border: none; 
   border-radius: 999px;
   padding: 10px 20px;
