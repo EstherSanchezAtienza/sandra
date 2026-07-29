@@ -30,9 +30,10 @@
         <a href="#galeria-multicolor" class="menu-link" data-hcolor="#90908A" onclick="closeMenu()">multicolor</a>
         <a href="#galeria-bw" class="menu-link" data-hcolor="#F5F5F0" onclick="closeMenu();openBW();return false;">B&W</a>
         <a href="#bio" class="menu-link" data-hcolor="rgba(255,255,255,.9)" onclick="closeMenu()">Sobre mí</a>
+        <a href="#contacto" class="menu-link" data-hcolor="rgba(255,255,255,.9)" onclick="closeMenu()">Hablemos</a>
         <div class="menu-contact">
             <a href="mailto:sandrasanati@gmail.com">sandrasanati@gmail.com</a>
-            <a href="#">@sandraschezz</a>
+            <a href="https://www.instagram.com/sandraschezz/" target="_blank" rel="noopener">@sandraschezz</a>
         </div>
     </div>
     <div class="overlay" id="overlay" onclick="closeMenu()"></div>
@@ -73,11 +74,11 @@
     <section class="gallery-section" id="galeria-azul">
         <div class="gallery-header">
             <div class="palette-circles">
-                <div class="palette-swatch" style="background: #DCEBEB;"></div>
-                <div class="palette-swatch" style="background: #CCDEE6;"></div>
-                <div class="palette-swatch" style="background: #B2CFF0;"></div>
-                <div class="palette-swatch" style="background: #91C0F4;"></div>
-                <div class="palette-swatch" style="background: #589ECB;"></div>
+                <div class="palette-swatch" id="palette-swatch-azul-1"></div>
+                <div class="palette-swatch" id="palette-swatch-azul-2"></div>
+                <div class="palette-swatch" id="palette-swatch-azul-3"></div>
+                <div class="palette-swatch" id="palette-swatch-azul-4"></div>
+                <div class="palette-swatch" id="palette-swatch-azul-5"></div>
             </div>
         </div>
         <div class="photo-grid" id="grid-azul"></div>
@@ -98,13 +99,12 @@
     </section>
     <section class="gallery-section" id="galeria-rosa">
         <div class="gallery-header">
-            <!-- <p class="gallery-tag">colección</p> -->
             <div class="palette-circles">
-                <div class="palette-swatch" style="background: #F3C4CA;"></div>
-                <div class="palette-swatch" style="background: #DEAFBD;"></div>
-                <div class="palette-swatch" style="background: #FD9FA3;"></div>
-                <div class="palette-swatch" style="background: #E6A3E1;"></div>
-                <div class="palette-swatch" style="background: #EF2C83;"></div>
+                <div class="palette-swatch" id="palette-swatch-rosa-1"></div>
+                <div class="palette-swatch" id="palette-swatch-rosa-2"></div>
+                <div class="palette-swatch" id="palette-swatch-rosa-3"></div>
+                <div class="palette-swatch" id="palette-swatch-rosa-4"></div>
+                <div class="palette-swatch" id="palette-swatch-rosa-5"></div>
             </div>
         </div>
         <div class="photo-grid" id="grid-rosa"></div>
@@ -169,23 +169,45 @@
             <h2 class="bio-name">Sandra Sánchez Atienza</h2>
             <div class="bio-text">
                 <p>Fotógrafa con una curiosidad incansable.</p>
-                <p>A la vista está que, si hay algo que me apasiona, son los colores y las personas. Es por eso que celebro lo ordinario como si fuera extraordinario, porque lo es.</p>
+                <p>Si hay algo que me apasiona, son las personas y los colores. Ahí está la vida.</p>
+                <p>Es por eso que celebro lo ordinario como si fuera extraordinario, porque lo es.</p>
                 <p>Disponible en cualquier lugar.</p>
             </div>
             </div>
             <div class="bio-photo-space"></div>
         </div>
     </section>
-    <!-- 
-        <section id="contacto">
-        <p class="contact-tag">hablemos</p>
-        <h2 class="contact-title">Celebremos<br>juntas</h2>
-        <div class="contact-links">
-            <a href="mailto:hola@tudominio.com" class="contact-link">hola@tudominio.com</a>
-            <a href="#" class="contact-link">instagram</a>
+    <section id="contacto">
+        <div class="contact-inner">
+            <div class="contact-left">
+                <div class="contact-info">
+                    <div class="contact-info-row">
+                        <span class="contact-info-label">E-mail</span>
+                        <a class="contact-info-value">sandrasanati@gmail.com</a>
+                    </div>
+                    <div class="contact-info-row">
+                        <span class="contact-info-label">Redes sociales</span>
+                        <a class="contact-info-value" href="https://www.instagram.com/sandraschezz/" target="_blank" rel="noopener">@sandraschezz</a>
+                    </div>
+                </div>
+                <h2 class="contact-title">Hablemos</h2>
+            </div>
+            <div class="contact-form-card">
+                <form id="contact-form">
+                    <div class="contact-form-card-label">Nombre y apellidos</div>
+                    <input type="text" id="cf-nombre" name="nombre" placeholder="Ej. Sandra Sánchez" required>
+                    <div class="contact-form-card-label">Email</div>
+                    <input type="text" id="cf-email" name="email" placeholder="Ej. nombre@gmail.com" required>
+                    <div class="contact-form-card-label">Deja un mensaje</div>
+                    <textarea id="cf-mensaje" name="message" rows="5"></textarea>
+                    <button type="submit" class="contact-submit">Contactar</button>
+                </form>
+            </div>
         </div>
-        <p class="footer-note">nunca dejaré de celebrarlo</p>
-        </section> -->
+    </section>
+    <section id="footer">
+        <div class="footer-note">Nunca dejaré de celebrarlo</div>
+    </section>
     <div class="lightbox" id="lightbox">
         <button class="lightbox-close" onclick="closeLightbox()">×</button>
         <img class="lightbox-img" id="lightbox-img" src="" alt="" style="display: none;">
@@ -564,37 +586,25 @@
             'multicolor_1': 'img/multicolor/02.jpg',
             'multicolor_2': 'img/multicolor/03.jpg',
             'multicolor_3': 'img/multicolor/04.jpg',
-            'multicolor_4': 'img/multicolor/05.jpeg',
+            'multicolor_4': 'img/multicolor/05.jpg',
             'multicolor_5': 'img/multicolor/06.jpeg',
             'multicolor_6': 'img/multicolor/07.jpeg',
             'multicolor_7': 'img/multicolor/08.jpeg',
             'multicolor_8': 'img/multicolor/09.jpeg',
-            'multicolor_9': 'img/multicolor/10.jpeg',
-            'multicolor_10': 'img/multicolor/11.jpeg',
-            'multicolor_11': 'img/multicolor/12.jpeg',
-            'multicolor_12': 'img/multicolor/13.jpeg',
-            'multicolor_13': 'img/multicolor/14.jpeg',
-            'multicolor_14': 'img/multicolor/15.jpeg',
+            'multicolor_9': 'img/multicolor/10.jpg',
+            'multicolor_10': 'img/multicolor/11.jpg',
+            'multicolor_11': 'img/multicolor/12.jpg',
+            'multicolor_12': 'img/multicolor/13.jpg',
+            'multicolor_13': 'img/multicolor/14.jpg',
+            'multicolor_14': 'img/multicolor/15.jpg',
             'multicolor_15': 'img/multicolor/16.jpg',
             'multicolor_16': 'img/multicolor/17.jpg',
-            'multicolor_17': 'img/multicolor/18.jpg',
-            'multicolor_18': 'img/multicolor/19.jpg',
-            'multicolor_19': 'img/multicolor/20.jpg',
-            'multicolor_20': 'img/multicolor/21.jpg',
+            'multicolor_17': 'img/multicolor/18.jpeg',
+            'multicolor_18': 'img/multicolor/19.jpeg',
+            'multicolor_19': 'img/multicolor/20.jpeg',
+            'multicolor_20': 'img/multicolor/21.jpeg',
             'multicolor_21': 'img/multicolor/22.jpg',
-            'multicolor_22': 'img/multicolor/23.jpg',
-            'multicolor_23': 'img/multicolor/24.jpg',
-            'multicolor_24': 'img/multicolor/25.jpg',
-            'multicolor_25': 'img/multicolor/26.jpg',
-            'multicolor_26': 'img/multicolor/27.jpg',
-            'multicolor_27': 'img/multicolor/28.jpg',
-            'multicolor_28': 'img/multicolor/29.jpg',
-            'multicolor_29': 'img/multicolor/30.jpg',
-            'multicolor_30': 'img/multicolor/31.jpg',
-            'multicolor_31': 'img/multicolor/32.jpg',
-            'multicolor_32': 'img/multicolor/33.jpg',
-            'multicolor_33': 'img/multicolor/34.jpg',
-            'multicolor_34': 'img/multicolor/35.jpg',
+            'multicolor_22': 'img/multicolor/23.jpeg',
             'bw_0': 'img/bw/001.jpg',
             'bw_1': 'img/bw/002.jpg',
             'bw_2': 'img/bw/003.jpg',
@@ -704,18 +714,50 @@
         const page_size = 5;
         const page_size_bw = 10;
         const galleryPage = {rosa: 0, azul: 0, amarillo: 0, verde: 0, rojonaranja: 0, gris: 0, multicolor: 0, bw: 0};
-        const pantone_azul = [
-            ['#DCEBEB', '#CCDEF6', '#B2CFF0', '#91C0F4', '#589ECB'],
-            ['#BFDCED', '#78AECD', '#4094AF', '#0A80A9', '#045884'],
-            ['#A2B0C1', '#86A5C3', '#0CA3C7', '#6DAEB3', '#26919C'],
-            ['#BFC3C2', '#8AB0CD', '#7CAEC3', '#6C8897', '#429DA7'],
-            ['#CDDFF2', '#B1BFE2', '#9DBFD3', '#B4D1D6', '#5E7485'],
-            ['#CCE3F9', '#9FA9C5', '#87CDF0', '#95AAB1', '#5068CB'],
-            ['#BBDCFE', '#A5C1E4', '#88C2F1', '#82A3C3', '#6385A8'],
-            ['#C5D2E2', '#9DC1D2', '#7B98A0', '#408ABF', '#0ED1EA'],
-            ['#DCEAFE', '#97BAEB', '#86BEE4', '#69ADF2', '#7499B8'],
-            ['#A0C8E8', '#0A99F8', '#079EB3', '#1E7AA8', '#0675C3'],
-            ['#A7DAFA', '#85D2FA', '#96C6FB', '#2F81ED', '#2E5B8D']
+        const pantone_colors = [
+            {
+                'rosa': [
+                    ['#F3C4CA', '#DEAFBD', '#FD9FA3', '#E6A3E1', '#EF2C83'],
+                    ['#BFDCED', '#78AECD', '#4094AF', '#0A80A9', '#045884'],
+                    ['#A2B0C1', '#86A5C3', '#0CA3C7', '#6DAEB3', '#26919C'],
+                    ['#BFC3C2', '#8AB0CD', '#7CAEC3', '#6C8897', '#429DA7'],
+                    ['#CDDFF2', '#B1BFE2', '#9DBFD3', '#B4D1D6', '#5E7485'],
+                    ['#CCE3F9', '#9FA9C5', '#87CDF0', '#95AAB1', '#5068CB'],
+                    ['#BBDCFE', '#A5C1E4', '#88C2F1', '#82A3C3', '#6385A8'],
+                    ['#C5D2E2', '#9DC1D2', '#7B98A0', '#408ABF', '#0ED1EA'],
+                    ['#DCEAFE', '#97BAEB', '#86BEE4', '#69ADF2', '#7499B8'],
+                    ['#A0C8E8', '#0A99F8', '#079EB3', '#1E7AA8', '#0675C3'],
+                    ['#A7DAFA', '#85D2FA', '#96C6FB', '#2F81ED', '#2E5B8D']
+                ]
+            }, {
+                'azul': [
+                    ['#DCEBEB', '#CCDEF6', '#B2CFF0', '#91C0F4', '#589ECB'],
+                    ['#BFDCED', '#78AECD', '#4094AF', '#0A80A9', '#045884'],
+                    ['#A2B0C1', '#86A5C3', '#0CA3C7', '#6DAEB3', '#26919C'],
+                    ['#BFC3C2', '#8AB0CD', '#7CAEC3', '#6C8897', '#429DA7'],
+                    ['#CDDFF2', '#B1BFE2', '#9DBFD3', '#B4D1D6', '#5E7485'],
+                    ['#CCE3F9', '#9FA9C5', '#87CDF0', '#95AAB1', '#5068CB'],
+                    ['#BBDCFE', '#A5C1E4', '#88C2F1', '#82A3C3', '#6385A8'],
+                    ['#C5D2E2', '#9DC1D2', '#7B98A0', '#408ABF', '#0ED1EA'],
+                    ['#DCEAFE', '#97BAEB', '#86BEE4', '#69ADF2', '#7499B8'],
+                    ['#A0C8E8', '#0A99F8', '#079EB3', '#1E7AA8', '#0675C3'],
+                    ['#A7DAFA', '#85D2FA', '#96C6FB', '#2F81ED', '#2E5B8D']
+                ]
+            }, {
+                'amarillo': [
+                    ['#DCEBEB', '#CCDEF6', '#B2CFF0', '#91C0F4', '#589ECB'],
+                    ['#BFDCED', '#78AECD', '#4094AF', '#0A80A9', '#045884'],
+                    ['#A2B0C1', '#86A5C3', '#0CA3C7', '#6DAEB3', '#26919C'],
+                    ['#BFC3C2', '#8AB0CD', '#7CAEC3', '#6C8897', '#429DA7'],
+                    ['#CDDFF2', '#B1BFE2', '#9DBFD3', '#B4D1D6', '#5E7485'],
+                    ['#CCE3F9', '#9FA9C5', '#87CDF0', '#95AAB1', '#5068CB'],
+                    ['#BBDCFE', '#A5C1E4', '#88C2F1', '#82A3C3', '#6385A8'],
+                    ['#C5D2E2', '#9DC1D2', '#7B98A0', '#408ABF', '#0ED1EA'],
+                    ['#DCEAFE', '#97BAEB', '#86BEE4', '#69ADF2', '#7499B8'],
+                    ['#A0C8E8', '#0A99F8', '#079EB3', '#1E7AA8', '#0675C3'],
+                    ['#A7DAFA', '#85D2FA', '#96C6FB', '#2F81ED', '#2E5B8D']
+                ]
+            }
         ];
 
         function countPhotos(gallery) {
@@ -744,7 +786,16 @@
                 c.appendChild(d);
             }
             document.querySelectorAll('#' + id + ' .photo-placeholder').forEach(el => galleryObserver.observe(el));
+            renderPantoneColors(gallery, page);
             renderPagination(gallery, total, page);
+        }
+        function renderPantoneColors(gallery, page) {
+            for (i = 1; i < 6; i++) {
+                const paletteSwatch = document.getElementById('palette-swatch-' + gallery + '-' + i);
+                if (paletteSwatch) {
+                    paletteSwatch.style.background = pantone_colors.find(obj => gallery in obj)[gallery][page][i-1];
+                }
+            }
         }
         function renderPagination(gallery, total, page) {
             const pg = gallery === 'bw' ? page_size_bw : page_size;
