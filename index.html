@@ -29,11 +29,11 @@
         <a href="#galeria-gris" class="menu-link" data-hcolor="#6B6864" onclick="closeMenu()">gris</a>
         <a href="#galeria-multicolor" class="menu-link" data-hcolor="#7B69B1" onclick="closeMenu()">multicolor</a>
         <a href="#galeria-bw" class="menu-link" data-hcolor="#000" onclick="closeMenu();openBW();return false;">blanco/negro</a>
-        <a href="#bio" class="menu-link" data-hcolor="rgba(255,255,255,.9)" onclick="closeMenu()">Sobre mí</a>
-        <a href="#contacto" class="menu-link" data-hcolor="rgba(255,255,255,.9)" onclick="closeMenu()">CONTACTO</a>
         <div class="menu-contact">
-            <a href="mailto:sandrasanati@gmail.com">sandrasanati@gmail.com</a>
-            <a href="https://www.instagram.com/sandraschezz/" target="_blank" rel="noopener">@sandraschezz</a>
+            <a href="#bio" class="menu-link" data-hcolor="rgba(255,255,255,.9)" onclick="closeMenu()">Sobre mí</a>
+            <a href="#contacto" class="menu-link" data-hcolor="rgba(255,255,255,.9)" onclick="closeMenu()">CONTACTO</a>
+            <a href="mailto:sandrasanati@gmail.com" style="line-height: 2.2; margin-top: 15px;">sandrasanati@gmail.com</a>
+            <a href="https://www.instagram.com/sandraschezz/" target="_blank" rel="noopener" style="line-height: 2.2;">@sandraschezz</a>
         </div>
     </div>
     <div class="overlay" id="overlay" onclick="closeMenu()"></div>
@@ -50,7 +50,6 @@
                 </a>
                 <a href="#galeria-rosa" class="color-key-item" data-gallery="rosa" data-color="var(--rosa)">
                     <span class="color-dot dot-rosa"></span>
-                    <!-- <span>azul</span> -->
                 </a>
                 <a href="#galeria-verde" class="color-key-item" data-gallery="verde" data-color="var(--verde)">
                     <span class="color-dot dot-verde"></span>
@@ -87,11 +86,11 @@
     <section class="gallery-section" id="galeria-amarillo">
         <div class="gallery-header">
             <div class="palette-circles">
-                <div class="palette-swatch" style="background: #F7E289;"></div>
-                <div class="palette-swatch" style="background: #FCCF72;"></div>
-                <div class="palette-swatch" style="background: #F3BD36;"></div>
-                <div class="palette-swatch" style="background: #E5C39C;"></div>
-                <div class="palette-swatch" style="background: #CEAC7A;"></div>
+                <div class="palette-swatch" id="palette-swatch-amarillo-1"></div>
+                <div class="palette-swatch" id="palette-swatch-amarillo-2"></div>
+                <div class="palette-swatch" id="palette-swatch-amarillo-3"></div>
+                <div class="palette-swatch" id="palette-swatch-amarillo-4"></div>
+                <div class="palette-swatch" id="palette-swatch-amarillo-5"></div>
             </div>
         </div>
         <div class="photo-grid" id="grid-amarillo"></div>
@@ -113,11 +112,11 @@
     <section class="gallery-section" id="galeria-verde">
         <div class="gallery-header">
             <div class="palette-circles">
-                <div class="palette-swatch" style="background: #B8CA6D;"></div>
-                <div class="palette-swatch" style="background: #A3C26E;"></div>
-                <div class="palette-swatch" style="background: #9BC644;"></div>
-                <div class="palette-swatch" style="background: #9DB242;"></div>
-                <div class="palette-swatch" style="background: #6A8A2C;"></div>
+                <div class="palette-swatch" id="palette-swatch-verde-1"></div>
+                <div class="palette-swatch" id="palette-swatch-verde-2"></div>
+                <div class="palette-swatch" id="palette-swatch-verde-3"></div>
+                <div class="palette-swatch" id="palette-swatch-verde-4"></div>
+                <div class="palette-swatch" id="palette-swatch-verde-5"></div>
             </div>
         </div>
         <div class="photo-grid" id="grid-verde"></div>
@@ -126,11 +125,11 @@
     <section class="gallery-section" id="galeria-rojonaranja">
         <div class="gallery-header">
             <div class="palette-circles">
-                <div class="palette-swatch" style="background: #E6A774;"></div>
-                <div class="palette-swatch" style="background: #F39A3A;"></div>
-                <div class="palette-swatch" style="background: #A65619;"></div>
-                <div class="palette-swatch" style="background: #74322D;"></div>
-                <div class="palette-swatch" style="background: #4F1105;"></div>
+                <div class="palette-swatch" id="palette-swatch-rojonaranja-1"></div>
+                <div class="palette-swatch" id="palette-swatch-rojonaranja-2"></div>
+                <div class="palette-swatch" id="palette-swatch-rojonaranja-3"></div>
+                <div class="palette-swatch" id="palette-swatch-rojonaranja-4"></div>
+                <div class="palette-swatch" id="palette-swatch-rojonaranja-5"></div>
             </div>
         </div>
         <div class="photo-grid" id="grid-rojonaranja"></div>
@@ -139,11 +138,11 @@
     <section class="gallery-section" id="galeria-gris">
         <div class="gallery-header">
             <div class="palette-circles">
-                <div class="palette-swatch" style="background: #FFFFFF;"></div>
-                <div class="palette-swatch" style="background: #C8CBC5;"></div>
-                <div class="palette-swatch" style="background: #ADADAB;"></div>
-                <div class="palette-swatch" style="background: #929594;"></div>
-                <div class="palette-swatch" style="background: #000000;"></div>
+                <div class="palette-swatch" id="palette-swatch-gris-1"></div>
+                <div class="palette-swatch" id="palette-swatch-gris-2"></div>
+                <div class="palette-swatch" id="palette-swatch-gris-3"></div>
+                <div class="palette-swatch" id="palette-swatch-gris-4"></div>
+                <div class="palette-swatch" id="palette-swatch-gris-5"></div>
             </div>
         </div>
         <div class="photo-grid" id="grid-gris"></div>
@@ -152,11 +151,11 @@
     <section class="gallery-section" id="galeria-multicolor">
         <div class="gallery-header">
             <div class="palette-circles">
-                <div class="palette-swatch" style="background: #FFFFFF;"></div>
-                <div class="palette-swatch" style="background: #C8CBC5;"></div>
-                <div class="palette-swatch" style="background: #ADADAB;"></div>
-                <div class="palette-swatch" style="background: #929594;"></div>
-                <div class="palette-swatch" style="background: #000000;"></div>
+                <div class="palette-swatch" id="palette-swatch-multicolor-1"></div>
+                <div class="palette-swatch" id="palette-swatch-multicolor-2"></div>
+                <div class="palette-swatch" id="palette-swatch-multicolor-3"></div>
+                <div class="palette-swatch" id="palette-swatch-multicolor-4"></div>
+                <div class="palette-swatch" id="palette-swatch-multicolor-5"></div>
             </div>
         </div>
         <div class="photo-grid" id="grid-multicolor"></div>
@@ -164,17 +163,17 @@
     </section>
     <section id="bio">
         <div class="bio-inner">
-            <div>
-            <p class="bio-tag">sobre mí</p>
-            <h2 class="bio-name">Sandra Sánchez Atienza</h2>
-            <div class="bio-text">
-                <p>Fotógrafa con una curiosidad incansable.</p>
-                <p>Si hay algo que me apasiona, son las personas y los colores. Ahí está la vida.</p>
-                <p>Es por eso que celebro lo ordinario como si fuera extraordinario, porque lo es.</p>
-                <p>Disponible en cualquier lugar.</p>
+            <div class="bio-left">
+                <p class="bio-tag">sobre mí</p>
+                <h2 class="bio-name">Sandra Sánchez Atienza</h2>
+                <div class="bio-text">
+                    <p>Fotógrafa con una curiosidad incansable.</p>
+                    <p>Si hay algo que me apasiona, son las personas y los colores. Ahí está la vida.</p>
+                    <p>Es por eso que celebro lo ordinario como si fuera extraordinario, porque lo es.</p>
+                    <p>Disponible en cualquier lugar.</p>
+                </div>
             </div>
-            </div>
-            <div class="bio-photo-space"></div>
+            <div class="bio-photo-space" onclick="openImg('./img/bio.jpg')"></div>
         </div>
     </section>
     <section id="contacto">
@@ -199,15 +198,15 @@
                     <div class="contact-form-card-label">Email</div>
                     <input type="text" id="cf-email" name="email" placeholder="Ej. nombre@gmail.com" required>
                     <div class="contact-form-card-label">Deja un mensaje</div>
-                    <textarea id="cf-mensaje" name="message" rows="5"></textarea>
+                    <textarea id="cf-mensaje" name="message" rows="3"></textarea>
                     <button type="submit" class="contact-submit">Contactar</button>
                 </form>
             </div>
         </div>
     </section>
     <section id="footer">
-        <div class="footer-note">Nunca dejaré de celebrarlo<br/>
-        <a href="https://example.com">Photographies</a> © 2026 by <a href="https://example.com">Sandra Sánchez Atienza</a> is licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a><img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/nd.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"></div>
+        <div class="footer-note"><span style="opacity: .35;">Nu</span>n<span style="opacity: .35;">ca d</span>e<span style="opacity: .35;">jaré </span>d<span style="opacity: .35;">e </span>c<span style="opacity: .35;">ele</span>b<span style="opacity: .35;">r</span>a<span style="opacity: .35;">rl</span>o</div>
+        <div class="footer-copyright">Photographies © 2026 by Sandra Sánchez Atienza is licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a><img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/nd.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"></div>
     </section>
     <div class="lightbox" id="lightbox">
         <button class="lightbox-close" onclick="closeLightbox()">×</button>
@@ -249,7 +248,7 @@
             {ch: 'R', type: 'rojonaranja', link: 'galeria-rojonaranja'},
             {ch: 'É', type: 'regular'},
             {ch: ' '},
-            {ch: 'D', type: 'regular'},
+            {ch: 'D', type: 'gris'},
             {ch: 'E', type: 'regular'}
         ];
         const row2Def = [
@@ -262,7 +261,7 @@
             {ch: 'A', type: 'amarillo', link: 'galeria-amarillo'},
             {ch: 'R', type: 'regular'},
             {ch: 'L', type: 'regular'},
-            {ch: 'O', type: 'regular'}
+            {ch: 'O', type: 'multicolor'}
         ];
 
         function getScale() {
@@ -324,7 +323,7 @@
         buildTitles();
 
         // COLOR KEY → letter color change
-        const colorMap = {azul: '#5BBFBF', amarillo: '#E8C85A', rosa: '#E8A4B8', verde: '#B8CA6D', rojonaranja: '#E6A774', bw:'#1C1C1A'};
+        const colorMap = {azul: '#5BBFBF', amarillo: '#E8C85A', rosa: '#E8A4B8', verde: '#B8CA6D', rojonaranja: '#E6A774', bw:'#1C1C1A', multicolor: '#7B69B1', gris: '#545454'};
         document.querySelectorAll('.color-key-item[data-gallery]').forEach(item => {
             const gallery = item.getAttribute('data-gallery');
             const col = colorMap[gallery];
@@ -719,23 +718,17 @@
             {
                 'rosa': [
                     ['#F3C4CA', '#DEAFBD', '#FD9FA3', '#E6A3E1', '#EF2C83'],
-                    ['#BFDCED', '#78AECD', '#4094AF', '#0A80A9', '#045884'],
-                    ['#A2B0C1', '#86A5C3', '#0CA3C7', '#6DAEB3', '#26919C'],
-                    ['#BFC3C2', '#8AB0CD', '#7CAEC3', '#6C8897', '#429DA7'],
-                    ['#CDDFF2', '#B1BFE2', '#9DBFD3', '#B4D1D6', '#5E7485'],
-                    ['#CCE3F9', '#9FA9C5', '#87CDF0', '#95AAB1', '#5068CB'],
-                    ['#BBDCFE', '#A5C1E4', '#88C2F1', '#82A3C3', '#6385A8'],
-                    ['#C5D2E2', '#9DC1D2', '#7B98A0', '#408ABF', '#0ED1EA'],
-                    ['#DCEAFE', '#97BAEB', '#86BEE4', '#69ADF2', '#7499B8'],
-                    ['#A0C8E8', '#0A99F8', '#079EB3', '#1E7AA8', '#0675C3'],
-                    ['#A7DAFA', '#85D2FA', '#96C6FB', '#2F81ED', '#2E5B8D']
-                ]
-            }, {
+                    ['#EFD0DA', '#F2B8CB', '#E7B8B1', '#F990B4', '#CE89C6'],
+                    ['#E8C2CE', '#BAA2AB', '#DEA19C', '#FDB19B', '#AE6161'],
+                    ['#D4ACB2', '#DA9790', '#F892AB', '#F06981', '#AE887B'],
+                    ['#DDBDC7', '#CC8B85', '#E66855', '#B19BCE', '#E73697']
+                ],
                 'azul': [
                     ['#DCEBEB', '#CCDEF6', '#B2CFF0', '#91C0F4', '#589ECB'],
                     ['#BFDCED', '#78AECD', '#4094AF', '#0A80A9', '#045884'],
                     ['#A2B0C1', '#86A5C3', '#0CA3C7', '#6DAEB3', '#26919C'],
                     ['#BFC3C2', '#8AB0CD', '#7CAEC3', '#6C8897', '#429DA7'],
+                    ['#ADE9FE', '#B5CACA', '#86A3B6', '#7095C5', '#889B9D'],
                     ['#CDDFF2', '#B1BFE2', '#9DBFD3', '#B4D1D6', '#5E7485'],
                     ['#CCE3F9', '#9FA9C5', '#87CDF0', '#95AAB1', '#5068CB'],
                     ['#BBDCFE', '#A5C1E4', '#88C2F1', '#82A3C3', '#6385A8'],
@@ -743,20 +736,44 @@
                     ['#DCEAFE', '#97BAEB', '#86BEE4', '#69ADF2', '#7499B8'],
                     ['#A0C8E8', '#0A99F8', '#079EB3', '#1E7AA8', '#0675C3'],
                     ['#A7DAFA', '#85D2FA', '#96C6FB', '#2F81ED', '#2E5B8D']
-                ]
-            }, {
+                ],
                 'amarillo': [
-                    ['#DCEBEB', '#CCDEF6', '#B2CFF0', '#91C0F4', '#589ECB'],
-                    ['#BFDCED', '#78AECD', '#4094AF', '#0A80A9', '#045884'],
-                    ['#A2B0C1', '#86A5C3', '#0CA3C7', '#6DAEB3', '#26919C'],
-                    ['#BFC3C2', '#8AB0CD', '#7CAEC3', '#6C8897', '#429DA7'],
-                    ['#CDDFF2', '#B1BFE2', '#9DBFD3', '#B4D1D6', '#5E7485'],
-                    ['#CCE3F9', '#9FA9C5', '#87CDF0', '#95AAB1', '#5068CB'],
-                    ['#BBDCFE', '#A5C1E4', '#88C2F1', '#82A3C3', '#6385A8'],
-                    ['#C5D2E2', '#9DC1D2', '#7B98A0', '#408ABF', '#0ED1EA'],
-                    ['#DCEAFE', '#97BAEB', '#86BEE4', '#69ADF2', '#7499B8'],
-                    ['#A0C8E8', '#0A99F8', '#079EB3', '#1E7AA8', '#0675C3'],
-                    ['#A7DAFA', '#85D2FA', '#96C6FB', '#2F81ED', '#2E5B8D']
+                    ['#F7E289', '#FCCF72', '#F3BD36', '#E5C39C', '#CEAC7A'],
+                    ['#D1B182', '#EDA367', '#FECC31', '#D0A101', '#CE8D12'],
+                    ['#FBF0A4', '#EEE17B', '#EACA9A', '#DBB98D', '#F7B217'],
+                    ['#F4ECC1', '#D7B19E', '#FCBC12', '#E2C908', '#FEC448'],
+                    ['#F2DFC0', '#F5D8A5', '#E3BE9F', '#D3D37D', '#DBBC6A'],
+                    ['#FDEBA7', '#FDB96D', '#CEA263', '#C8A141', '#FEE011'],
+                    ['#FFFEBB', '#EEE4D1', '#E2D8BE', '#E2CFAF', '#BEB47A']
+                ],
+                'verde': [
+                    ['#B8CA6D', '#A3C26E', '#9BC644', '#9DB242', '#6A8A2C'],
+                    ['#D1CC96', '#78B818', '#4D845D', '#4E651C', '#4E651C'],
+                    ['#A7BE92', '#88AA66', '#9DBF31', '#2E8019', '#214821'],
+                    ['#A5B297', '#BECD56', '#6A752D', '#36794E', '#244B08'],
+                    ['#E3E871', '#99995A', '#7F9D43', '#529704', '#2C4F2B'],
+                    ['#DCD7A1', '#C1BC71', '#7B8D2A', '#44693E', '#4F531A'],
+                    ['#C2CB65', '#ACBA6B', '#8CA44A', '#697C44', '#414B29'],
+                    ['#B5C85F', '#9BB53C', '#6C8E38', '#617412', '#2B511C'],
+                    ['#A4A852', '#ABA51D', '#79640A', '#1D4D04', '#363F1E'],
+                    ['#BEE015', '#768863', '#5F6F44', '#588A1B', '#2F540C']
+                ],
+                'rojonaranja': [
+                    ['#E6A774', '#F39A3A', '#A65619', '#74322D', '#4F1105'],
+                    ['#C5917B', '#E37E31', '#C95B1C', '#DF494D', '#753432'],
+                    ['#AA6623', '#CE4E05', '#C91C0A', '#FF2303', '#661C03'],
+                    ['#AC8567', '#C67234', '#A82648', '#C20504', '#482024']
+                ],
+                'gris': [
+                    ['#FFF', '#C8CBC5', '#ADADAB', '#929594', '#000'],
+                    ['#C5C5C3', '#B4B5BA', '#8D8D91', '#CDCDCD', '#000']
+                ],
+                'multicolor': [
+                    ['#DA820D', '#E53C66', '#8AA9D8', '#FBBF1E', '#A9C327'],
+                    ['#A9CEF4', '#D0A972', '#FE2E7A', '#A62411', '#516073'],
+                    ['#161116', '#66A9EC', '#BE080A', '#9374BE', '#90A854'],
+                    ['#C38990', '#F5D70C', '#92CEC7', '#8BA297', '#DB2D65'],
+                    ['#F1AABE', '#BCCB75', '#428DCC', '#2F5E6E', '#374F1E']
                 ]
             }
         ];
@@ -844,31 +861,6 @@
         buildGrid('grid-rojonaranja', countPhotos('rojonaranja'), 'rojonaranja', 0);
         buildGrid('grid-gris', countPhotos('gris'), 'gris', 0);
         buildGrid('grid-multicolor', countPhotos('multicolor'), 'multicolor', 0);
-
-        // ── Galería del overlay de BW ──
-        // function buildBwCelebrateGrid() {
-        //     const total = countPhotos('gris');
-        //     const c = document.getElementById('grid-bw');
-        //     c.innerHTML = '';
-        //     for (let i = 0; i < total; i++) {
-        //         const d = document.createElement('div');
-        //         d.className = 'photo-placeholder';
-        //         d.style.animationDelay = (i * 120) + 'ms';
-        //         d.classList.add('revealed');
-        //         const inner = document.createElement('div');
-        //         inner.className = 'photo-inner';
-        //         const img = document.createElement('img');
-        //         img.src = photos['gris_' + i];
-        //         img.alt = 'fotografía';
-        //         img.loading = 'lazy';
-        //         inner.appendChild(img);
-        //         d.appendChild(inner);
-        //         d.addEventListener('click', () => openImg(img.src));
-        //         c.appendChild(d);
-        //     }
-        // }
-        // buildBwCelebrateGrid();
-
 
         function openImg(src) {
             cursor.style.border = '1.5px solid white';

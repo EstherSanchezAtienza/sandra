@@ -37,12 +37,12 @@
   --rosa: #E8A4B8;
   --azul: #5BBFBF;
   --amarillo: #E8C85A;
-  --verde: #B8CA6D;
+  --verde: #9DBF31;
   --rojonaranja: #E6A774;
   --violeta: #BE90DF;
   --rojo: #E28378;
-  --multicolor: #1C1C1A;
-  --gris: #90908A;
+  --multicolor: #7B69B1;
+  --gris: #545454;
   --bw: #1C1C1A;
 }
 
@@ -168,7 +168,7 @@ nav {
   position: fixed;
   top: 0;
   right: -100%;
-  width: 260px;
+  width: 280px;
   height: 100vh;
   background: var(--azul);
   z-index: 199;
@@ -181,10 +181,11 @@ nav {
   right: 0;
 }
 .menu-link {
+  font-family: PacoFont, 'Quicksand', sans-serif;
   display: block;
   font-weight: 200;
   font-size: 18px;
-  color: rgba(255, 255, 255, .4);
+  color: rgba(255, 255, 255, .65);
   text-decoration: none;
   padding: 8px 0;
   letter-spacing: .08em;
@@ -200,8 +201,7 @@ nav {
   margin-top: auto;
   font-family: 'Quicksand';
   font-size: 15px;
-  color: rgba(255, 255, 255, .45);
-  line-height: 2.2;
+  color: rgba(255, 255, 255, .65);
   letter-spacing: .07em;
 }
 .menu-contact a {
@@ -286,6 +286,9 @@ nav {
 }
 .letter-bw {
   color: var(--bw);
+}
+.letter-multicolor {
+  color: var(--multicolor);
 }
 .color-key {
   display: flex;
@@ -673,17 +676,20 @@ body.bw .lightbox {
 
 /* SOBRE MI */
 #bio {
-  padding: 110px 40px;
+  padding: 90px 40px;
   background: var(--cream);
   display: flex;
   justify-content: center;
 }
 .bio-inner {
-  max-width: 800px;
+  max-width: 1000px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 56px;
+  gap: 80px;
   align-items: start;
+}
+.bio-left {
+  min-width: 280px;
 }
 .bio-tag {
   font-size: 15px;
@@ -713,7 +719,8 @@ body.bw .lightbox {
 .bio-photo-space {
   aspect-ratio: 1/1;
   width: 100%;
-  max-width: 380px;
+  min-width: 300px;
+  max-width: 420px;
   background-image: url(../img/bio.JPG);
   background-size: cover;
   background-position: center;
@@ -728,17 +735,17 @@ body.bw .lightbox {
 
 /* CONTACTO */
 #contacto {
-  padding: 110px 40px 140px;
+  padding: 90px 40px;
   background: var(--azul);
+  display: flex;
+  justify-content: center;
 }
 .contact-inner {
   max-width: 1100px;
-  margin: 0 auto;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 80px;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  justify-content: space-between;
+  align-items: start;
 }
 .contact-left {
   flex: 1;
@@ -752,6 +759,7 @@ body.bw .lightbox {
   display: flex;
   gap: 28px;
   align-items: baseline;
+  justify-content: space-between;
   margin-bottom: 10px;
   flex-wrap: wrap;
 }
@@ -783,7 +791,7 @@ body.bw .lightbox {
   font-weight: 100;
   font-size: clamp(46px, 7vw, 84px);
   letter-spacing: .12em;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   color: white;
   opacity: .8;
   margin-top: 56px;
@@ -853,17 +861,29 @@ body.bw .lightbox {
 
 /* FOOTER */
 #footer {
-  display: flex;
-  justify-content: center;
-  padding: 90px 40px 90px;
+  padding: 30px 40px 20px;
   background: var(--ink);
+  display: grid;
+  justify-content: center;
+  text-align: center;
 }
 .footer-note {
   font-size: 15px;
-  font-weight: 900;
-  letter-spacing: .2em;
+  font-weight: 100;
+  letter-spacing: .4em;
   text-transform: uppercase;
-  color: var(--cream)
+  color: white;
+}
+.footer-copyright {
+  margin-top: 30px;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 10px;
+  color: white;
+}
+.footer-copyright a {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 10px;
+  color: white;
 }
 
 
