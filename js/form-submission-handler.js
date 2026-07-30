@@ -59,17 +59,6 @@
     xhr.onreadystatechange = function() {
         if (xhr.readyState === 4 && xhr.status === 200) {
           form.reset();
-          var formElements = form.querySelector(".form")
-          if (formElements) {
-            formElements.style.display = "none"; // hide form
-          }
-          var gracias = form.querySelector(".gracias");
-          var losiento = form.querySelector(".losiento");
-          if (formData.data["¿ASISTENCIA?"] === "SI") {
-            gracias.style.display = "block";
-          } else {
-            losiento.style.display = "block";
-          }
         }
     };
     // url encode form data for sending as post data

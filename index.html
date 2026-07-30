@@ -14,11 +14,19 @@
     <canvas id="rainbow"></canvas>
     <nav>
         <div id="nddc" class="nddc">NDDC</div>
-        <button class="nav-menu-btn" id="navMenuBtn" aria-label="Menú">
-            <div class="menu-circle">
-                <div class="menu-circle-dot"></div>
-            </div>
-        </button>
+        <div style="display: flex;">
+            <button class="nav-close" id="closeBw" aria-label="CloseBW" onclick="closeBW()">
+                <img 
+                    alt="Cerrar"
+                    src="./img/close.svg"
+                    style="width: 50px;"/>
+            </button>
+            <button class="nav-menu-btn" id="navMenuBtn" aria-label="Menú">
+                <div class="menu-circle">
+                    <div class="menu-circle-dot"></div>
+                </div>
+            </button>
+        </div>
     </nav>
     <div class="side-menu" id="sideMenu">
         <a href="#galeria-azul" class="menu-link" data-hcolor="#1E7AA8" onclick="closeMenu()">azul</a>
@@ -73,11 +81,11 @@
     <section class="gallery-section" id="galeria-azul">
         <div class="gallery-header">
             <div class="palette-circles">
-                <div class="palette-swatch" id="palette-swatch-azul-1"></div>
-                <div class="palette-swatch" id="palette-swatch-azul-2"></div>
-                <div class="palette-swatch" id="palette-swatch-azul-3"></div>
-                <div class="palette-swatch" id="palette-swatch-azul-4"></div>
-                <div class="palette-swatch" id="palette-swatch-azul-5"></div>
+                <div class="palette-swatch-azul" id="palette-swatch-azul-1"></div>
+                <div class="palette-swatch-azul" id="palette-swatch-azul-2"></div>
+                <div class="palette-swatch-azul" id="palette-swatch-azul-3"></div>
+                <div class="palette-swatch-azul" id="palette-swatch-azul-4"></div>
+                <div class="palette-swatch-azul" id="palette-swatch-azul-5"></div>
             </div>
         </div>
         <div class="photo-grid" id="grid-azul"></div>
@@ -86,11 +94,11 @@
     <section class="gallery-section" id="galeria-amarillo">
         <div class="gallery-header">
             <div class="palette-circles">
-                <div class="palette-swatch" id="palette-swatch-amarillo-1"></div>
-                <div class="palette-swatch" id="palette-swatch-amarillo-2"></div>
-                <div class="palette-swatch" id="palette-swatch-amarillo-3"></div>
-                <div class="palette-swatch" id="palette-swatch-amarillo-4"></div>
-                <div class="palette-swatch" id="palette-swatch-amarillo-5"></div>
+                <div class="palette-swatch-amarillo" id="palette-swatch-amarillo-1"></div>
+                <div class="palette-swatch-amarillo" id="palette-swatch-amarillo-2"></div>
+                <div class="palette-swatch-amarillo" id="palette-swatch-amarillo-3"></div>
+                <div class="palette-swatch-amarillo" id="palette-swatch-amarillo-4"></div>
+                <div class="palette-swatch-amarillo" id="palette-swatch-amarillo-5"></div>
             </div>
         </div>
         <div class="photo-grid" id="grid-amarillo"></div>
@@ -99,11 +107,11 @@
     <section class="gallery-section" id="galeria-rosa">
         <div class="gallery-header">
             <div class="palette-circles">
-                <div class="palette-swatch" id="palette-swatch-rosa-1"></div>
-                <div class="palette-swatch" id="palette-swatch-rosa-2"></div>
-                <div class="palette-swatch" id="palette-swatch-rosa-3"></div>
-                <div class="palette-swatch" id="palette-swatch-rosa-4"></div>
-                <div class="palette-swatch" id="palette-swatch-rosa-5"></div>
+                <div class="palette-swatch-rosa" id="palette-swatch-rosa-1"></div>
+                <div class="palette-swatch-rosa" id="palette-swatch-rosa-2"></div>
+                <div class="palette-swatch-rosa" id="palette-swatch-rosa-3"></div>
+                <div class="palette-swatch-rosa" id="palette-swatch-rosa-4"></div>
+                <div class="palette-swatch-rosa" id="palette-swatch-rosa-5"></div>
             </div>
         </div>
         <div class="photo-grid" id="grid-rosa"></div>
@@ -112,11 +120,11 @@
     <section class="gallery-section" id="galeria-verde">
         <div class="gallery-header">
             <div class="palette-circles">
-                <div class="palette-swatch" id="palette-swatch-verde-1"></div>
-                <div class="palette-swatch" id="palette-swatch-verde-2"></div>
-                <div class="palette-swatch" id="palette-swatch-verde-3"></div>
-                <div class="palette-swatch" id="palette-swatch-verde-4"></div>
-                <div class="palette-swatch" id="palette-swatch-verde-5"></div>
+                <div class="palette-swatch-verde" id="palette-swatch-verde-1"></div>
+                <div class="palette-swatch-verde" id="palette-swatch-verde-2"></div>
+                <div class="palette-swatch-verde" id="palette-swatch-verde-3"></div>
+                <div class="palette-swatch-verde" id="palette-swatch-verde-4"></div>
+                <div class="palette-swatch-verde" id="palette-swatch-verde-5"></div>
             </div>
         </div>
         <div class="photo-grid" id="grid-verde"></div>
@@ -125,11 +133,11 @@
     <section class="gallery-section" id="galeria-rojonaranja">
         <div class="gallery-header">
             <div class="palette-circles">
-                <div class="palette-swatch" id="palette-swatch-rojonaranja-1"></div>
-                <div class="palette-swatch" id="palette-swatch-rojonaranja-2"></div>
-                <div class="palette-swatch" id="palette-swatch-rojonaranja-3"></div>
-                <div class="palette-swatch" id="palette-swatch-rojonaranja-4"></div>
-                <div class="palette-swatch" id="palette-swatch-rojonaranja-5"></div>
+                <div class="palette-swatch-rojonaranja" id="palette-swatch-rojonaranja-1"></div>
+                <div class="palette-swatch-rojonaranja" id="palette-swatch-rojonaranja-2"></div>
+                <div class="palette-swatch-rojonaranja" id="palette-swatch-rojonaranja-3"></div>
+                <div class="palette-swatch-rojonaranja" id="palette-swatch-rojonaranja-4"></div>
+                <div class="palette-swatch-rojonaranja" id="palette-swatch-rojonaranja-5"></div>
             </div>
         </div>
         <div class="photo-grid" id="grid-rojonaranja"></div>
@@ -138,11 +146,11 @@
     <section class="gallery-section" id="galeria-gris">
         <div class="gallery-header">
             <div class="palette-circles">
-                <div class="palette-swatch" id="palette-swatch-gris-1"></div>
-                <div class="palette-swatch" id="palette-swatch-gris-2"></div>
-                <div class="palette-swatch" id="palette-swatch-gris-3"></div>
-                <div class="palette-swatch" id="palette-swatch-gris-4"></div>
-                <div class="palette-swatch" id="palette-swatch-gris-5"></div>
+                <div class="palette-swatch-gris" id="palette-swatch-gris-1"></div>
+                <div class="palette-swatch-gris" id="palette-swatch-gris-2"></div>
+                <div class="palette-swatch-gris" id="palette-swatch-gris-3"></div>
+                <div class="palette-swatch-gris" id="palette-swatch-gris-4"></div>
+                <div class="palette-swatch-gris" id="palette-swatch-gris-5"></div>
             </div>
         </div>
         <div class="photo-grid" id="grid-gris"></div>
@@ -151,11 +159,11 @@
     <section class="gallery-section" id="galeria-multicolor">
         <div class="gallery-header">
             <div class="palette-circles">
-                <div class="palette-swatch" id="palette-swatch-multicolor-1"></div>
-                <div class="palette-swatch" id="palette-swatch-multicolor-2"></div>
-                <div class="palette-swatch" id="palette-swatch-multicolor-3"></div>
-                <div class="palette-swatch" id="palette-swatch-multicolor-4"></div>
-                <div class="palette-swatch" id="palette-swatch-multicolor-5"></div>
+                <div class="palette-swatch-multicolor" id="palette-swatch-multicolor-1"></div>
+                <div class="palette-swatch-multicolor" id="palette-swatch-multicolor-2"></div>
+                <div class="palette-swatch-multicolor" id="palette-swatch-multicolor-3"></div>
+                <div class="palette-swatch-multicolor" id="palette-swatch-multicolor-4"></div>
+                <div class="palette-swatch-multicolor" id="palette-swatch-multicolor-5"></div>
             </div>
         </div>
         <div class="photo-grid" id="grid-multicolor"></div>
@@ -192,13 +200,13 @@
                 <h2 class="contact-title">Hablemos</h2>
             </div>
             <div class="contact-form-card">
-                <form id="contact-form">
+                <form id="contact-form" method="POST" data-email="sandrasanati@gmail.com">
                     <div class="contact-form-card-label">Nombre y apellidos</div>
-                    <input type="text" id="cf-nombre" name="nombre" placeholder="Ej. Francisco Luis Pastor" required>
+                    <input type="text" id="NOMBRE" name="NOMBRE" placeholder="Ej. Francisco Luis Pastor" required>
                     <div class="contact-form-card-label">Email</div>
-                    <input type="text" id="cf-email" name="email" placeholder="Ej. nombre@gmail.com" required>
+                    <input type="text" id="EMAIL" name="EMAIL" placeholder="Ej. nombre@gmail.com" required>
                     <div class="contact-form-card-label">Deja un mensaje</div>
-                    <textarea id="cf-mensaje" name="message" rows="3"></textarea>
+                    <textarea id="MENSAJE" name="MENSAJE" rows="3"></textarea>
                     <button type="submit" class="contact-submit">Contactar</button>
                 </form>
             </div>
@@ -209,7 +217,12 @@
         <div class="footer-copyright">Photographies © 2026 by Sandra Sánchez Atienza is licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a><img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/nd.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"></div>
     </section>
     <div class="lightbox" id="lightbox">
-        <button class="lightbox-close" onclick="closeLightbox()">×</button>
+        <button class="lightbox-close" onclick="closeLightbox()">
+            <img 
+                alt="Cerrar"
+                src="./img/close.svg"
+                style="width: 50px;"/>
+        </button>
         <img class="lightbox-img" id="lightbox-img" src="" alt="" style="display: none;">
         <div class="lightbox-txt" id="lightbox-txt">tus fotos aquí</div>
     </div>
@@ -248,7 +261,7 @@
             {ch: 'R', type: 'rojonaranja', link: 'galeria-rojonaranja'},
             {ch: 'É', type: 'regular'},
             {ch: ' '},
-            {ch: 'D', type: 'gris'},
+            {ch: 'D', type: 'gris', link: 'galeria-gris'},
             {ch: 'E', type: 'regular'}
         ];
         const row2Def = [
@@ -261,7 +274,7 @@
             {ch: 'A', type: 'amarillo', link: 'galeria-amarillo'},
             {ch: 'R', type: 'regular'},
             {ch: 'L', type: 'regular'},
-            {ch: 'O', type: 'multicolor'}
+            {ch: 'O', type: 'multicolor', link: 'galeria-multicolor'}
         ];
 
         function getScale() {
@@ -353,16 +366,21 @@
             });
         });
 
-        // CLOSE BW
         // OPEN / CLOSE BW
         function openBW() {
             document.body.classList.add('bw');
             document.getElementById('bw-overlay').classList.add('active');
+            document.getElementById('closeBw').classList.add('visible');
             buildGrid('grid-bw', countPhotos('bw'), 'bw', 0);
         }
         function closeBW() {
+            if (document.getElementById('bw-overlay').classList.contains('active')) {
+                document.getElementById('home').classList.remove('bw-hover');
+                document.querySelector('nav').classList.remove('bw-hover');
+                document.getElementById('closeBw').classList.remove('visible');
+                document.getElementById('bw-overlay').classList.remove('active');
+            }
             document.body.classList.remove('bw');
-            document.getElementById('bw-overlay').classList.remove('active');
         }
         // document.getElementById('bw-overlay').addEventListener('click', closeBW);
         // document.addEventListener('keydown', e => {
@@ -386,7 +404,13 @@
         }
         const galleryObserver = new IntersectionObserver(revealItems, {threshold: 0.08, rootMargin: '0px 0px -40px 0px'});
         setTimeout(() => {
-            document.querySelectorAll('.palette-swatch').forEach(el => galleryObserver.observe(el));
+            document.querySelectorAll('.palette-swatch-azul').forEach(el => galleryObserver.observe(el));
+            document.querySelectorAll('.palette-swatch-amarillo').forEach(el => galleryObserver.observe(el));
+            document.querySelectorAll('.palette-swatch-rosa').forEach(el => galleryObserver.observe(el));
+            document.querySelectorAll('.palette-swatch-rojonaranja').forEach(el => galleryObserver.observe(el));
+            document.querySelectorAll('.palette-swatch-verde').forEach(el => galleryObserver.observe(el));
+            document.querySelectorAll('.palette-swatch-gris').forEach(el => galleryObserver.observe(el));
+            document.querySelectorAll('.palette-swatch-multicolor').forEach(el => galleryObserver.observe(el));
         }, 200);
         
         const photos = {
@@ -816,6 +840,9 @@
             }
         }
         function renderPagination(gallery, total, page) {
+            document.querySelectorAll('.palette-swatch-' + gallery).forEach(el => el.classList.remove('revealed'));
+            document.querySelectorAll('.palette-swatch-' + gallery).forEach(el => galleryObserver.observe(el));
+            
             const pg = gallery === 'bw' ? page_size_bw : page_size;
             const pageCount = Math.ceil(total / pg);
             const pagEl = document.getElementById('pag-' + gallery);
@@ -852,7 +879,7 @@
         function goToPage(gallery, page, total) {
             galleryPage[gallery] = page;
             buildGrid('grid-' + gallery, total, gallery, page);
-            document.getElementById('galeria-' + gallery).scrollIntoView({behavior:'smooth', block:'start'});
+            // document.getElementById('galeria-' + gallery).scrollIntoView({behavior:'smooth', block:'start'});
         }
         buildGrid('grid-rosa', countPhotos('rosa'), 'rosa', 0);
         buildGrid('grid-azul', countPhotos('azul'), 'azul', 0);
@@ -963,6 +990,7 @@
             overlay.classList.toggle('active', open);
         });
         function closeMenu() {
+            closeBW();
             sideMenu.classList.remove('open');
             navMenuBtn.classList.remove('open');
             overlay.classList.remove('active');
@@ -974,62 +1002,6 @@
             link.addEventListener('mouseenter', () => {link.style.color = col;});
             link.addEventListener('mouseleave', () => {link.style.color = '';});
         });
-
-
-
-
-
-
-
-        // const portada = document.getElementById("portada");
-        // function showImages() {
-        //     portada.classList.add("fundido");
-        // }
-
-        // const portada = document.getElementById("portada");
-        // const pink = document.getElementById("pink");
-        // const blue = document.getElementById("blue");
-        // const yellow = document.getElementById("yellow");
-        
-        // const imagenes = document.getElementById("imagenes");
-
-        // const fotos = document.querySelectorAll(".imagen");
-        // let actual = 0;
-
-        // portada.addEventListener("animationend", () => {
-        //     imagenes.classList.add("visible");
-        //     fotos.forEach((foto, i) => {
-        //         setTimeout(() => {
-        //             foto.classList.add("mostrar");
-        //         }, i * 800); // Una nueva imagen cada 800 ms
-        //     });
-        // });
-
-        // function changeColor(color) {
-        //     switch(color) {
-        //         case "pink":
-        //             portada.classList.add("changeToPink");
-        //             pink.classList.add("changeToPink");
-        //             blue.classList.add("changeToPink");
-        //             yellow.classList.add("changeToPink");
-        //             break;
-        //         case "blue":
-        //             break;
-        //         case "yellow":
-        //             break;
-        //         default:
-        //             break;
-        //     }
-        // }
-
-
-//         document.getElementById("btn").addEventListener("click", () => {
-//     document.getElementById("texto1").classList.remove("visible");
-//     document.getElementById("texto1").classList.add("oculto");
-
-//     document.getElementById("texto2").classList.remove("oculto");
-//     document.getElementById("texto2").classList.add("visible");
-// });
     </script>
 </body>
 </html>
