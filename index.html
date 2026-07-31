@@ -184,6 +184,24 @@
             <div class="bio-photo-space" onclick="openImg('./img/bio.jpg')"></div>
         </div>
     </section>
+    <section id="empresas">
+        <p class="empresas-tag">Ellos ya confían</p>
+        <div class="track" id="track">
+            <img src="./img/logos/arthink.png">
+            <img src="./img/logos/community-council.png">
+            <img src="./img/logos/decelera.png">
+            <img src="./img/logos/el-confidencial.png">
+            <img src="./img/logos/el-español.png">
+            <img src="./img/logos/forbes.png">
+            <img src="./img/logos/galeria.png">
+            <img src="./img/logos/iki.png">
+            <img src="./img/logos/macc.png">
+            <img src="./img/logos/memorable.png">
+            <img src="./img/logos/menorca-diario.png">
+            <img src="./img/logos/metrica.png">
+            <img src="./img/logos/raices.png">
+        </div>
+    </section>
     <section id="contacto">
         <div class="contact-inner">
             <div class="contact-left">
@@ -1002,6 +1020,23 @@
             link.addEventListener('mouseenter', () => {link.style.color = col;});
             link.addEventListener('mouseleave', () => {link.style.color = '';});
         });
+
+        // EMPRESAS
+        const track = document.getElementById('track');
+        track.innerHTML += track.innerHTML;
+        track.innerHTML += track.innerHTML;
+
+        let pos = 0;
+        const velocidad = 1;
+        function animar() {
+            pos += velocidad;
+            if (pos >= track.scrollWidth / 4) {
+                pos = 0;
+            }
+            track.style.transform = `translateX(-${pos}px)`;
+            requestAnimationFrame(animar);
+        }
+        animar();
     </script>
 </body>
 </html>

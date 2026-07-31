@@ -836,6 +836,32 @@ body.bw .lightbox {
   text-transform: uppercase;
 }
 
+/* EMPRESAS */
+#empresas {
+  padding: 20px 20px;
+  background: var(--gris);
+}
+.empresas-tag {
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: .05rem;
+  text-transform: uppercase;
+  color: var(--cream);
+  display: flex;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+.track {
+  display: flex;
+  width: max-content;
+}
+.track img {
+  width: 100px;
+  height: 100px;
+  /* object-fit: cover; */
+  margin-right: 50px;
+}
+
 /* CONTACTO */
 #contacto {
   padding: 90px 40px;
@@ -1034,7 +1060,6 @@ body.bw .lightbox {
   letter-spacing: .1em;
   text-transform: uppercase;
 }
-
 
 
 /* ANIMATION */
