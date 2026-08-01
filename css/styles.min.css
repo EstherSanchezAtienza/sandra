@@ -43,7 +43,7 @@
   --rojo: #E28378;
   --multicolor: #7B69B1;
   --gris: #545454;
-  --bw: #1C1C1A;
+  --blanconegro: #1C1C1A;
 }
 
 html {
@@ -301,8 +301,8 @@ nav {
 .letter-gris {
   color: var(--gris);
 }
-.letter-bw {
-  color: var(--bw);
+.letter-blanconegro {
+  color: var(--blanconegro);
 }
 .letter-multicolor {
   color: var(--multicolor);
@@ -367,8 +367,8 @@ nav {
     var(--rojonaranja) 74% 86%, 
     var(--rojo) 86% 100%);
 }
-.dot-bw {
-  background: var(--bw);
+.dot-blanconegro {
+  background: var(--blanconegro);
 }
 .scroll-hint {
   position: absolute;
@@ -432,7 +432,7 @@ nav {
     #EDE0F6 83.3%,
     #F7EAEE 100%);
 }
-#galeria-bw {
+#galeria-blanconegro {
   background: #F0F0EE;
 }
 .gallery-header { 
@@ -704,7 +704,7 @@ nav {
     var(--rojonaranja) 74% 86%, 
     var(--rojo) 86% 100%);
 }
-.pagination-dot.active-bw {
+.pagination-dot.active-blanconegro {
   opacity: .65;
   transform: scale(1.35);
   background: #fff;
@@ -717,42 +717,42 @@ nav {
 #home {
   transition: background 1s ease;
 }
-#home.bw-hover {
+#home.blanconegro-hover {
   background: linear-gradient(135deg, #ffffff 0%, #000000 100%);
 }
-#home.bw-hover .letter:not(.letter-bw) {
+#home.blanconegro-hover .letter:not(.letter-blanconegro) {
   color: #fff!important;
 }
-#home.bw-hover .letter-bw {
+#home.blanconegro-hover .letter-blanconegro {
   color: #fff!important;
 }
-nav.bw-hover .menu-circle {
+nav.blanconegro-hover .menu-circle {
   border-color: #fff;
 }
-nav.bw-hover .menu-circle-dot {
+nav.blanconegro-hover .menu-circle-dot {
   background: #fff;
 }
-body.bw {
+body.blanconegro {
   overflow: hidden;
 }
-body.bw>*:not(#bw-overlay):not(#cursor):not(#rainbow):not(nav):not(#sideMenu):not(#overlay):not(#lightbox) {
+body.blanconegro>*:not(#blanconegro-overlay):not(#cursor):not(#rainbow):not(nav):not(#sideMenu):not(#overlay):not(#lightbox) {
   opacity: 0;
   pointer-events: none;
   transition: opacity .6s ease;
 }
-body.bw nav {
+body.blanconegro nav {
   z-index: 501;
 }
-body.bw #overlay {
+body.blanconegro #overlay {
   z-index: 501;
 }
-body.bw .side-menu {
+body.blanconegro .side-menu {
   z-index: 502;
 }
-body.bw .lightbox {
+body.blanconegro .lightbox {
   z-index: 503;
 }
-#bw-overlay {
+#blanconegro-overlay {
   position: fixed;
   inset: 0;
   background: linear-gradient(135deg, #ffffff 0%, #000000 100%);
@@ -769,11 +769,11 @@ body.bw .lightbox {
   overflow-x: hidden;
   padding: 120px 40px 80px;
 }
-#bw-overlay.active {
+#blanconegro-overlay.active {
   opacity: 1;
   pointer-events: all;
 }
-#bw-overlay .photo-grid {
+#blanconegro-overlay .photo-grid {
   max-width: 1600px;
 }
 
