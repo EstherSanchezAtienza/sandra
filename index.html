@@ -245,8 +245,21 @@
                 src="./img/close.svg"
                 style="width: 50px;"/>
         </button>
+        <div class="lightbox-left">
+            <img 
+                alt="Izquierda"
+                src="img/left.svg"
+                style="width: 50px;"
+                onclick="changeImg(true)"/>
+        </div>
         <img class="lightbox-img" id="lightbox-img" src="" alt="" style="display: none;">
-        <div class="lightbox-txt" id="lightbox-txt">tus fotos aquí</div>
+        <div class="lightbox-right">
+            <img 
+                alt="Derecha"
+                src="img/right.svg"
+                style="width: 50px;"
+                onclick="changeImg(false)"/>
+        </div>
     </div>
     <div id="blanconegro-overlay">
         <div class="photo-grid" id="grid-blanconegro"></div>
@@ -646,28 +659,28 @@
             'multicolor_20': 'img/multicolor/21.jpeg',
             'multicolor_21': 'img/multicolor/22.jpg',
             'multicolor_22': 'img/multicolor/23.jpeg',
-            'blanconegro_0': 'img/blanconegro/001.jpg',
+            'blanconegro_0': 'img/blanconegro/001.JPG',
             'blanconegro_1': 'img/blanconegro/002.jpg',
             'blanconegro_2': 'img/blanconegro/003.jpg',
             'blanconegro_3': 'img/blanconegro/004.jpg',
             'blanconegro_4': 'img/blanconegro/005.jpg',
             'blanconegro_5': 'img/blanconegro/006.jpg',
-            'blanconegro_6': 'img/blanconegro/007.jpg',
-            'blanconegro_7': 'img/blanconegro/008.jpg',
+            'blanconegro_6': 'img/blanconegro/007.JPG',
+            'blanconegro_7': 'img/blanconegro/008.JPG',
             'blanconegro_8': 'img/blanconegro/009.jpg',
             'blanconegro_9': 'img/blanconegro/010.jpg',
             'blanconegro_10': 'img/blanconegro/011.jpg',
-            'blanconegro_11': 'img/blanconegro/012.jpg',
-            'blanconegro_12': 'img/blanconegro/013.jpg',
+            'blanconegro_11': 'img/blanconegro/012.JPG',
+            'blanconegro_12': 'img/blanconegro/013.JPG',
             'blanconegro_13': 'img/blanconegro/014.jpg',
-            'blanconegro_14': 'img/blanconegro/015.jpg',
-            'blanconegro_15': 'img/blanconegro/016.jpg',
-            'blanconegro_16': 'img/blanconegro/017.jpg',
-            'blanconegro_17': 'img/blanconegro/018.jpg',
-            'blanconegro_18': 'img/blanconegro/019.jpg',
-            'blanconegro_19': 'img/blanconegro/020.jpg',
-			'blanconegro_20': 'img/blanconegro/021.jpg',
-            'blanconegro_21': 'img/blanconegro/022.jpg',
+            'blanconegro_14': 'img/blanconegro/015.JPG',
+            'blanconegro_15': 'img/blanconegro/016.JPG',
+            'blanconegro_16': 'img/blanconegro/017.JPG',
+            'blanconegro_17': 'img/blanconegro/018.JPG',
+            'blanconegro_18': 'img/blanconegro/019.JPG',
+            'blanconegro_19': 'img/blanconegro/020.JPG',
+			'blanconegro_20': 'img/blanconegro/021.JPG',
+            'blanconegro_21': 'img/blanconegro/022.JPG',
             'blanconegro_22': 'img/blanconegro/023.jpg',
             'blanconegro_23': 'img/blanconegro/024.jpg',
             'blanconegro_24': 'img/blanconegro/025.jpg',
@@ -681,7 +694,7 @@
             'blanconegro_32': 'img/blanconegro/033.jpg',
             'blanconegro_33': 'img/blanconegro/034.jpg',
             'blanconegro_34': 'img/blanconegro/035.jpg',
-            'blanconegro_35': 'img/blanconegro/036.jpg',
+            'blanconegro_35': 'img/blanconegro/036.JPG',
             'blanconegro_36': 'img/blanconegro/037.jpg',
             'blanconegro_37': 'img/blanconegro/038.jpg',
             'blanconegro_38': 'img/blanconegro/039.jpg',
@@ -703,37 +716,37 @@
             'blanconegro_54': 'img/blanconegro/055.jpg',
             'blanconegro_55': 'img/blanconegro/056.jpg',
             'blanconegro_56': 'img/blanconegro/057.jpg',
-            'blanconegro_57': 'img/blanconegro/058.jpg',
-            'blanconegro_58': 'img/blanconegro/059.jpg',
-            'blanconegro_59': 'img/blanconegro/060.jpg',
-			'blanconegro_60': 'img/blanconegro/061.jpg',
-            'blanconegro_61': 'img/blanconegro/062.jpg',
+            'blanconegro_57': 'img/blanconegro/058.JPG',
+            'blanconegro_58': 'img/blanconegro/059.JPG',
+            'blanconegro_59': 'img/blanconegro/060.JPG',
+			'blanconegro_60': 'img/blanconegro/061.JPG',
+            'blanconegro_61': 'img/blanconegro/062.JPG',
             'blanconegro_62': 'img/blanconegro/063.jpg',
             'blanconegro_63': 'img/blanconegro/064.jpg',
             'blanconegro_64': 'img/blanconegro/065.jpg',
-            'blanconegro_65': 'img/blanconegro/066.jpg',
-            'blanconegro_66': 'img/blanconegro/067.jpg',
-            'blanconegro_67': 'img/blanconegro/068.jpg',
-            'blanconegro_68': 'img/blanconegro/069.jpg',
-            'blanconegro_69': 'img/blanconegro/070.jpg',
-			'blanconegro_70': 'img/blanconegro/071.jpg',
+            'blanconegro_65': 'img/blanconegro/066.JPG',
+            'blanconegro_66': 'img/blanconegro/067.JPG',
+            'blanconegro_67': 'img/blanconegro/068.JPG',
+            'blanconegro_68': 'img/blanconegro/069.JPG',
+            'blanconegro_69': 'img/blanconegro/070.JPG',
+			'blanconegro_70': 'img/blanconegro/071.JPG',
             'blanconegro_71': 'img/blanconegro/072.jpg',
-            'blanconegro_72': 'img/blanconegro/073.jpg',
-            'blanconegro_73': 'img/blanconegro/074.jpg',
-            'blanconegro_74': 'img/blanconegro/075.jpg',
-            'blanconegro_75': 'img/blanconegro/076.jpg',
-            'blanconegro_76': 'img/blanconegro/077.jpg',
-            'blanconegro_77': 'img/blanconegro/078.jpg',
-            'blanconegro_78': 'img/blanconegro/079.jpg',
-            'blanconegro_79': 'img/blanconegro/080.jpg',
-			'blanconegro_80': 'img/blanconegro/081.jpg',
-            'blanconegro_81': 'img/blanconegro/082.jpg',
+            'blanconegro_72': 'img/blanconegro/073.JPG',
+            'blanconegro_73': 'img/blanconegro/074.JPG',
+            'blanconegro_74': 'img/blanconegro/075.JPG',
+            'blanconegro_75': 'img/blanconegro/076.JPG',
+            'blanconegro_76': 'img/blanconegro/077.JPG',
+            'blanconegro_77': 'img/blanconegro/078.JPG',
+            'blanconegro_78': 'img/blanconegro/079.JPG',
+            'blanconegro_79': 'img/blanconegro/080.JPG',
+			'blanconegro_80': 'img/blanconegro/081.JPG',
+            'blanconegro_81': 'img/blanconegro/082.JPG',
             'blanconegro_82': 'img/blanconegro/083.jpg',
-            'blanconegro_83': 'img/blanconegro/084.jpg',
+            'blanconegro_83': 'img/blanconegro/084.JPG',
             'blanconegro_84': 'img/blanconegro/085.jpg',
             'blanconegro_85': 'img/blanconegro/086.jpg',
-            'blanconegro_86': 'img/blanconegro/087.jpg',
-            'blanconegro_87': 'img/blanconegro/088.jpg',
+            'blanconegro_86': 'img/blanconegro/087.JPG',
+            'blanconegro_87': 'img/blanconegro/088.JPG',
             'blanconegro_88': 'img/blanconegro/089.jpg',
             'blanconegro_89': 'img/blanconegro/090.jpg',
 			'blanconegro_90': 'img/blanconegro/091.jpg',
@@ -741,8 +754,8 @@
             'blanconegro_92': 'img/blanconegro/093.jpg',
             'blanconegro_93': 'img/blanconegro/094.jpg',
             'blanconegro_94': 'img/blanconegro/095.jpg',
-            'blanconegro_95': 'img/blanconegro/096.jpg',
-            'blanconegro_96': 'img/blanconegro/097.jpg',
+            'blanconegro_95': 'img/blanconegro/096.JPG',
+            'blanconegro_96': 'img/blanconegro/097.JPG',
             'blanconegro_97': 'img/blanconegro/098.jpg',
             'blanconegro_98': 'img/blanconegro/099.jpg',
             'blanconegro_99': 'img/blanconegro/100.jpg',
@@ -750,7 +763,7 @@
             'blanconegro_101': 'img/blanconegro/102.jpg',
             'blanconegro_102': 'img/blanconegro/103.jpg',
             'blanconegro_103': 'img/blanconegro/104.jpg',
-            'blanconegro_104': 'img/blanconegro/105.jpg',
+            'blanconegro_104': 'img/blanconegro/105.JPG',
         };
         const page_size = 5;
         const page_size_bw = 10;
@@ -912,7 +925,6 @@
             const lightbox = document.getElementById('lightbox');
             document.getElementById('lightbox-img').src = src;
             document.getElementById('lightbox-img').style.display = 'block';
-            document.getElementById('lightbox-txt').style.display = 'none';
             lightbox.classList.add('active');
         }
         function closeLightbox() {
@@ -923,6 +935,25 @@
         document.addEventListener('keydown', e => {
             if (e.key === 'Escape') closeLightbox();
         });
+
+        function changeImg(previous) {
+            const srcOrigin =  document.getElementById('lightbox-img').src;
+            const gallery = srcOrigin.split('/')[srcOrigin.split('/').length-2];
+            const src = srcOrigin.split('/')[srcOrigin.split('/').length-1];
+            const imgNumber = Number(srcOrigin.split('/')[srcOrigin.split('/').length-1].split('.')[0]);
+            const photos_gallery = Object.keys(photos).filter(k => k.includes(gallery));
+
+            let next = previous ? imgNumber-1 : imgNumber+1;
+            if (next == 0) {
+                next = photos_gallery.length - 1;
+            }
+            if (next == photos_gallery.length) {
+                next = 1;
+            }
+
+            const lightbox = document.getElementById('lightbox');
+            document.getElementById('lightbox-img').src = photos[gallery + '_' + (next-1)];
+        }
 
         // CURSOR
         const cursor = document.getElementById('cursor');

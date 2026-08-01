@@ -963,9 +963,6 @@ body.blanconegro .lightbox {
   width: 100%;
   margin-bottom: 15px;
 }
-/* .contact-form-card input:focus, .contact-form-card textarea:focus {
-  border-color: var(--ink);
-} */
 .contact-form-card input::placeholder, .contact-form-card textarea::placeholder {
   color: rgba(0, 0, 0, .3);
 }
@@ -1024,7 +1021,7 @@ body.blanconegro .lightbox {
   z-index: 300;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   opacity: 0;
   pointer-events: none;
   transition: opacity .3s;
@@ -1032,6 +1029,12 @@ body.blanconegro .lightbox {
 .lightbox.active { 
   opacity: 1;
   pointer-events: all;
+}
+.lightbox-left {
+  margin-left: 20px;
+}
+.lightbox-right {
+  margin-right: 20px;
 }
 .lightbox-close {
   position: absolute;
@@ -1054,11 +1057,32 @@ body.blanconegro .lightbox {
   object-fit: contain;
   border-radius: 2px;
 }
-.lightbox-txt {
-  font-size: 13px;
-  color: rgba(255, 255, 255, .2);
-  letter-spacing: .1em;
-  text-transform: uppercase;
+
+/* MEDIA */
+@media (max-width: 768px) {
+  .bio-inner, .contact-inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .bio-left, .contact-left {
+    min-width: 0;
+  }
+  .bio-photo-space, .contact-form-card {
+    min-width: 0;
+    max-width: 100%;
+  }
+  .lightbox-left, .lightbox-right {
+    margin-left: 6px;
+    margin-right: 6px;
+    flex-shrink: 0;
+  }
+  .lightbox-left img, .lightbox-right img {
+    width: 28px !important;
+  }
+  .lightbox-img {
+    max-width: 72vw;
+    max-height: 80vh;
+  }
 }
 
 
